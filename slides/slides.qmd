@@ -1,0 +1,554 @@
+---
+title: "Title Here"
+subtitle: "Helping students translate code across statistical languages"
+author: "Marie Neubrander & Kat Husar"
+date: "ECOTS 2026"
+format: revealjs
+---
+
+## Welcome {.center}
+
+::: {.timing}
+0:00 – 0:30 · TITLE
+:::
+
+**Title?**
+
+*Helping students translate code across statistical languages*
+
+::: {.small}
+ECOTS 2026 · Breakout Session · ~25 min
+:::
+
+::: {.notes}
+- Smile, wave, name + institution.
+- "Today we want to talk about something we've all watched happen: a student who's perfectly capable in one language sees a job posting in another, and self-rejects."
+- Mention this will be interactive — encourage chat use throughout.
+- Have co-host ready to monitor chat.
+:::
+
+---
+
+## The scene {.center}
+
+::: {.timing}
+0:30 – 2:00 · HOOK (1.5 min)
+:::
+
+> *A student fluent in R sees "Python required" in a job posting…*
+>
+> *…and closes the tab.*
+
+::: {.fragment}
+They didn't lack the **statistics**.
+They lacked confidence in the **syntax**.
+:::
+
+::: {.notes}
+- Tell the real story (Marie or collaborator picks one — pick one you've actually seen).
+- Pause after "closes the tab" — let it land.
+- Pivot: this isn't a knowledge gap. It's a confidence gap.
+:::
+
+---
+
+## Quick poll {background-color="#f0f9ff"}
+
+::: {.timing}
+2:00 – 3:00 · POLL #1 (1 min)
+:::
+
+### Which best describes your students?
+
+a. **R-first** (intro stats, biostats, social science)
+b. **Python-first** (CS-adjacent, data science programs)
+c. **Mixed** — they see both
+d. **Neither yet** — pre-programming
+
+::: {.small}
+Launch Zoom poll. Read results aloud. Reference back during the demo.
+:::
+
+::: {.notes}
+- Pre-build this poll in Zoom web portal BEFORE the session.
+- ~30 sec to launch + vote, ~20 sec to read results.
+- Tie results to the demo: "Most of you said R-first — so we'll start there."
+:::
+
+---
+
+## "Fear of the new" {background-color="#fff7ed"}
+
+::: {.timing}
+3:00 – 5:00 · PROBLEM (2 min)
+:::
+
+The barrier isn't conceptual. It's **psychological**.
+
+::: {.two-col}
+::: {}
+**Students who know:**
+
+- What a linear model *is*
+- How to interpret coefficients
+- When to use a t-test
+:::
+
+::: {}
+**Freeze when they see:**
+
+- `model.fit(X, y)` instead of `lm(y ~ x)`
+- `pd.DataFrame` instead of `data.frame`
+- `:=` instead of `<-`
+:::
+:::
+
+::: {.fragment}
+**Same concept. Different costume.**
+:::
+
+::: {.notes}
+- This framing — "same concept, different costume" — is the through-line. Repeat it in the demo.
+- Mention groups disproportionately affected: career-switchers, first-gen students, students from teaching-focused programs without industry exposure.
+:::
+
+---
+
+## Chat waterfall {background-color="#f0f9ff"}
+
+::: {.timing}
+5:00 – 6:00 · CHAT (1 min)
+:::
+
+### Type — but **don't hit send yet**
+
+> *What's one language or tool your students fear?*
+
+::: {.fragment}
+**3 … 2 … 1 … send.**
+:::
+
+::: {.notes}
+- The "don't send yet" trick produces a visible wave instead of a trickle.
+- Read 3-4 aloud. Look for patterns ("lots of SQL — we'll touch that").
+- Co-host can screenshot the chat for the GitHub repo later.
+:::
+
+---
+
+## The thesis {.center background-color="#ecfdf5"}
+
+::: {.timing}
+6:00 – 6:30 · THESIS (30 sec)
+:::
+
+### AI can lower the syntax barrier
+
+…**if** we design the activity so students learn the *mapping*,
+not just receive the *answer*.
+
+[Bridge]{.bridge} → toward mastery
+[Crutch]{.crutch} → away from it
+
+::: {.notes}
+- Plant the bridge/crutch language. It comes back in section 5.
+:::
+
+---
+
+## Demo: prompt-building {background-color="#fafafa"}
+
+::: {.timing}
+6:30 – 12:30 · DEMO (6 min)
+:::
+
+### Two prompts. Same task. Very different output.
+
+We'll translate:
+
+1. `lm()` in R → `LinearRegression` in Python
+2. `pandas` groupby → `dplyr` pipe
+3. A 30-second SQL ↔ tidyverse cameo
+
+::: {.notes}
+- Open ChatGPT/Claude in a separate window BEFORE you start so screenshare is ready.
+- Have a pre-recorded backup video of this demo in case the AI is slow.
+- Talk through what you're doing — don't just type silently.
+:::
+
+---
+
+## Bad prompt {background-color="#fef2f2"}
+
+::: {.timing}
+6:30 – 8:00 · DEMO part 1 (1.5 min)
+:::
+
+```
+Convert this R code to Python:
+
+lm(mpg ~ wt + hp, data = mtcars)
+```
+
+::: {.fragment}
+**You get:** working code.
+
+**You don't get:** why `~` became a design matrix, why
+`sklearn` separates `X` and `y`, or that `summary()`
+has no direct equivalent.
+:::
+
+::: {.notes}
+- Run this live. Show the output.
+- Pause on what's MISSING: the conceptual map.
+- "This produces an answer. It doesn't produce learning."
+:::
+
+---
+
+## Good prompt {background-color="#f0fdf4"}
+
+::: {.timing}
+8:00 – 10:00 · DEMO part 2 (2 min)
+:::
+
+```
+I'm an intro stats student fluent in R.
+Translate this R code to Python, AND:
+
+1. Add inline comments mapping each R line to its Python equivalent.
+2. Flag any idiom differences (e.g., formula interface vs. design matrix).
+3. End with one concept-check question I should be able to answer
+   before I move on.
+
+R code:
+lm(mpg ~ wt + hp, data = mtcars)
+```
+
+::: {.notes}
+- Run this live. Show the output — it should include comments + a check question.
+- This is the centerpiece pattern. Name it: "learning goal + mapping + idiom flags + concept check."
+- This pattern is in the GitHub repo as a template.
+:::
+
+---
+
+## Python → R: same trick {background-color="#f0fdf4"}
+
+::: {.timing}
+10:00 – 11:30 · DEMO part 3 (1.5 min)
+:::
+
+```python
+df.groupby("cyl")["mpg"].mean()
+```
+
+::: {.fragment}
+**AI maps it to:**
+
+```r
+df |> group_by(cyl) |> summarize(mean_mpg = mean(mpg))
+```
+
+…and explains that method chaining ↔ the pipe.
+:::
+
+::: {.notes}
+- This is the tidyverse cameo. Highlight that the pipe is the same idea as `.` chaining in pandas.
+- Students who learned dplyr first often "get" pandas faster once they see this.
+:::
+
+---
+
+## 30-sec SQL cameo {background-color="#f0fdf4"}
+
+::: {.timing}
+11:30 – 12:30 · DEMO part 4 (1 min)
+:::
+
+::: {.two-col}
+::: {}
+**SQL**
+```sql
+SELECT cyl, AVG(mpg)
+FROM mtcars
+GROUP BY cyl
+HAVING AVG(mpg) > 20;
+```
+:::
+
+::: {}
+**dplyr**
+```r
+mtcars |>
+  group_by(cyl) |>
+  summarize(m = mean(mpg)) |>
+  filter(m > 20)
+```
+:::
+:::
+
+::: {.fragment}
+**One concept. Three costumes.**
+:::
+
+::: {.notes}
+- Move fast. Don't explain SQL in depth — just show that GROUP BY/HAVING maps cleanly.
+- This is the moment the "same concept, different costume" line earns its keep.
+:::
+
+---
+
+## Activity {background-color="#f0f9ff"}
+
+::: {.timing}
+12:30 – 17:30 · HANDS-ON (5 min)
+:::
+
+### Your turn
+
+You'll take a code snippet, write a prompt that
+produces a **pedagogically useful** translation,
+and evaluate it.
+
+::: {.fragment}
+**Rubric:**
+
+1. Does it run?
+2. Does it *teach the mapping*?
+3. Does it flag idiom differences?
+4. Does it leave the student able to do the next problem alone?
+:::
+
+::: {.notes}
+- Format is flexible — see backup slide for options.
+- DEFAULT format: shared Padlet/Google Doc. Drop link in chat.
+- If running Padlet: have 4 snippets pre-loaded as columns. Attendees pick one.
+- Set a 4-min timer. Call attention back at 4 min.
+:::
+
+---
+
+## Activity — what to do {background-color="#f0f9ff"}
+
+::: {.timing}
+(visible during the 5-min activity)
+:::
+
+::: {.small}
+**Link:** [padlet link / Google Doc link goes here]
+:::
+
+1. Pick a snippet (R, Python, or SQL).
+2. Write a prompt using the template:
+   *learning goal · mapping · idiom flags · concept check*
+3. Paste the AI output.
+4. Score 1–4 on the rubric. Drop one insight in the chat.
+
+::: {.notes}
+- Leave this slide up while attendees work.
+- Co-host watches chat for early finishers; you watch the Padlet.
+- At the 4-min mark: "30 seconds — wrap up your score."
+:::
+
+---
+
+## What patterns showed up? {background-color="#f0f9ff"}
+
+::: {.timing}
+17:30 – 18:30 · DEBRIEF (1 min)
+:::
+
+- Which prompts worked best?
+- Where did AI over-explain or under-explain?
+- Which snippets surprised people?
+
+::: {.notes}
+- Narrate live from what you saw in the Padlet/chat.
+- Pick 2-3 to call out by name (if comfortable) or anonymously.
+- Bridge to next section: "This is how we tell bridge from crutch."
+:::
+
+---
+
+## Bridge vs. crutch {background-color="#ecfdf5"}
+
+::: {.timing}
+18:30 – 22:30 · GUARDRAILS (4 min)
+:::
+
+::: {.two-col}
+::: {}
+[**Bridge**]{.bridge}
+
+- Annotate AI output
+- Translate, then close the tab and re-derive
+- Pair with a concept check
+- Scaffolded fading (week 1 → week 5)
+:::
+
+::: {}
+[**Crutch**]{.crutch}
+
+- Copy-paste without reading
+- Skip the *why*
+- Never reproduce unaided
+- Same level of help every week
+:::
+:::
+
+::: {.notes}
+- This is the most "Monday-morning useful" section. Slow down.
+- Each bullet is a real classroom move — give one quick example for each on the left.
+- "Scaffolded fading" = the key term they'll Google later.
+:::
+
+---
+
+## Who benefits most? {background-color="#ecfdf5"}
+
+::: {.timing}
+22:30 – 23:30 · WHO (1 min)
+:::
+
+**Benefits most:**
+
+- Students switching ecosystems mid-program
+- Career-switchers with stats but new to programming
+- Students at teaching-focused institutions w/o industry exposure
+
+**At risk of over-reliance:**
+
+- Students who haven't built the underlying concept yet
+- Students using AI to skip — not to bridge
+
+::: {.notes}
+- Be honest: AI translation is most useful AFTER the concept is solid in one language.
+- Don't introduce it as a first encounter with linear regression.
+:::
+
+---
+
+## Quick poll {background-color="#f0f9ff"}
+
+::: {.timing}
+23:30 – 24:00 · POLL #2 (30 sec)
+:::
+
+### Which guardrail will you try first?
+
+a. Annotate AI output
+b. Translate-then-close-the-tab
+c. AI + concept-check pairing
+d. Scaffolded fading across the term
+
+::: {.notes}
+- Quick poll, no deep discussion. Just commitment.
+- Read top result aloud.
+:::
+
+---
+
+## Take this with you {background-color="#fefce8"}
+
+::: {.timing}
+24:00 – 25:00 · CLOSE (1 min)
+:::
+
+### Three things for Monday
+
+1. **One prompt template** — *goal · mapping · idiom · check*
+2. **One guardrail** — pick the one you just voted for
+3. **One concept** you'll teach with translation next week
+
+::: {.small}
+**Repo:** github.com/mneubrander/ecots-2026 ·
+prompt templates + R↔Python examples + rubric
+:::
+
+::: {.notes}
+- Drop repo link in chat NOW (have it pre-copied).
+- "If you remember one thing: same concept, different costume."
+- Thank co-host, attendees. Open for Q&A.
+:::
+
+---
+
+## Q&A {.center}
+
+### Questions?
+
+::: {.small}
+**Marie Neubrander** — [email]
+**Kat Husar** — [email]
+**Repo:** github.com/mneubrander/ecots-2026
+:::
+
+::: {.notes}
+- Most likely Q's:
+  - "What AI tool do you use?" → answer honestly, mention free tiers
+  - "How do you handle students who just copy-paste?" → scaffolded fading + concept checks
+  - "Does this work for [language X]?" → yes, same prompt pattern
+  - "What about academic integrity?" → frame as a *learning tool*, like a calculator; disclosure norms
+:::
+
+---
+
+# Backup slides {.center background-color="#1f2937" style="color: white;"}
+
+::: {.notes}
+- Anything past here is overflow / Q&A support / safety net.
+:::
+
+---
+
+## Activity format options {background-color="#fafafa"}
+
+| Format | Setup | Risk | Best for |
+|---|---|---|---|
+| **Padlet / Google Doc** | 5 min | Low | Default; any room size |
+| **Zoom breakouts** | 2 min mid-session | Medium | Deeper engagement, ≥15 attendees |
+| **Chat-driven live demo** | None | Higher | Small/known room |
+| **Custom API website** | 5+ days | **Too high** | Don't ship in 5 days |
+
+::: {.notes}
+- This slide is for YOU during planning, not for the audience.
+- Decide format 24h before based on registration count.
+:::
+
+---
+
+## If demo breaks {background-color="#fef2f2"}
+
+1. Switch to the **pre-recorded demo video** (have it open in a tab).
+2. Or pivot to: *"Let's read this output together"* with a printed/slide screenshot of a known-good run.
+3. Don't troubleshoot live for more than 30 seconds.
+
+::: {.notes}
+- Pre-record a 90-sec backup video of the good-prompt demo.
+- Save 3-4 known-good screenshots as slides 28-31 (TODO).
+:::
+
+---
+
+## Prompt template (full) {background-color="#f0fdf4"}
+
+```
+I'm a [level] student fluent in [source language].
+Translate this [source] code to [target], AND:
+
+1. Add inline comments mapping each [source] line to [target].
+2. Flag any idiom differences (formulas, indexing,
+   data structures, default behaviors).
+3. End with one concept-check question I should be
+   able to answer before moving on.
+4. Do NOT explain basic syntax I already know in [source].
+
+Code:
+[paste here]
+```
+
+::: {.notes}
+- This is the full version of the template — the slides earlier showed a stats-specific instantiation.
+- The "do NOT explain basic syntax" line is what stops AI from being condescending.
+:::

@@ -1,0 +1,21 @@
+project:
+  type: default
+
+format:
+  revealjs:
+    theme: [default, styles.scss]
+    slide-number: c/t
+    show-slide-number: all
+    incremental: false
+    transition: fade
+    width: 1280
+    height: 720
+    fig-align: center
+    code-line-numbers: false
+    code-overflow: wrap
+    highlight-style: github
+    chalkboard: false
+    menu:
+      side: right
+    history: true
+    hash-type: number

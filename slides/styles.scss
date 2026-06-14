@@ -1,0 +1,58 @@
+/*-- scss:defaults --*/
+
+$body-bg: #fdfdfd;
+$body-color: #1f2937;
+$link-color: #2563eb;
+$presentation-heading-color: #0f172a;
+$presentation-heading-font: "Source Sans Pro", "Helvetica Neue", sans-serif;
+$code-block-bg: #f6f8fa;
+
+/*-- scss:rules --*/
+
+.reveal .slide-number {
+  font-size: 0.7em;
+  color: #6b7280;
+}
+
+.reveal h2 {
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.6em;
+}
+
+.reveal .callout {
+  font-size: 0.85em;
+}
+
+.reveal .timing {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  font-size: 0.55em;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.reveal .two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+
+.reveal .bridge {
+  color: #047857;
+  font-weight: 600;
+}
+
+.reveal .crutch {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.reveal .small {
+  font-size: 0.75em;
+}
+
+.reveal pre code {
+  max-height: 500px;
+}
