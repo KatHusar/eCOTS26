@@ -268,42 +268,42 @@
     "href": "slides/slides.html#welcome",
     "title": "Breaking the Syntax Barrier",
     "section": "Welcome",
-    "text": "Welcome\n: Breaking the Syntax Barrier\nEmpowering Students to Code in Any Language\n\nECOTS 2026 · Breakout Session · ~25 min\n\n\n\nSmile, wave, name + institution.\n“Today we want to talk about something we’ve all watched happen: a student who’s perfectly capable in one language sees a job posting in another, and self-rejects.”\nMention this will be interactive — encourage chat use throughout.\nHave co-host ready to monitor chat."
+    "text": "Welcome\n: Breaking the Syntax Barrier\nEmpowering Students to Code in Any Language\n\nECOTS 2026 · Breakout Session\n\n\n\nSmile, wave, name + institution.\n“Today we want to talk about something we’ve all watched happen: a student who’s perfectly capable in one language sees a job posting in another, and self-rejects.”\nMention this will be interactive — encourage chat use throughout.\nHave co-host ready to monitor chat."
   },
   {
     "objectID": "slides/slides.html#the-scene",
     "href": "slides/slides.html#the-scene",
     "title": "Breaking the Syntax Barrier",
     "section": "The scene",
-    "text": "The scene\n\n0:30 – 2:00 · HOOK (1.5 min)\n\n\nA student fluent in R sees “Python required” in a job posting…\n…and closes the tab.\n\n\nThey didn’t lack the statistics. They lacked confidence in the syntax.\n\n\n\nTell the real story (Marie or collaborator picks one — pick one you’ve actually seen).\nPause after “closes the tab” — let it land.\nPivot: this isn’t a knowledge gap. It’s a confidence gap."
+    "text": "The scene\n\nA student fluent in R sees “Python required” in a job posting…\n…and closes the tab.\n\n\nThey didn’t lack the statistics. They lacked confidence in the syntax.\n\n\n\nTell the real story (Marie or collaborator picks one — pick one you’ve actually seen).\nPause after “closes the tab” — let it land.\nPivot: this isn’t a knowledge gap. It’s a confidence gap."
   },
   {
     "objectID": "slides/slides.html#quick-poll",
     "href": "slides/slides.html#quick-poll",
     "title": "Breaking the Syntax Barrier",
     "section": "Quick poll",
-    "text": "Quick poll\n\n2:00 – 3:00 · POLL #1 (1 min)\n\nWhich best describes your students?\n\nR-first (intro stats, biostats, social science)\nPython-first (CS-adjacent, data science programs)\nMixed — they see both\nNeither yet — pre-programming\n\n\nLaunch Zoom poll. Read results aloud. Reference back during the demo.\n\n\n\nPre-build this poll in Zoom web portal BEFORE the session.\n~30 sec to launch + vote, ~20 sec to read results.\nTie results to the demo: “Most of you said R-first — so we’ll start there.”"
+    "text": "Quick poll\nWhich best describes your students?\n\nR-first (intro stats, biostats, social science)\nPython-first (CS-adjacent, data science programs)\nMixed — they see both\nNeither yet — pre-programming\n\n\n\nPre-build this poll in Zoom web portal BEFORE the session.\n~30 sec to launch + vote, ~20 sec to read results.\nTie results to the demo: “Most of you said R-first — so we’ll start there.”"
   },
   {
     "objectID": "slides/slides.html#fear-of-the-new",
     "href": "slides/slides.html#fear-of-the-new",
     "title": "Breaking the Syntax Barrier",
     "section": "“Fear of the new”",
-    "text": "“Fear of the new”\n\n3:00 – 5:00 · PROBLEM (2 min)\n\nThe barrier isn’t conceptual. It’s psychological.\n\n\nStudents who know:\n\nWhat a linear model is\nHow to interpret coefficients\nWhen to use a t-test\n\n\n\nFreeze when they see:\n\nmodel.fit(X, y) instead of lm(y ~ x)\npd.DataFrame instead of data.frame\n:= instead of &lt;-\n\n\n\n\nSame concept. Different costume.\n\n\n\nThis framing — “same concept, different costume” — is the through-line. Repeat it in the demo.\nMention groups disproportionately affected: career-switchers, first-gen students, students from teaching-focused programs without industry exposure."
+    "text": "“Fear of the new”\nThe barrier isn’t conceptual. It’s psychological.\n\n\nStudents who know:\n\nWhat a linear model is\nHow to interpret coefficients\nWhen to use a t-test\n\n\n\nFreeze when they see:\n\nmodel.fit(X, y) instead of lm(y ~ x)\npd.DataFrame instead of data.frame\n:= instead of &lt;-\n\n\n\n\nSame concept. Different costume.\n\n\n\nThis framing — “same concept, different costume” — is the through-line. Repeat it in the demo.\nMention groups disproportionately affected: career-switchers, first-gen students, students from teaching-focused programs without industry exposure."
   },
   {
     "objectID": "slides/slides.html#chat-waterfall",
     "href": "slides/slides.html#chat-waterfall",
     "title": "Breaking the Syntax Barrier",
     "section": "Chat waterfall",
-    "text": "Chat waterfall\n\n5:00 – 6:00 · CHAT (1 min)\n\nType — but don’t hit send yet\n\nWhat’s one language or tool your students fear?\n\n\n3 … 2 … 1 … send.\n\n\n\nThe “don’t send yet” trick produces a visible wave instead of a trickle.\nRead 3-4 aloud. Look for patterns (“lots of SQL — we’ll touch that”).\nCo-host can screenshot the chat for the GitHub repo later."
+    "text": "Chat waterfall\nType — but don’t hit send yet\n\nWhat’s one language or tool your students fear?\n\n\n3 … 2 … 1 … send.\n\n\n\nThe “don’t send yet” trick produces a visible wave instead of a trickle.\nRead 3-4 aloud. Look for patterns (“lots of SQL — we’ll touch that”).\nCo-host can screenshot the chat for the GitHub repo later."
   },
   {
     "objectID": "slides/slides.html#the-thesis",
     "href": "slides/slides.html#the-thesis",
     "title": "Breaking the Syntax Barrier",
     "section": "The thesis",
-    "text": "The thesis\n\n6:00 – 6:30 · THESIS (30 sec)\n\nAI can lower the syntax barrier\n…if we design the activity so students learn the mapping, not just receive the answer.\nBridge → toward mastery Crutch → away from it\n\n\nPlant the bridge/crutch language. It comes back in section 5."
+    "text": "The thesis\nAI can lower the syntax barrier\n…if we design the activity so students learn the mapping, not just receive the answer.\nBridge → toward mastery Crutch → away from it\n\n\nPlant the bridge/crutch language. It comes back in section 5."
   },
   {
     "objectID": "slides/slides.html#demo-prompt-building",
