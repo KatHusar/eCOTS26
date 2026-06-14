@@ -1,5 +1,8 @@
 project:
   type: website
+  resources:
+    - slides/images
+    - slides/slides_files
 
 
 engine: knitr
