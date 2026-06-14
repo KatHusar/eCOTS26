@@ -74,154 +74,154 @@
   {
     "objectID": "slides/slides.html#welcome",
     "href": "slides/slides.html#welcome",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Welcome",
-    "text": "Welcome\n\n0:00 – 0:30 · TITLE\n\nTitle?\nHelping students translate code across statistical languages\n\nECOTS 2026 · Breakout Session · ~25 min\n\n\n\nSmile, wave, name + institution.\n“Today we want to talk about something we’ve all watched happen: a student who’s perfectly capable in one language sees a job posting in another, and self-rejects.”\nMention this will be interactive — encourage chat use throughout.\nHave co-host ready to monitor chat."
+    "text": "Welcome\n: Breaking the Syntax Barrier\nEmpowering Students to Code in Any Language\n\nECOTS 2026 · Breakout Session · ~25 min\n\n\n\nSmile, wave, name + institution.\n“Today we want to talk about something we’ve all watched happen: a student who’s perfectly capable in one language sees a job posting in another, and self-rejects.”\nMention this will be interactive — encourage chat use throughout.\nHave co-host ready to monitor chat."
   },
   {
     "objectID": "slides/slides.html#the-scene",
     "href": "slides/slides.html#the-scene",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "The scene",
     "text": "The scene\n\n0:30 – 2:00 · HOOK (1.5 min)\n\n\nA student fluent in R sees “Python required” in a job posting…\n…and closes the tab.\n\n\nThey didn’t lack the statistics. They lacked confidence in the syntax.\n\n\n\nTell the real story (Marie or collaborator picks one — pick one you’ve actually seen).\nPause after “closes the tab” — let it land.\nPivot: this isn’t a knowledge gap. It’s a confidence gap."
   },
   {
     "objectID": "slides/slides.html#quick-poll",
     "href": "slides/slides.html#quick-poll",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Quick poll",
     "text": "Quick poll\n\n2:00 – 3:00 · POLL #1 (1 min)\n\nWhich best describes your students?\n\nR-first (intro stats, biostats, social science)\nPython-first (CS-adjacent, data science programs)\nMixed — they see both\nNeither yet — pre-programming\n\n\nLaunch Zoom poll. Read results aloud. Reference back during the demo.\n\n\n\nPre-build this poll in Zoom web portal BEFORE the session.\n~30 sec to launch + vote, ~20 sec to read results.\nTie results to the demo: “Most of you said R-first — so we’ll start there.”"
   },
   {
     "objectID": "slides/slides.html#fear-of-the-new",
     "href": "slides/slides.html#fear-of-the-new",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "“Fear of the new”",
     "text": "“Fear of the new”\n\n3:00 – 5:00 · PROBLEM (2 min)\n\nThe barrier isn’t conceptual. It’s psychological.\n\n\nStudents who know:\n\nWhat a linear model is\nHow to interpret coefficients\nWhen to use a t-test\n\n\n\nFreeze when they see:\n\nmodel.fit(X, y) instead of lm(y ~ x)\npd.DataFrame instead of data.frame\n:= instead of &lt;-\n\n\n\n\nSame concept. Different costume.\n\n\n\nThis framing — “same concept, different costume” — is the through-line. Repeat it in the demo.\nMention groups disproportionately affected: career-switchers, first-gen students, students from teaching-focused programs without industry exposure."
   },
   {
     "objectID": "slides/slides.html#chat-waterfall",
     "href": "slides/slides.html#chat-waterfall",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Chat waterfall",
     "text": "Chat waterfall\n\n5:00 – 6:00 · CHAT (1 min)\n\nType — but don’t hit send yet\n\nWhat’s one language or tool your students fear?\n\n\n3 … 2 … 1 … send.\n\n\n\nThe “don’t send yet” trick produces a visible wave instead of a trickle.\nRead 3-4 aloud. Look for patterns (“lots of SQL — we’ll touch that”).\nCo-host can screenshot the chat for the GitHub repo later."
   },
   {
     "objectID": "slides/slides.html#the-thesis",
     "href": "slides/slides.html#the-thesis",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "The thesis",
     "text": "The thesis\n\n6:00 – 6:30 · THESIS (30 sec)\n\nAI can lower the syntax barrier\n…if we design the activity so students learn the mapping, not just receive the answer.\nBridge → toward mastery Crutch → away from it\n\n\nPlant the bridge/crutch language. It comes back in section 5."
   },
   {
     "objectID": "slides/slides.html#demo-prompt-building",
     "href": "slides/slides.html#demo-prompt-building",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Demo: prompt-building",
     "text": "Demo: prompt-building\n\n6:30 – 12:30 · DEMO (6 min)\n\nTwo prompts. Same task. Very different output.\nWe’ll translate:\n\nlm() in R → LinearRegression in Python\npandas groupby → dplyr pipe\nA 30-second SQL ↔︎ tidyverse cameo\n\n\n\nOpen ChatGPT/Claude in a separate window BEFORE you start so screenshare is ready.\nHave a pre-recorded backup video of this demo in case the AI is slow.\nTalk through what you’re doing — don’t just type silently."
   },
   {
     "objectID": "slides/slides.html#bad-prompt",
     "href": "slides/slides.html#bad-prompt",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Bad prompt",
     "text": "Bad prompt\n\n6:30 – 8:00 · DEMO part 1 (1.5 min)\n\nConvert this R code to Python:\n\nlm(mpg ~ wt + hp, data = mtcars)\n\nYou get: working code.\nYou don’t get: why ~ became a design matrix, why sklearn separates X and y, or that summary() has no direct equivalent.\n\n\n\nRun this live. Show the output.\nPause on what’s MISSING: the conceptual map.\n“This produces an answer. It doesn’t produce learning.”"
   },
   {
     "objectID": "slides/slides.html#good-prompt",
     "href": "slides/slides.html#good-prompt",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Good prompt",
     "text": "Good prompt\n\n8:00 – 10:00 · DEMO part 2 (2 min)\n\nI'm an intro stats student fluent in R.\nTranslate this R code to Python, AND:\n\n1. Add inline comments mapping each R line to its Python equivalent.\n2. Flag any idiom differences (e.g., formula interface vs. design matrix).\n3. End with one concept-check question I should be able to answer\n   before I move on.\n\nR code:\nlm(mpg ~ wt + hp, data = mtcars)\n\n\nRun this live. Show the output — it should include comments + a check question.\nThis is the centerpiece pattern. Name it: “learning goal + mapping + idiom flags + concept check.”\nThis pattern is in the GitHub repo as a template."
   },
   {
     "objectID": "slides/slides.html#python-r-same-trick",
     "href": "slides/slides.html#python-r-same-trick",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Python → R: same trick",
     "text": "Python → R: same trick\n\n10:00 – 11:30 · DEMO part 3 (1.5 min)\n\ndf.groupby(\"cyl\")[\"mpg\"].mean()\n\nAI maps it to:\ndf |&gt; group_by(cyl) |&gt; summarize(mean_mpg = mean(mpg))\n…and explains that method chaining ↔︎ the pipe.\n\n\n\nThis is the tidyverse cameo. Highlight that the pipe is the same idea as . chaining in pandas.\nStudents who learned dplyr first often “get” pandas faster once they see this."
   },
   {
     "objectID": "slides/slides.html#sec-sql-cameo",
     "href": "slides/slides.html#sec-sql-cameo",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "30-sec SQL cameo",
     "text": "30-sec SQL cameo\n\n11:30 – 12:30 · DEMO part 4 (1 min)\n\n\n\nSQL\nSELECT cyl, AVG(mpg)\nFROM mtcars\nGROUP BY cyl\nHAVING AVG(mpg) &gt; 20;\n\n\ndplyr\nmtcars |&gt;\n  group_by(cyl) |&gt;\n  summarize(m = mean(mpg)) |&gt;\n  filter(m &gt; 20)\n\n\n\nOne concept. Three costumes.\n\n\n\nMove fast. Don’t explain SQL in depth — just show that GROUP BY/HAVING maps cleanly.\nThis is the moment the “same concept, different costume” line earns its keep."
   },
   {
     "objectID": "slides/slides.html#activity",
     "href": "slides/slides.html#activity",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Activity",
     "text": "Activity\n\n12:30 – 17:30 · HANDS-ON (5 min)\n\nYour turn\nYou’ll take a code snippet, write a prompt that produces a pedagogically useful translation, and evaluate it.\n\nRubric:\n\nDoes it run?\nDoes it teach the mapping?\nDoes it flag idiom differences?\nDoes it leave the student able to do the next problem alone?\n\n\n\n\nFormat is flexible — see backup slide for options.\nDEFAULT format: shared Padlet/Google Doc. Drop link in chat.\nIf running Padlet: have 4 snippets pre-loaded as columns. Attendees pick one.\nSet a 4-min timer. Call attention back at 4 min."
   },
   {
     "objectID": "slides/slides.html#activity-what-to-do",
     "href": "slides/slides.html#activity-what-to-do",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Activity — what to do",
     "text": "Activity — what to do\n\n(visible during the 5-min activity)\n\n\nLink: [padlet link / Google Doc link goes here]\n\n\nPick a snippet (R, Python, or SQL).\nWrite a prompt using the template: learning goal · mapping · idiom flags · concept check\nPaste the AI output.\nScore 1–4 on the rubric. Drop one insight in the chat.\n\n\n\nLeave this slide up while attendees work.\nCo-host watches chat for early finishers; you watch the Padlet.\nAt the 4-min mark: “30 seconds — wrap up your score.”"
   },
   {
     "objectID": "slides/slides.html#what-patterns-showed-up",
     "href": "slides/slides.html#what-patterns-showed-up",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "What patterns showed up?",
     "text": "What patterns showed up?\n\n17:30 – 18:30 · DEBRIEF (1 min)\n\n\nWhich prompts worked best?\nWhere did AI over-explain or under-explain?\nWhich snippets surprised people?\n\n\n\nNarrate live from what you saw in the Padlet/chat.\nPick 2-3 to call out by name (if comfortable) or anonymously.\nBridge to next section: “This is how we tell bridge from crutch.”"
   },
   {
     "objectID": "slides/slides.html#bridge-vs.-crutch",
     "href": "slides/slides.html#bridge-vs.-crutch",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Bridge vs. crutch",
     "text": "Bridge vs. crutch\n\n18:30 – 22:30 · GUARDRAILS (4 min)\n\n\n\nBridge\n\nAnnotate AI output\nTranslate, then close the tab and re-derive\nPair with a concept check\nScaffolded fading (week 1 → week 5)\n\n\n\nCrutch\n\nCopy-paste without reading\nSkip the why\nNever reproduce unaided\nSame level of help every week\n\n\n\n\n\nThis is the most “Monday-morning useful” section. Slow down.\nEach bullet is a real classroom move — give one quick example for each on the left.\n“Scaffolded fading” = the key term they’ll Google later."
   },
   {
     "objectID": "slides/slides.html#who-benefits-most",
     "href": "slides/slides.html#who-benefits-most",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Who benefits most?",
     "text": "Who benefits most?\n\n22:30 – 23:30 · WHO (1 min)\n\nBenefits most:\n\nStudents switching ecosystems mid-program\nCareer-switchers with stats but new to programming\nStudents at teaching-focused institutions w/o industry exposure\n\nAt risk of over-reliance:\n\nStudents who haven’t built the underlying concept yet\nStudents using AI to skip — not to bridge\n\n\n\nBe honest: AI translation is most useful AFTER the concept is solid in one language.\nDon’t introduce it as a first encounter with linear regression."
   },
   {
     "objectID": "slides/slides.html#quick-poll-1",
     "href": "slides/slides.html#quick-poll-1",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Quick poll",
     "text": "Quick poll\n\n23:30 – 24:00 · POLL #2 (30 sec)\n\nWhich guardrail will you try first?\n\nAnnotate AI output\nTranslate-then-close-the-tab\nAI + concept-check pairing\nScaffolded fading across the term\n\n\n\nQuick poll, no deep discussion. Just commitment.\nRead top result aloud."
   },
   {
     "objectID": "slides/slides.html#take-this-with-you",
     "href": "slides/slides.html#take-this-with-you",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Take this with you",
     "text": "Take this with you\n\n24:00 – 25:00 · CLOSE (1 min)\n\nThree things for Monday\n\nOne prompt template — goal · mapping · idiom · check\nOne guardrail — pick the one you just voted for\nOne concept you’ll teach with translation next week\n\n\nRepo: github.com/mneubrander/ecots-2026 · prompt templates + R↔︎Python examples + rubric\n\n\n\nDrop repo link in chat NOW (have it pre-copied).\n“If you remember one thing: same concept, different costume.”\nThank co-host, attendees. Open for Q&A."
   },
   {
     "objectID": "slides/slides.html#qa",
     "href": "slides/slides.html#qa",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Q&A",
     "text": "Q&A\nQuestions?\n\nMarie Neubrander — [email] Kat Husar — [email] Repo: github.com/mneubrander/ecots-2026\n\n\n\nMost likely Q’s:\n\n“What AI tool do you use?” → answer honestly, mention free tiers\n“How do you handle students who just copy-paste?” → scaffolded fading + concept checks\n“Does this work for [language X]?” → yes, same prompt pattern\n“What about academic integrity?” → frame as a learning tool, like a calculator; disclosure norms"
   },
   {
     "objectID": "slides/slides.html#activity-format-options",
     "href": "slides/slides.html#activity-format-options",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Activity format options",
     "text": "Activity format options\n\n\n\n\n\n\n\n\n\nFormat\nSetup\nRisk\nBest for\n\n\n\n\nPadlet / Google Doc\n5 min\nLow\nDefault; any room size\n\n\nZoom breakouts\n2 min mid-session\nMedium\nDeeper engagement, ≥15 attendees\n\n\nChat-driven live demo\nNone\nHigher\nSmall/known room\n\n\nCustom API website\n5+ days\nToo high\nDon’t ship in 5 days\n\n\n\n\n\nThis slide is for YOU during planning, not for the audience.\nDecide format 24h before based on registration count."
   },
   {
     "objectID": "slides/slides.html#if-demo-breaks",
     "href": "slides/slides.html#if-demo-breaks",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "If demo breaks",
     "text": "If demo breaks\n\nSwitch to the pre-recorded demo video (have it open in a tab).\nOr pivot to: “Let’s read this output together” with a printed/slide screenshot of a known-good run.\nDon’t troubleshoot live for more than 30 seconds.\n\n\n\nPre-record a 90-sec backup video of the good-prompt demo.\nSave 3-4 known-good screenshots as slides 28-31 (TODO)."
   },
   {
     "objectID": "slides/slides.html#prompt-template-full",
     "href": "slides/slides.html#prompt-template-full",
-    "title": "Title Here",
+    "title": "Breaking the Syntax Barrier",
     "section": "Prompt template (full)",
     "text": "Prompt template (full)\nI'm a [level] student fluent in [source language].\nTranslate this [source] code to [target], AND:\n\n1. Add inline comments mapping each [source] line to [target].\n2. Flag any idiom differences (formulas, indexing,\n   data structures, default behaviors).\n3. End with one concept-check question I should be\n   able to answer before moving on.\n4. Do NOT explain basic syntax I already know in [source].\n\nCode:\n[paste here]\n\n\nThis is the full version of the template — the slides earlier showed a stats-specific instantiation.\nThe “do NOT explain basic syntax” line is what stops AI from being condescending."
   }
