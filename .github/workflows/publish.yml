@@ -27,6 +27,11 @@ jobs:
       - name: Render site
         run: quarto render
 
+      - name: Copy presentation slides into site output
+        run: |
+          mkdir -p _site/slides
+          cp -r slides/slides.html slides/slides_files slides/images _site/slides/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
