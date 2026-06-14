@@ -24,27 +24,75 @@
     ]
   },
   {
-    "objectID": "lessons/Demo.html#in-python",
-    "href": "lessons/Demo.html#in-python",
-    "title": "Demo",
-    "section": "In Python",
-    "text": "In Python\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nConsider the following plot1:\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\n\nReveal Correct Answer\n\n\n💡 Answer: \\(r^2 = 0.954\\).\n\n\n\n\n\n\n\nImportant\n\n\n\nGo to the discussion board on Canvas and post a short (1–2 sentence) response explaining one possible reason for the trend shown in the graph. What might be driving this pattern? Your name will be hidden from other students.\n\n\nNow read through the following AI-generated explanation for this observed trend with a high correlation:\n“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”\nSounds a bit far-fetched, doesn’t it?\nWhat we’re seeing here is a classic example of correlation not equaling causation — just because two things move together doesn’t mean one caused the other.\nCausal inference is all about answering the question: What actually causes what? It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.\n\n\n\n\n\n\nTip 1\n\n\n\nExplore more spurious correlations at this link.\n\n\nIn the next section, we will explore one powerful way to study causal relationships: randomized experiments.",
+    "objectID": "lessons/Demo.html",
+    "href": "lessons/Demo.html",
+    "title": "Demo!",
+    "section": "",
+    "text": "For this activity, we’ll use a small made-up dataset: hours studied vs. exam score for 12 students. We’ll define the exact same data in both R and Python so we can compare the two languages side-by-side.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nNotice the parallels already: c() becomes [], data.frame() becomes pd.DataFrame(), and head() becomes .head().",
     "crumbs": [
       "Home",
       "Content",
-      "Demo"
+      "Demo!"
     ]
   },
   {
-    "objectID": "lessons/Demo.html#footnotes",
-    "href": "lessons/Demo.html#footnotes",
-    "title": "Demo",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nIllustration and AI explanation with the prompt used to generate it can be found at Spurious Correlations.↩︎",
+    "objectID": "lessons/Demo.html#step-1-a-shared-dataset",
+    "href": "lessons/Demo.html#step-1-a-shared-dataset",
+    "title": "Demo!",
+    "section": "",
+    "text": "For this activity, we’ll use a small made-up dataset: hours studied vs. exam score for 12 students. We’ll define the exact same data in both R and Python so we can compare the two languages side-by-side.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nNotice the parallels already: c() becomes [], data.frame() becomes pd.DataFrame(), and head() becomes .head().",
     "crumbs": [
       "Home",
       "Content",
-      "Demo"
+      "Demo!"
+    ]
+  },
+  {
+    "objectID": "lessons/Demo.html#step-2-fit-a-linear-model-in-r",
+    "href": "lessons/Demo.html#step-2-fit-a-linear-model-in-r",
+    "title": "Demo!",
+    "section": "Step 2: Fit a linear model — in R",
+    "text": "Step 2: Fit a linear model — in R\nIn R, fitting a linear model and getting a full statistical summary takes just two lines:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Demo!"
+    ]
+  },
+  {
+    "objectID": "lessons/Demo.html#step-3-from-r-to-python-ask-the-ai",
+    "href": "lessons/Demo.html#step-3-from-r-to-python-ask-the-ai",
+    "title": "Demo!",
+    "section": "Step 3: From R to Python — ask the AI",
+    "text": "Step 3: From R to Python — ask the AI\nSuppose you’ve never written Python before, but you need to reproduce this analysis. Let’s ask an AI assistant for help.\n\nPrompt: “Translate this R code to Python”\n\n🧑 Prompt\nTranslate this R code to Python:\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nIn Python, the closest equivalent is scikit-learn’s LinearRegression. Here’s the translation:\nfrom sklearn.linear_model import LinearRegression\n\nX = study_data[[\"hours\"]]\ny = study_data[\"score\"]\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprint(\"Intercept:\", model.intercept_)\nprint(\"Coefficient:\", model.coef_[0])\n\nTry running the translated code below (the first run may take a few seconds while scikit-learn loads):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBetter prompts: “Take me step by step through the differences and similarities in this code”\nThe first translation works, but a better prompt can help us actually understand what changed.\n\n🧑 Prompt\nTake me step by step through the differences and similarities\nbetween the R code and the Python code above.\n\n\n🤖 AI response\nSimilarities\n\nBoth approaches create a model object (model) that stores the fitted line.\nBoth use the same underlying idea: find the intercept and slope that best fit score as a function of hours.\nBoth let you inspect the fitted coefficients afterward.\n\nDifferences\n\nFormula vs. arrays: R’s lm(score ~ hours, data = study_data) uses a formula (y ~ x) and the whole data frame. Python’s LinearRegression().fit(X, y) instead expects X (a table of predictors) and y (the outcome) as separate objects.\nAssignment: R traditionally uses &lt;-; Python always uses =.\nOutput detail: summary(model) in R immediately prints coefficients, standard errors, p-values, and R² — all in one table. scikit-learn doesn’t print any of this by default; you have to ask for each piece (model.intercept_, model.coef_) separately, or switch to the statsmodels package for an R-like summary().\nColumn access: R uses study_data$hours or study_data[\"hours\"]; pandas uses study_data[\"hours\"] or study_data.hours.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Demo!"
+    ]
+  },
+  {
+    "objectID": "lessons/Demo.html#step-4-match-the-syntax",
+    "href": "lessons/Demo.html#step-4-match-the-syntax",
+    "title": "Demo!",
+    "section": "Step 4: Match the syntax!",
+    "text": "Step 4: Match the syntax!\nTest what you just learned. For each R snippet, choose its Python equivalent.\n\n\n\nR\nPython\n\n\n\n\n\nx &lt;- 5\n -- choose -- x == 5 x = 5 x :: 5 \n\n\n\nc(1, 2, 3)\n -- choose -- [1, 2, 3] (1, 2, 3) {1, 2, 3} \n\n\n\ndata.frame(a = x, b = y)\n -- choose -- np.array([x, y]) dict(a = x, b = y) pd.DataFrame({\"a\": x, \"b\": y}) \n\n\n\nstudy_data$hours\n -- choose -- study_data-&gt;hours study_data[\"hours\"] study_data::hours \n\n\n\nlm(y ~ x, data = df)\n -- choose -- LinearRegression().fit(X, y) lm(y, x) regress(df, y, x) \n\n\n\nnrow(df)\n -- choose -- df.count nrow(df) len(df) \n\n\n\n\n\n\nCheck Answers",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Demo!"
+    ]
+  },
+  {
+    "objectID": "lessons/Demo.html#step-5-your-turn-fill-in-the-blanks",
+    "href": "lessons/Demo.html#step-5-your-turn-fill-in-the-blanks",
+    "title": "Demo!",
+    "section": "Step 5: Your turn — fill in the blanks",
+    "text": "Step 5: Your turn — fill in the blanks\nNow let’s try a different task on a different dataset: the correlation between temperature and ice cream sales.\nHere’s the complete R version:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow write the equivalent Python — fill in the blanks below and run it!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nReveal Solution\n\n\nimport numpy as np\n\ntemp = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95]\nsales = [10, 15, 22, 28, 35, 42, 50, 58, 65, 75]\n\ncorrelation = np.corrcoef(temp, sales)[0, 1]\nprint(correlation)",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Demo!"
     ]
   },
   {
