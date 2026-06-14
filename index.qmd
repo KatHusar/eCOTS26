@@ -6,6 +6,10 @@ webr:
 
 Welcome to the casual introduction to Causal Inference!
 
+## Slides
+
+[View the eCOTS 2026 presentation slides](slides/slides.html)
+
 
 In this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.
 
