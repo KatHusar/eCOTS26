@@ -276,7 +276,7 @@ sales |>
 | `SELECT col, fn(col)` | `summarise()` | `.agg()` |
 | `GROUP BY` | `group_by()` | `.groupby()` |
 | `ORDER BY ... DESC` | `arrange(desc(...))` | `.sort_values(..., ascending=False)` |
-| `AS alias` | `name = expr` inside `summarise()` | `alias=("col","fn")` inside `.agg()` |
+| `AS name` | `name = expr` inside `summarise()` | `name=("col","fn")` inside `.agg()` |
 
 ---
 
