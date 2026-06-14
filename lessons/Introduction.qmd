@@ -32,8 +32,6 @@ Consider the following plot[^1]:
 
 [^1]: Illustration from [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us)
 
-![](/images/fashion_lecture_salary.png)
-
 What is the reported correlation coefficient ($r^2$) value?
 
 <button class="reveal-btn" onclick="document.getElementById(&#39;answer1&#39;).style.display=&#39;block&#39;">

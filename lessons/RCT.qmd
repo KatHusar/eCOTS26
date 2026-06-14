@@ -12,7 +12,6 @@ To do this, researchers try to compare groups that are as similar as possible â€
 
 One simple (although not always possible) way to do that is a **randomized experiment**, where individuals are randomly selected into *treatment* and *control* groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.
 
-[![](/images/randomized-controlled-trial.webp)](https://www.simplypsychology.org/randomized-controlled-trial.html)
 
 For example, you might randomly assign some students to get the new method (the "treatment") and others to continue with the old method (the "control").
 
