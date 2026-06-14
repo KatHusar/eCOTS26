@@ -406,7 +406,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"sales <- data.frame(\n  month    = c(\"Jan\",\"Jan\",\"Jan\",\"Feb\",\"Feb\",\"Feb\",\"Mar\",\"Mar\",\"Mar\"),\n  category = c(\"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\"),\n  revenue  = c(120, 340, 210, 95, 410, 180, 150, 290, 230),\n  units    = c(12, 4, 15, 9, 5, 13, 14, 3, 17)\n)\nhead(sales)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sales |>\n  group_by(category) |>\n  summarise(\n    total_revenue = sum(revenue),\n    total_units   = sum(units)\n  ) |>\n  arrange(desc(total_revenue))","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  filter(month != \"Feb\") |>\n  group_by(month, category) |>\n  summarise(avg_rev_per_unit = mean(revenue / units), .groups = \"drop\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  group_by(month) |>\n  summarise(total_units = sum(units)) |>\n  filter(total_units > 30) |>\n  arrange(month)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(dplyr)","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sales <- data.frame(\n  month    = c(\"Jan\",\"Jan\",\"Jan\",\"Feb\",\"Feb\",\"Feb\",\"Mar\",\"Mar\",\"Mar\"),\n  category = c(\"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\"),\n  revenue  = c(120, 340, 210, 95, 410, 180, 150, 290, 230),\n  units    = c(12, 4, 15, 9, 5, 13, 14, 3, 17)\n)\nhead(sales)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sales |>\n  group_by(category) |>\n  summarise(\n    total_revenue = sum(revenue),\n    total_units   = sum(units)\n  ) |>\n  arrange(desc(total_revenue))","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  filter(month != \"Feb\") |>\n  group_by(month, category) |>\n  summarise(avg_rev_per_unit = mean(revenue / units), .groups = \"drop\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  group_by(month) |>\n  summarise(total_units = sum(units)) |>\n  filter(total_units > 30) |>\n  arrange(month)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -2424,6 +2424,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <style>
 .reveal-btn {
   background-color: #4CAF50;
@@ -2524,7 +2526,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
@@ -2540,7 +2542,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>The most common data-wrangling task: <strong>total revenue by category, sorted descending</strong>.</p>
 <section id="in-r-the-dplyr-pipe" class="level3">
 <h3 class="anchored" data-anchor-id="in-r-the-dplyr-pipe">In R — the dplyr pipe</h3>
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="in-python-pandas-groupby" class="level3">
@@ -2612,7 +2614,7 @@ Tip
 <p>Now: <strong>average revenue per unit, for months that aren’t February</strong>.</p>
 <section id="in-r" class="level3">
 <h3 class="anchored" data-anchor-id="in-r">In R</h3>
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="in-python" class="level3">
@@ -2802,7 +2804,7 @@ function checkMatches() {
 <section id="your-turn-fill-in-the-blanks" class="level2">
 <h2 class="anchored" data-anchor-id="your-turn-fill-in-the-blanks">Your turn — fill in the blanks</h2>
 <p>Here’s the complete R version of a new task: <strong>total units sold per month, keeping only months with more than 30 total units</strong>.</p>
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Now complete the pandas equivalent below and run it:</p>
 <div id="qpyodide-insertion-location-4"></div>

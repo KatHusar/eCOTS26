@@ -156,23 +156,11 @@
     ]
   },
   {
-    "objectID": "lessons/Activity.html",
-    "href": "lessons/Activity.html",
-    "title": "Try It Yourself!",
-    "section": "",
-    "text": "As you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in this slidedeck",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Try It Yourself!"
-    ]
-  },
-  {
     "objectID": "lessons/Activity.html#share-your-thoughts",
     "href": "lessons/Activity.html#share-your-thoughts",
     "title": "Try It Yourself!",
-    "section": "",
-    "text": "As you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in this slidedeck",
+    "section": "Share your thoughts",
+    "text": "Share your thoughts\nAs you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in this slidedeck",
     "crumbs": [
       "Home",
       "Content",
