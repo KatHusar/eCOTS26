@@ -83,19 +83,50 @@ look at what each one "requires."
 
 ---
 
+## It starts before graduation {background-color="#fff7ed"}
+
+That "Python required" job posting isn't the *first* time syntax
+becomes a barrier.
+
+::: {.fragment}
+It's also:
+
+- Intro Stats in **R** → the required Methods course next semester is **Python**
+- A capstone or research lab that "just uses whatever the PI uses"
+- A stats elective taught by someone who never coordinated with the intro instructor
+:::
+
+::: {.fragment}
+**Every course transition is a small version of "closing the tab."**
+:::
+
+::: {.notes}
+- Bridges from the job-market framing to the curriculum framing.
+- The point: this isn't just a graduation-day problem — it's baked into how
+  courses get sequenced, often without anyone planning the language transitions.
+- Sets up the poll and the multilingual-childhood analogy.
+:::
+
+---
+
 ## Quick poll {background-color="#f0f9ff"}
 
-### Which best describes your students?
+### What do *you* primarily teach/use?
 
-a. **R-first** (intro stats, biostats, social science)
-b. **Python-first** (CS-adjacent, data science programs)
-c. **Mixed** — they see both
-d. **Neither yet** — pre-programming
+a. **R**
+b. **Python**
+c. **SQL**
+d. **A mix, depending on the course**
 
 ::: {.notes}
 - Pre-build this poll in Zoom web portal BEFORE the session.
 - ~30 sec to launch + vote, ~20 sec to read results.
-- Tie results to the demo: "Most of you said R-first — so we'll start there."
+- The punchline: "Look how split this room is — and we're all instructors.
+  Now imagine a student moving between our courses."
+- If results are split: that's the evidence for the next few slides — your
+  curriculum probably looks like this room.
+- If results aren't split: ask "is your *department's* curriculum this
+  consistent, or more mixed than any one of us individually?"
 :::
 
 ---
@@ -152,18 +183,50 @@ The barrier isn't conceptual. It's **psychological**.
 
 ---
 
+## Like a multilingual childhood {.center background-color="#ecfdf5"}
+
+Kids raised hearing two languages rarely speak both *perfectly* —
+but a **third**, related language later comes much easier.
+
+::: {.fragment}
+**Early exposure doesn't need to produce fluency.**
+It needs to produce *familiarity* — so the next language
+doesn't look foreign.
+:::
+
+::: {.notes}
+- This is the emotional core of the new framing — give it room to breathe.
+- Nobody expects a bilingual toddler to be "fluent" the way we'd judge an
+  adult. But that early, low-stakes exposure rewires how easy the THIRD
+  language is later.
+- Same with R/Python/SQL in intro courses: a student doesn't need to master
+  Python in week 3 of an R-based intro course. They just need it to stop
+  looking like an alien alphabet.
+- Bridge: "So what if intro courses gave students that early exposure — on purpose?"
+:::
+
+---
+
 ## The thesis {.center background-color="#ecfdf5"}
 
-### AI can lower the syntax barrier
+### AI can give students that early exposure — on purpose
 
 …**if** we design the activity so students learn the *mapping*,
 not just receive the *answer*.
 
-[Bridge]{.bridge} → toward mastery
+[Bridge]{.bridge} → toward comfort, then mastery
 [Crutch]{.crutch} → away from it
+
+::: {.fragment}
+Same payoff as before — an easier job-market transition —
+but it starts in **week 3 of an intro course**, not senior year.
+:::
 
 ::: {.notes}
 - Plant the bridge/crutch language. It comes back in section 5.
+- Explicitly connect: this operationalizes the "multilingual childhood" idea.
+- Don't lose the career framing — it's still the long-term payoff. The
+  near-term payoff is smoother in-curriculum transitions.
 :::
 
 ---
@@ -311,6 +374,32 @@ mtcars |>
 
 ---
 
+## Bringing this into the classroom {background-color="#f0f9ff"}
+
+A few low-stakes ways to build in early exposure, starting week 1:
+
+- **Warm-up**: same 5-line script shown in two languages, side by side —
+  "spot the mapping"
+- **Exit ticket**: "translate today's example to [other language] with AI —
+  flag one thing that surprised you"
+- **Rotating worked example**: alternate which language the in-class example
+  uses each week
+- **Lab option**: students may submit in *either* language, with a short
+  AI-assisted translation note
+
+::: {.fragment}
+None of these require rewriting your course — they're additions.
+Low-stakes, recurring, a few minutes at a time.
+:::
+
+::: {.notes}
+- This is the "menu" slide — give instructors several entry points, not one
+  big lift.
+- Now we'll try the prompt-writing piece of this ourselves.
+:::
+
+---
+
 ## Activity {background-color="#f0f9ff"}
 
 ::: {.timing}
@@ -425,7 +514,9 @@ and evaluate it.
 
 **Benefits most:**
 
-- Students switching ecosystems mid-program
+- Students moving between courses that use different languages —
+  *the everyday case*
+- Students switching ecosystems mid-program (capstone, research lab)
 - Career-switchers with stats but new to programming
 - Students at teaching-focused institutions w/o industry exposure
 
@@ -437,6 +528,8 @@ and evaluate it.
 ::: {.notes}
 - Be honest: AI translation is most useful AFTER the concept is solid in one language.
 - Don't introduce it as a first encounter with linear regression.
+- "Everyday case" is the new through-line — most students hit this every
+  time they change courses, not just at graduation.
 :::
 
 ---
@@ -470,7 +563,7 @@ d. Scaffolded fading across the term
 ### Three things for Monday
 
 1. **One prompt template** — *goal · mapping · idiom · check*
-2. **One guardrail** — pick the one you just voted for
+2. **One low-stakes activity** — pick one from the classroom menu
 3. **One concept** you'll teach with translation next week
 
 ::: {.small}
@@ -480,7 +573,8 @@ prompt templates + R↔Python examples + rubric
 
 ::: {.notes}
 - Drop repo link in chat NOW (have it pre-copied).
-- "If you remember one thing: same concept, different costume."
+- "If you remember one thing: early exposure builds comfort. Comfort builds
+  the bridge to the next course — and eventually the next job."
 - Thank co-host, attendees. Open for Q&A.
 :::
 
