@@ -1,39 +1,22 @@
 ---
-title: "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language"
+title: "eCOTS 2026: Breaking the Syntax Barrier"
+subtitle: "Empowering Students to Code in Any Language"
 webr:  
   show-startup-message: false   # Display status of webR initialization
 ---
 
-Welcome to the casual introduction to Causal Inference!
+------------------------------------------------------------------------
+
+[eCOTS 2026](https://www.causeweb.org/cause/ecots/ecots26/program/breakouts/5C)\
+Tuesday, June 16, 2026\
+3:45 pm – 4:15 pm
+
+------------------------------------------------------------------------
 
 
-In this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.
+# Abstract
 
-Students will be able to:
-
-1.  Define what is the study of causal inference.
-
-2.  Identify the difference between randomized experiments and observational studies.
-
-3.  Execute a difference–in-means calculation to estimate treatment effect.
-
-
-
-
-```{webr-r}
-print("Hello")
-```
-
-## In Python
-
-```{pyodide-python}
-
-import numpy as np
-
-X = np.array([[1], [2], [3]])
-y = np.array([2, 4, 6])
-print(y)
-```
+As instructors, we must equip students with the credentials needed for an increasingly competitive job market. Many graduates hesitate to apply for roles because they fear learning a new programming language or feel "rusty" in a specific environment. We can proactively address this "fear of the new" by using AI to demonstrate linguistic parallels. Knowing that `linear_model.LinearRegression()` in Python performs the same function as `lm()` in `R` should be an easy transition, yet syntax differences often become a psychological barrier. This breakout session demonstrates how to build AI prompts that convert code between languages, helping students gain confidence across diverse environments. We will discuss which student groups benefit most from these activities and explore strategies to encourage deep, independent learning, ensuring AI acts as a bridge to mastery rather than a permanent crutch for translation.
 
 ## Slides
 
