@@ -21,7 +21,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          external_repository: GS750/GS750.github.io
+          external_repository: KatHusar/eCOTS26
           publish_dir: ./_site
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com

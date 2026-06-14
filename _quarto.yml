@@ -11,8 +11,8 @@ website:
   title: "Casual Causal Inference"
   search: true
   reader-mode: true
-  site-url: "https://GS750.github.io/"
-  repo-url: https://github.com/GS750/GS750.github.io
+  site-url: "https://kathusar.github.io/eCOTS26/"
+  repo-url: https://github.com/KatHusar/eCOTS26
   repo-actions: [edit, issue]
   navbar:
     left:
