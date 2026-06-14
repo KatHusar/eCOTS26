@@ -1,11 +1,13 @@
 project:
   type: website
-  
-  
-format: 
+
+
+engine: knitr
+
+format:
   html:
-    webR: true 
-  
+    webR: true
+
 website:
   page-navigation: true
   title: "eCOTS 2026"
