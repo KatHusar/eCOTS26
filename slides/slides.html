@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<script src="slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Marie Neubrander &amp; Kat Husar">
   <meta name="dcterms.date" content="2026-01-01">
-  <title>eCOTS 2026 – Breaking the Syntax Barrier</title>
+  <title>Breaking the Syntax Barrier</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -33,9 +30,8 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -46,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -60,50 +56,50 @@
         -khtml-user-select: none; -moz-user-select: none;
         -ms-user-select: none; user-select: none;
         padding: 0 4px; width: 4em;
-        color: #aaaaaa;
       }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
     div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
+      { color: #24292e;  }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-c268c77ce815e31d3cf70a6d126bb9b5.css">
+  <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -196,7 +192,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section class="quarto-title-block center">
   <h1 class="title">Breaking the Syntax Barrier</h1>
   <p class="subtitle">Empowering Students to Code in Any Language</p>
 
@@ -210,7 +206,7 @@ Marie Neubrander &amp; Kat Husar
 
   <p class="date">2026-01-01</p>
 </section>
-<section id="welcome" class="slide level2 center">
+<section class="slide level2 center">
 <h2>Welcome</h2>
 <p>: <strong>Breaking the Syntax Barrier</strong></p>
 <p><em>Empowering Students to Code in Any Language</em></p>
@@ -236,7 +232,7 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-scene" class="slide level2 center">
+<section class="slide level2 center">
 <h2>The scene</h2>
 <blockquote>
 <p><em>A student fluent in R sees “Python required” in a job posting…</em></p>
@@ -263,7 +259,7 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="same-job.-different-syntax." class="slide level2" data-background-color="#fff7ed">
+<section class="slide level2" data-background-color="#fff7ed">
 <h2>Same job. Different syntax.</h2>
 <p>Three real <strong>entry-level Data Analyst</strong> postings. Same kind of role — look at what each one “requires.”</p>
 <div class="job-row">
@@ -299,7 +295,7 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="it-starts-before-graduation" class="slide level2" data-background-color="#fff7ed">
+<section class="slide level2" data-background-color="#fff7ed">
 <h2>It starts before graduation</h2>
 <p>That “Python required” job posting isn’t the <em>first</em> time syntax becomes a barrier.</p>
 <div class="fragment">
@@ -331,9 +327,9 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="quick-poll" class="slide level2" data-background-color="#f0f9ff">
+<section class="slide level2" data-background-color="#f0f9ff">
 <h2>Quick poll</h2>
-<h3 id="what-do-you-primarily-teachuse">What do <em>you</em> primarily teach/use?</h3>
+<h3>What do <em>you</em> primarily teach/use?</h3>
 <ol type="a">
 <li><strong>R</strong></li>
 <li><strong>Python</strong></li>
@@ -360,7 +356,7 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="fear-of-the-new" class="slide level2" data-background-color="#fff7ed">
+<section class="slide level2" data-background-color="#fff7ed">
 <h2>“Fear of the new”</h2>
 <p>The barrier isn’t conceptual. It’s <strong>psychological</strong>.</p>
 <div class="two-col">
@@ -401,9 +397,9 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="chat-waterfall" class="slide level2" data-background-color="#f0f9ff">
+<section class="slide level2" data-background-color="#f0f9ff">
 <h2>Chat waterfall</h2>
-<h3 id="type-but-dont-hit-send-yet">Type — but <strong>don’t hit send yet</strong></h3>
+<h3>Type — but <strong>don’t hit send yet</strong></h3>
 <blockquote>
 <p><em>What’s one language or tool your students fear?</em></p>
 </blockquote>
@@ -428,7 +424,7 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="like-a-multilingual-childhood" class="slide level2 center" data-background-color="#ecfdf5">
+<section class="slide level2 center" data-background-color="#ecfdf5">
 <h2>Like a multilingual childhood</h2>
 <p>Kids raised hearing two languages rarely speak both <em>perfectly</em> — but a <strong>third</strong>, related language later comes much easier.</p>
 <div class="fragment">
@@ -453,9 +449,9 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-thesis" class="slide level2 center" data-background-color="#ecfdf5">
+<section class="slide level2 center" data-background-color="#ecfdf5">
 <h2>The thesis</h2>
-<h3 id="ai-can-give-students-that-early-exposure-on-purpose">AI can give students that early exposure — on purpose</h3>
+<h3>AI can give students that early exposure — on purpose</h3>
 <p>…<strong>if</strong> we design the activity so students learn the <em>mapping</em>, not just receive the <em>answer</em>.</p>
 <p><span class="bridge">Bridge</span> → toward comfort, then mastery <span class="crutch">Crutch</span> → away from it</p>
 <div class="fragment">
@@ -483,7 +479,7 @@ Marie Neubrander &amp; Kat Husar
 
 </section>
 <section>
-<section id="time-for-the-demo" class="title-slide slide level1 center" data-background-color="#1f2937" style="color: white;">
+<section class="title-slide slide level1 center" data-background-color="#1f2937" style="color: white;">
 <h1>🎬 Time for the demo</h1>
 <p>Switch to the course site:</p>
 <p><strong>kathusar.github.io/eCOTS26/lessons/Demo.html</strong></p>
@@ -508,12 +504,12 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="demo-prompt-building" class="slide level2" data-background-color="#fafafa">
+<section class="slide level2" data-background-color="#fafafa">
 <h2>Demo: prompt-building</h2>
 <div class="timing">
 <p>6:30 – 12:30 · DEMO (6 min)</p>
 </div>
-<h3 id="two-prompts.-same-task.-very-different-output.">Two prompts. Same task. Very different output.</h3>
+<h3>Two prompts. Same task. Very different output.</h3>
 <p>We’ll translate:</p>
 <ol type="1">
 <li><code>lm()</code> in R → <code>LinearRegression</code> in Python</li>
@@ -538,7 +534,7 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section id="bad-prompt" class="slide level2" data-background-color="#fef2f2">
+<section class="slide level2" data-background-color="#fef2f2">
 <h2>Bad prompt</h2>
 <div class="timing">
 <p>6:30 – 8:00 · DEMO part 1 (1.5 min)</p>
@@ -568,7 +564,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="good-prompt" class="slide level2" data-background-color="#f0fdf4">
+<section class="slide level2" data-background-color="#f0fdf4">
 <h2>Good prompt</h2>
 <div class="timing">
 <p>8:00 – 10:00 · DEMO part 2 (2 min)</p>
@@ -601,15 +597,15 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="python-r-same-trick" class="slide level2" data-background-color="#f0fdf4">
+<section class="slide level2" data-background-color="#f0fdf4">
 <h2>Python → R: same trick</h2>
 <div class="timing">
 <p>10:00 – 11:30 · DEMO part 3 (1.5 min)</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>df.groupby(<span class="st">"cyl"</span>)[<span class="st">"mpg"</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">"cyl"</span>)[<span class="st">"mpg"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><strong>AI maps it to:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>df <span class="sc">|&gt;</span> <span class="fu">group_by</span>(cyl) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">group_by</span>(cyl) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>…and explains that method chaining ↔︎ the pipe.</p>
 </div>
 <aside class="notes">
@@ -629,7 +625,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="sec-sql-cameo" class="slide level2" data-background-color="#f0fdf4">
+<section class="slide level2" data-background-color="#f0fdf4">
 <h2>30-sec SQL cameo</h2>
 <div class="timing">
 <p>11:30 – 12:30 · DEMO part 4 (1 min)</p>
@@ -637,17 +633,17 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
 <div class="two-col">
 <div>
 <p><strong>SQL</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a></a><span class="kw">SELECT</span> cyl, <span class="fu">AVG</span>(mpg)</span>
-<span id="cb5-2"><a></a><span class="kw">FROM</span> mtcars</span>
-<span id="cb5-3"><a></a><span class="kw">GROUP</span> <span class="kw">BY</span> cyl</span>
-<span id="cb5-4"><a></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(mpg) <span class="op">&gt;</span> <span class="dv">20</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> cyl, <span class="fu">AVG</span>(mpg)</span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> mtcars</span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> cyl</span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(mpg) <span class="op">&gt;</span> <span class="dv">20</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
 <p><strong>dplyr</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>mtcars <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a></a>  <span class="fu">group_by</span>(cyl) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a></a>  <span class="fu">summarize</span>(<span class="at">m =</span> <span class="fu">mean</span>(mpg)) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a></a>  <span class="fu">filter</span>(m <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">m =</span> <span class="fu">mean</span>(mpg)) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(m <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -674,7 +670,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
 
 </section></section>
 <section>
-<section id="time-for-the-activity" class="title-slide slide level1 center" data-background-color="#1f2937" style="color: white;">
+<section class="title-slide slide level1 center" data-background-color="#1f2937" style="color: white;">
 <h1>🎯 Time for the activity</h1>
 <p>Switch to the course site:</p>
 <p><strong>kathusar.github.io/eCOTS26/lessons/Activity.html</strong></p>
@@ -699,7 +695,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="bringing-this-into-the-classroom" class="slide level2" data-background-color="#f0f9ff">
+<section class="slide level2" data-background-color="#f0f9ff">
 <h2>Bringing this into the classroom</h2>
 <p>A few low-stakes ways to build in early exposure, starting week 1:</p>
 <ul>
@@ -728,12 +724,12 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="activity" class="slide level2" data-background-color="#f0f9ff">
+<section class="slide level2" data-background-color="#f0f9ff">
 <h2>Activity</h2>
 <div class="timing">
 <p>12:30 – 17:30 · HANDS-ON (5 min)</p>
 </div>
-<h3 id="your-turn">Your turn</h3>
+<h3>Your turn</h3>
 <p>You’ll take a code snippet, write a prompt that produces a <strong>pedagogically useful</strong> translation, and evaluate it.</p>
 <div class="fragment">
 <p><strong>Rubric:</strong></p>
@@ -763,7 +759,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="activity-what-to-do" class="slide level2" data-background-color="#f0f9ff">
+<section class="slide level2" data-background-color="#f0f9ff">
 <h2>Activity — what to do</h2>
 <div class="timing">
 <p>(visible during the 5-min activity)</p>
@@ -795,7 +791,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="what-patterns-showed-up" class="slide level2" data-background-color="#f0f9ff">
+<section class="slide level2" data-background-color="#f0f9ff">
 <h2>What patterns showed up?</h2>
 <div class="timing">
 <p>17:30 – 18:30 · DEBRIEF (1 min)</p>
@@ -823,7 +819,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="bridge-vs.-crutch" class="slide level2" data-background-color="#ecfdf5">
+<section class="slide level2" data-background-color="#ecfdf5">
 <h2>Bridge vs.&nbsp;crutch</h2>
 <div class="timing">
 <p>18:30 – 22:30 · GUARDRAILS (4 min)</p>
@@ -866,7 +862,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="who-benefits-most" class="slide level2" data-background-color="#ecfdf5">
+<section class="slide level2" data-background-color="#ecfdf5">
 <h2>Who benefits most?</h2>
 <div class="timing">
 <p>22:30 – 23:30 · WHO (1 min)</p>
@@ -901,12 +897,12 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="quick-poll-1" class="slide level2" data-background-color="#f0f9ff">
+<section class="slide level2" data-background-color="#f0f9ff">
 <h2>Quick poll</h2>
 <div class="timing">
 <p>23:30 – 24:00 · POLL #2 (30 sec)</p>
 </div>
-<h3 id="which-guardrail-will-you-try-first">Which guardrail will you try first?</h3>
+<h3>Which guardrail will you try first?</h3>
 <ol type="a">
 <li>Annotate AI output</li>
 <li>Translate-then-close-the-tab</li>
@@ -930,12 +926,12 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="take-this-with-you" class="slide level2" data-background-color="#fefce8">
+<section class="slide level2" data-background-color="#fefce8">
 <h2>Take this with you</h2>
 <div class="timing">
 <p>24:00 – 25:00 · CLOSE (1 min)</p>
 </div>
-<h3 id="three-things-for-monday">Three things for Monday</h3>
+<h3>Three things for Monday</h3>
 <ol type="1">
 <li><strong>One prompt template</strong> — <em>goal · mapping · idiom · check</em></li>
 <li><strong>One low-stakes activity</strong> — pick one from the classroom menu</li>
@@ -962,9 +958,9 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="qa" class="slide level2 center">
+<section class="slide level2 center">
 <h2>Q&amp;A</h2>
-<h3 id="questions">Questions?</h3>
+<h3>Questions?</h3>
 <div class="small">
 <p><strong>Marie Neubrander</strong> — [email] <strong>Kat Husar</strong> — [email] <strong>Repo:</strong> github.com/mneubrander/ecots-2026</p>
 </div>
@@ -990,7 +986,6 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 
-
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -1000,19 +995,19 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="slides_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -1027,7 +1022,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"right","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1048,7 +1043,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -1153,7 +1148,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
@@ -1173,15 +1168,15 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1208,173 +1203,190 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
-          }
-          return false;
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
         }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/kathusar\.github\.io\/eCOTS26\/");
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
-            } else {
-              return "";
-            }
-          });
-        }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
-            }
-          } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
-            });
-          }
-        }
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      </script>
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
     
 
 </body></html>

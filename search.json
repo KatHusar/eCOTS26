@@ -1,29 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "eCOTS 2026: Breaking the Syntax Barrier",
-    "section": "",
-    "text": "eCOTS 2026\nTuesday, June 16, 2026\n3:45 pm – 4:15 pm",
-    "crumbs": [
-      "Home",
-      "Content",
-      "eCOTS 2026: Breaking the Syntax Barrier"
-    ]
-  },
-  {
-    "objectID": "index.html#slides",
-    "href": "index.html#slides",
-    "title": "eCOTS 2026: Breaking the Syntax Barrier",
-    "section": "Slides",
-    "text": "Slides\n\n\nOpen slides in full screen",
-    "crumbs": [
-      "Home",
-      "Content",
-      "eCOTS 2026: Breaking the Syntax Barrier"
-    ]
-  },
-  {
     "objectID": "lessons/Demo.html",
     "href": "lessons/Demo.html",
     "title": "Demo!",
@@ -156,6 +132,30 @@
     ]
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "eCOTS 2026: Breaking the Syntax Barrier",
+    "section": "",
+    "text": "eCOTS 2026\nTuesday, June 16, 2026\n3:45 pm – 4:15 pm",
+    "crumbs": [
+      "Home",
+      "Content",
+      "eCOTS 2026: Breaking the Syntax Barrier"
+    ]
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": "eCOTS 2026: Breaking the Syntax Barrier",
+    "section": "Slides",
+    "text": "Slides\n\n\nOpen slides in full screen",
+    "crumbs": [
+      "Home",
+      "Content",
+      "eCOTS 2026: Breaking the Syntax Barrier"
+    ]
+  },
+  {
     "objectID": "lessons/Activity.html#share-your-thoughts",
     "href": "lessons/Activity.html#share-your-thoughts",
     "title": "Try It Yourself!",
@@ -250,166 +250,5 @@
       "Content",
       "Try It Yourself!"
     ]
-  },
-  {
-    "objectID": "slides/slides.html#welcome",
-    "href": "slides/slides.html#welcome",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Welcome",
-    "text": "Welcome\n: Breaking the Syntax Barrier\nEmpowering Students to Code in Any Language\n\nECOTS 2026 · Breakout Session\n\n\n\nSmile, wave, name + institution.\n“Today we want to talk about something we’ve all watched happen: a student who’s perfectly capable in one language sees a job posting in another, and self-rejects.”\nMention this will be interactive — encourage chat use throughout.\nHave co-host ready to monitor chat."
-  },
-  {
-    "objectID": "slides/slides.html#the-scene",
-    "href": "slides/slides.html#the-scene",
-    "title": "Breaking the Syntax Barrier",
-    "section": "The scene",
-    "text": "The scene\n\nA student fluent in R sees “Python required” in a job posting…\n…and closes the tab.\n\n\nThey didn’t lack the statistics. They lacked confidence in the syntax.\n\n\n\nTell the real story (Marie or collaborator picks one — pick one you’ve actually seen).\nPause after “closes the tab” — let it land.\nPivot: this isn’t a knowledge gap. It’s a confidence gap."
-  },
-  {
-    "objectID": "slides/slides.html#same-job.-different-syntax.",
-    "href": "slides/slides.html#same-job.-different-syntax.",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Same job. Different syntax.",
-    "text": "Same job. Different syntax.\nThree real entry-level Data Analyst postings. Same kind of role — look at what each one “requires.”\n\n\n\nDisney — SQL & Python\n\n\n\nHaystack — Excel, SQL, Tableau, Python, or R\n\n\n\nNetflix — Python/R + SQL\n\n\n\n\nThese are real postings, pulled while prepping this talk — not hypothetical.\nPoint at the highlighted line in each: same “data analyst” role, different language combinations listed as requirements.\nTies directly back to “The scene”: this is the exact moment a student self-rejects.\nLand the punchline: the underlying skill (query, summarize, model data) is identical across all three — only the syntax differs."
-  },
-  {
-    "objectID": "slides/slides.html#it-starts-before-graduation",
-    "href": "slides/slides.html#it-starts-before-graduation",
-    "title": "Breaking the Syntax Barrier",
-    "section": "It starts before graduation",
-    "text": "It starts before graduation\nThat “Python required” job posting isn’t the first time syntax becomes a barrier.\n\nIt’s also:\n\nIntro Stats in R → the required Methods course next semester is Python\nA capstone or research lab that “just uses whatever the PI uses”\nA stats elective taught by someone who never coordinated with the intro instructor\n\n\n\nEvery course transition is a small version of “closing the tab.”\n\n\n\nBridges from the job-market framing to the curriculum framing.\nThe point: this isn’t just a graduation-day problem — it’s baked into how courses get sequenced, often without anyone planning the language transitions.\nSets up the poll and the multilingual-childhood analogy."
-  },
-  {
-    "objectID": "slides/slides.html#quick-poll",
-    "href": "slides/slides.html#quick-poll",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Quick poll",
-    "text": "Quick poll\nWhat do you primarily teach/use?\n\nR\nPython\nSQL\nA mix, depending on the course\n\n\n\nPre-build this poll in Zoom web portal BEFORE the session.\n~30 sec to launch + vote, ~20 sec to read results.\nThe punchline: “Look how split this room is — and we’re all instructors. Now imagine a student moving between our courses.”\nIf results are split: that’s the evidence for the next few slides — your curriculum probably looks like this room.\nIf results aren’t split: ask “is your department’s curriculum this consistent, or more mixed than any one of us individually?”"
-  },
-  {
-    "objectID": "slides/slides.html#fear-of-the-new",
-    "href": "slides/slides.html#fear-of-the-new",
-    "title": "Breaking the Syntax Barrier",
-    "section": "“Fear of the new”",
-    "text": "“Fear of the new”\nThe barrier isn’t conceptual. It’s psychological.\n\n\nStudents who know:\n\nWhat a linear model is\nHow to interpret coefficients\nWhen to use a t-test\n\n\n\nFreeze when they see:\n\nmodel.fit(X, y) instead of lm(y ~ x)\npd.DataFrame instead of data.frame\n:= instead of &lt;-\n\n\n\n\nSame concept. Different costume.\n\n\n\nThis framing — “same concept, different costume” — is the through-line. Repeat it in the demo.\nMention groups disproportionately affected: career-switchers, first-gen students, students from teaching-focused programs without industry exposure."
-  },
-  {
-    "objectID": "slides/slides.html#chat-waterfall",
-    "href": "slides/slides.html#chat-waterfall",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Chat waterfall",
-    "text": "Chat waterfall\nType — but don’t hit send yet\n\nWhat’s one language or tool your students fear?\n\n\n3 … 2 … 1 … send.\n\n\n\nThe “don’t send yet” trick produces a visible wave instead of a trickle.\nRead 3-4 aloud. Look for patterns (“lots of SQL — we’ll touch that”).\nCo-host can screenshot the chat for the GitHub repo later."
-  },
-  {
-    "objectID": "slides/slides.html#like-a-multilingual-childhood",
-    "href": "slides/slides.html#like-a-multilingual-childhood",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Like a multilingual childhood",
-    "text": "Like a multilingual childhood\nKids raised hearing two languages rarely speak both perfectly — but a third, related language later comes much easier.\n\nEarly exposure doesn’t need to produce fluency. It needs to produce familiarity — so the next language doesn’t look foreign.\n\n\n\nThis is the emotional core of the new framing — give it room to breathe.\nNobody expects a bilingual toddler to be “fluent” the way we’d judge an adult. But that early, low-stakes exposure rewires how easy the THIRD language is later.\nSame with R/Python/SQL in intro courses: a student doesn’t need to master Python in week 3 of an R-based intro course. They just need it to stop looking like an alien alphabet.\nBridge: “So what if intro courses gave students that early exposure — on purpose?”"
-  },
-  {
-    "objectID": "slides/slides.html#the-thesis",
-    "href": "slides/slides.html#the-thesis",
-    "title": "Breaking the Syntax Barrier",
-    "section": "The thesis",
-    "text": "The thesis\nAI can give students that early exposure — on purpose\n…if we design the activity so students learn the mapping, not just receive the answer.\nBridge → toward comfort, then mastery Crutch → away from it\n\nSame payoff as before — an easier job-market transition — but it starts in week 3 of an intro course, not senior year.\n\n\n\nPlant the bridge/crutch language. It comes back in section 5.\nExplicitly connect: this operationalizes the “multilingual childhood” idea.\nDon’t lose the career framing — it’s still the long-term payoff. The near-term payoff is smoother in-curriculum transitions."
-  },
-  {
-    "objectID": "slides/slides.html#demo-prompt-building",
-    "href": "slides/slides.html#demo-prompt-building",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Demo: prompt-building",
-    "text": "Demo: prompt-building\n\n6:30 – 12:30 · DEMO (6 min)\n\nTwo prompts. Same task. Very different output.\nWe’ll translate:\n\nlm() in R → LinearRegression in Python\npandas groupby → dplyr pipe\nA 30-second SQL ↔︎ tidyverse cameo\n\n\n\nOpen ChatGPT/Claude in a separate window BEFORE you start so screenshare is ready.\nHave a pre-recorded backup video of this demo in case the AI is slow.\nTalk through what you’re doing — don’t just type silently."
-  },
-  {
-    "objectID": "slides/slides.html#bad-prompt",
-    "href": "slides/slides.html#bad-prompt",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Bad prompt",
-    "text": "Bad prompt\n\n6:30 – 8:00 · DEMO part 1 (1.5 min)\n\nConvert this R code to Python:\n\nlm(mpg ~ wt + hp, data = mtcars)\n\nYou get: working code.\nYou don’t get: why ~ became a design matrix, why sklearn separates X and y, or that summary() has no direct equivalent.\n\n\n\nRun this live. Show the output.\nPause on what’s MISSING: the conceptual map.\n“This produces an answer. It doesn’t produce learning.”"
-  },
-  {
-    "objectID": "slides/slides.html#good-prompt",
-    "href": "slides/slides.html#good-prompt",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Good prompt",
-    "text": "Good prompt\n\n8:00 – 10:00 · DEMO part 2 (2 min)\n\nI'm an intro stats student fluent in R.\nTranslate this R code to Python, AND:\n\n1. Add inline comments mapping each R line to its Python equivalent.\n2. Flag any idiom differences (e.g., formula interface vs. design matrix).\n3. End with one concept-check question I should be able to answer\n   before I move on.\n\nR code:\nlm(mpg ~ wt + hp, data = mtcars)\n\n\nRun this live. Show the output — it should include comments + a check question.\nThis is the centerpiece pattern. Name it: “learning goal + mapping + idiom flags + concept check.”\nThis pattern is in the GitHub repo as a template."
-  },
-  {
-    "objectID": "slides/slides.html#python-r-same-trick",
-    "href": "slides/slides.html#python-r-same-trick",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Python → R: same trick",
-    "text": "Python → R: same trick\n\n10:00 – 11:30 · DEMO part 3 (1.5 min)\n\ndf.groupby(\"cyl\")[\"mpg\"].mean()\n\nAI maps it to:\ndf |&gt; group_by(cyl) |&gt; summarize(mean_mpg = mean(mpg))\n…and explains that method chaining ↔︎ the pipe.\n\n\n\nThis is the tidyverse cameo. Highlight that the pipe is the same idea as . chaining in pandas.\nStudents who learned dplyr first often “get” pandas faster once they see this."
-  },
-  {
-    "objectID": "slides/slides.html#sec-sql-cameo",
-    "href": "slides/slides.html#sec-sql-cameo",
-    "title": "Breaking the Syntax Barrier",
-    "section": "30-sec SQL cameo",
-    "text": "30-sec SQL cameo\n\n11:30 – 12:30 · DEMO part 4 (1 min)\n\n\n\nSQL\nSELECT cyl, AVG(mpg)\nFROM mtcars\nGROUP BY cyl\nHAVING AVG(mpg) &gt; 20;\n\n\ndplyr\nmtcars |&gt;\n  group_by(cyl) |&gt;\n  summarize(m = mean(mpg)) |&gt;\n  filter(m &gt; 20)\n\n\n\nOne concept. Three costumes.\n\n\n\nMove fast. Don’t explain SQL in depth — just show that GROUP BY/HAVING maps cleanly.\nThis is the moment the “same concept, different costume” line earns its keep."
-  },
-  {
-    "objectID": "slides/slides.html#bringing-this-into-the-classroom",
-    "href": "slides/slides.html#bringing-this-into-the-classroom",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Bringing this into the classroom",
-    "text": "Bringing this into the classroom\nA few low-stakes ways to build in early exposure, starting week 1:\n\nWarm-up: same 5-line script shown in two languages, side by side — “spot the mapping”\nExit ticket: “translate today’s example to [other language] with AI — flag one thing that surprised you”\nRotating worked example: alternate which language the in-class example uses each week\nLab option: students may submit in either language, with a short AI-assisted translation note\n\n\nNone of these require rewriting your course — they’re additions. Low-stakes, recurring, a few minutes at a time.\n\n\n\nThis is the “menu” slide — give instructors several entry points, not one big lift.\nNow we’ll try the prompt-writing piece of this ourselves."
-  },
-  {
-    "objectID": "slides/slides.html#activity",
-    "href": "slides/slides.html#activity",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Activity",
-    "text": "Activity\n\n12:30 – 17:30 · HANDS-ON (5 min)\n\nYour turn\nYou’ll take a code snippet, write a prompt that produces a pedagogically useful translation, and evaluate it.\n\nRubric:\n\nDoes it run?\nDoes it teach the mapping?\nDoes it flag idiom differences?\nDoes it leave the student able to do the next problem alone?\n\n\n\n\nFormat is flexible — see backup slide for options.\nDEFAULT format: shared Padlet/Google Doc. Drop link in chat.\nIf running Padlet: have 4 snippets pre-loaded as columns. Attendees pick one.\nSet a 4-min timer. Call attention back at 4 min."
-  },
-  {
-    "objectID": "slides/slides.html#activity-what-to-do",
-    "href": "slides/slides.html#activity-what-to-do",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Activity — what to do",
-    "text": "Activity — what to do\n\n(visible during the 5-min activity)\n\n\nLink: [padlet link / Google Doc link goes here]\n\n\nPick a snippet (R, Python, or SQL).\nWrite a prompt using the template: learning goal · mapping · idiom flags · concept check\nPaste the AI output.\nScore 1–4 on the rubric. Drop one insight in the chat.\n\n\n\nLeave this slide up while attendees work.\nCo-host watches chat for early finishers; you watch the Padlet.\nAt the 4-min mark: “30 seconds — wrap up your score.”"
-  },
-  {
-    "objectID": "slides/slides.html#what-patterns-showed-up",
-    "href": "slides/slides.html#what-patterns-showed-up",
-    "title": "Breaking the Syntax Barrier",
-    "section": "What patterns showed up?",
-    "text": "What patterns showed up?\n\n17:30 – 18:30 · DEBRIEF (1 min)\n\n\nWhich prompts worked best?\nWhere did AI over-explain or under-explain?\nWhich snippets surprised people?\n\n\n\nNarrate live from what you saw in the Padlet/chat.\nPick 2-3 to call out by name (if comfortable) or anonymously.\nBridge to next section: “This is how we tell bridge from crutch.”"
-  },
-  {
-    "objectID": "slides/slides.html#bridge-vs.-crutch",
-    "href": "slides/slides.html#bridge-vs.-crutch",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Bridge vs. crutch",
-    "text": "Bridge vs. crutch\n\n18:30 – 22:30 · GUARDRAILS (4 min)\n\n\n\nBridge\n\nAnnotate AI output\nTranslate, then close the tab and re-derive\nPair with a concept check\nScaffolded fading (week 1 → week 5)\n\n\n\nCrutch\n\nCopy-paste without reading\nSkip the why\nNever reproduce unaided\nSame level of help every week\n\n\n\n\n\nThis is the most “Monday-morning useful” section. Slow down.\nEach bullet is a real classroom move — give one quick example for each on the left.\n“Scaffolded fading” = the key term they’ll Google later."
-  },
-  {
-    "objectID": "slides/slides.html#who-benefits-most",
-    "href": "slides/slides.html#who-benefits-most",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Who benefits most?",
-    "text": "Who benefits most?\n\n22:30 – 23:30 · WHO (1 min)\n\nBenefits most:\n\nStudents moving between courses that use different languages — the everyday case\nStudents switching ecosystems mid-program (capstone, research lab)\nCareer-switchers with stats but new to programming\nStudents at teaching-focused institutions w/o industry exposure\n\nAt risk of over-reliance:\n\nStudents who haven’t built the underlying concept yet\nStudents using AI to skip — not to bridge\n\n\n\nBe honest: AI translation is most useful AFTER the concept is solid in one language.\nDon’t introduce it as a first encounter with linear regression.\n“Everyday case” is the new through-line — most students hit this every time they change courses, not just at graduation."
-  },
-  {
-    "objectID": "slides/slides.html#quick-poll-1",
-    "href": "slides/slides.html#quick-poll-1",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Quick poll",
-    "text": "Quick poll\n\n23:30 – 24:00 · POLL #2 (30 sec)\n\nWhich guardrail will you try first?\n\nAnnotate AI output\nTranslate-then-close-the-tab\nAI + concept-check pairing\nScaffolded fading across the term\n\n\n\nQuick poll, no deep discussion. Just commitment.\nRead top result aloud."
-  },
-  {
-    "objectID": "slides/slides.html#take-this-with-you",
-    "href": "slides/slides.html#take-this-with-you",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Take this with you",
-    "text": "Take this with you\n\n24:00 – 25:00 · CLOSE (1 min)\n\nThree things for Monday\n\nOne prompt template — goal · mapping · idiom · check\nOne low-stakes activity — pick one from the classroom menu\nOne concept you’ll teach with translation next week\n\n\nRepo: github.com/mneubrander/ecots-2026 · prompt templates + R↔︎Python examples + rubric\n\n\n\nDrop repo link in chat NOW (have it pre-copied).\n“If you remember one thing: early exposure builds comfort. Comfort builds the bridge to the next course — and eventually the next job.”\nThank co-host, attendees. Open for Q&A."
-  },
-  {
-    "objectID": "slides/slides.html#qa",
-    "href": "slides/slides.html#qa",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Q&A",
-    "text": "Q&A\nQuestions?\n\nMarie Neubrander — [email] Kat Husar — [email] Repo: github.com/mneubrander/ecots-2026\n\n\n\nMost likely Q’s:\n\n“What AI tool do you use?” → answer honestly, mention free tiers\n“How do you handle students who just copy-paste?” → scaffolded fading + concept checks\n“Does this work for [language X]?” → yes, same prompt pattern\n“What about academic integrity?” → frame as a learning tool, like a calculator; disclosure norms"
   }
 ]
