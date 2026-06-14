@@ -1,6 +1,6 @@
 ---
-title: "Title Here"
-subtitle: "Helping students translate code across statistical languages"
+title: "Breaking the Syntax Barrier"
+subtitle: "Empowering Students to Code in Any Language"
 author: "Marie Neubrander & Kat Husar"
 date: "ECOTS 2026"
 format: revealjs
@@ -8,13 +8,10 @@ format: revealjs
 
 ## Welcome {.center}
 
-::: {.timing}
-0:00 – 0:30 · TITLE
-:::
+:
+**Breaking the Syntax Barrier**
 
-**Title?**
-
-*Helping students translate code across statistical languages*
+*Empowering Students to Code in Any Language*
 
 ::: {.small}
 ECOTS 2026 · Breakout Session · ~25 min
