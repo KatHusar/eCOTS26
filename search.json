@@ -16,7 +16,7 @@
     "href": "index.html#slides",
     "title": "eCOTS 2026: Breaking the Syntax Barrier",
     "section": "Slides",
-    "text": "Slides\nView the eCOTS 2026 presentation slides",
+    "text": "Slides\n\n\nOpen slides in full screen",
     "crumbs": [
       "Home",
       "Content",
@@ -411,26 +411,5 @@
     "title": "Breaking the Syntax Barrier",
     "section": "Q&A",
     "text": "Q&A\nQuestions?\n\nMarie Neubrander — [email] Kat Husar — [email] Repo: github.com/mneubrander/ecots-2026\n\n\n\nMost likely Q’s:\n\n“What AI tool do you use?” → answer honestly, mention free tiers\n“How do you handle students who just copy-paste?” → scaffolded fading + concept checks\n“Does this work for [language X]?” → yes, same prompt pattern\n“What about academic integrity?” → frame as a learning tool, like a calculator; disclosure norms"
-  },
-  {
-    "objectID": "slides/slides.html#activity-format-options",
-    "href": "slides/slides.html#activity-format-options",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Activity format options",
-    "text": "Activity format options\n\n\n\n\n\n\n\n\n\nFormat\nSetup\nRisk\nBest for\n\n\n\n\nPadlet / Google Doc\n5 min\nLow\nDefault; any room size\n\n\nZoom breakouts\n2 min mid-session\nMedium\nDeeper engagement, ≥15 attendees\n\n\nChat-driven live demo\nNone\nHigher\nSmall/known room\n\n\nCustom API website\n5+ days\nToo high\nDon’t ship in 5 days\n\n\n\n\n\nThis slide is for YOU during planning, not for the audience.\nDecide format 24h before based on registration count."
-  },
-  {
-    "objectID": "slides/slides.html#if-demo-breaks",
-    "href": "slides/slides.html#if-demo-breaks",
-    "title": "Breaking the Syntax Barrier",
-    "section": "If demo breaks",
-    "text": "If demo breaks\n\nSwitch to the pre-recorded demo video (have it open in a tab).\nOr pivot to: “Let’s read this output together” with a printed/slide screenshot of a known-good run.\nDon’t troubleshoot live for more than 30 seconds.\n\n\n\nPre-record a 90-sec backup video of the good-prompt demo.\nSave 3-4 known-good screenshots as slides 28-31 (TODO)."
-  },
-  {
-    "objectID": "slides/slides.html#prompt-template-full",
-    "href": "slides/slides.html#prompt-template-full",
-    "title": "Breaking the Syntax Barrier",
-    "section": "Prompt template (full)",
-    "text": "Prompt template (full)\nI'm a [level] student fluent in [source language].\nTranslate this [source] code to [target], AND:\n\n1. Add inline comments mapping each [source] line to [target].\n2. Flag any idiom differences (formulas, indexing,\n   data structures, default behaviors).\n3. End with one concept-check question I should be\n   able to answer before moving on.\n4. Do NOT explain basic syntax I already know in [source].\n\nCode:\n[paste here]\n\n\nThis is the full version of the template — the slides earlier showed a stats-specific instantiation.\nThe “do NOT explain basic syntax” line is what stops AI from being condescending."
   }
 ]
