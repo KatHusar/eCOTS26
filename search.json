@@ -160,7 +160,19 @@
     "href": "lessons/Activity.html",
     "title": "Try It Yourself!",
     "section": "",
-    "text": "We’ll use a small sales dataset: transactions across three product categories over several months. Define it once in each language — the analysis is identical.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "As you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in (this slidedeck)[https://docs.google.com/presentation/d/1mI8xHcWrm5yyu6YatNTdiBneGG3GNxB7CitujsBBhXk/edit?usp=sharing]",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Try It Yourself!"
+    ]
+  },
+  {
+    "objectID": "lessons/Activity.html#share-your-thoughts",
+    "href": "lessons/Activity.html#share-your-thoughts",
+    "title": "Try It Yourself!",
+    "section": "",
+    "text": "As you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in (this slidedeck)[https://docs.google.com/presentation/d/1mI8xHcWrm5yyu6YatNTdiBneGG3GNxB7CitujsBBhXk/edit?usp=sharing]",
     "crumbs": [
       "Home",
       "Content",
@@ -171,8 +183,8 @@
     "objectID": "lessons/Activity.html#the-shared-dataset",
     "href": "lessons/Activity.html#the-shared-dataset",
     "title": "Try It Yourself!",
-    "section": "",
-    "text": "We’ll use a small sales dataset: transactions across three product categories over several months. Define it once in each language — the analysis is identical.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "section": "The shared dataset",
+    "text": "The shared dataset\nWe’ll use a small sales dataset: transactions across three product categories over several months. Define it once in each language — the analysis is identical.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
