@@ -71,10 +71,6 @@ look at what each one "requires."
 :::
 :::
 
-::: {.fragment}
-**Same job. Three different "required" stacks.**
-A student who only knows R isn't underqualified — they're one prompt away.
-:::
 
 ::: {.notes}
 - These are real postings, pulled while prepping this talk — not hypothetical.
