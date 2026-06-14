@@ -4,7 +4,11 @@ subtitle: "pandas groupby ↔ dplyr pipes, with a SQL cameo"
 webr:
   show-startup-message: false
 ---
+```{webr-r}
+#| context: setup
 
+library(dplyr)
+```
 <style>
 .reveal-btn {
   background-color: #4CAF50;
