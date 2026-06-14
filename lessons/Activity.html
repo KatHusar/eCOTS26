@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Try it yourself! – eCOTS 2026</title>
+<title>Try It Yourself! – eCOTS 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -406,7 +406,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"hours <- c(1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10)\nscore <- c(52, 55, 61, 64, 68, 70, 73, 78, 82, 85, 88, 91)\n\nstudy_data <- data.frame(hours = hours, score = score)\nhead(study_data)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"model <- lm(score ~ hours, data = study_data)\nsummary(model)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"temp <- c(50, 55, 60, 65, 70, 75, 80, 85, 90, 95)\nsales <- c(10, 15, 22, 28, 35, 42, 50, 58, 65, 75)\n\nice_cream <- data.frame(temp = temp, sales = sales)\n\ncor(ice_cream$temp, ice_cream$sales)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"sales <- data.frame(\n  month    = c(\"Jan\",\"Jan\",\"Jan\",\"Feb\",\"Feb\",\"Feb\",\"Mar\",\"Mar\",\"Mar\"),\n  category = c(\"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\"),\n  revenue  = c(120, 340, 210, 95, 410, 180, 150, 290, 230),\n  units    = c(12, 4, 15, 9, 5, 13, 14, 3, 17)\n)\nhead(sales)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  group_by(category) |>\n  summarise(\n    total_revenue = sum(revenue),\n    total_units   = sum(units)\n  ) |>\n  arrange(desc(total_revenue))","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  filter(month != \"Feb\") |>\n  group_by(month, category) |>\n  summarise(avg_rev_per_unit = mean(revenue / units), .groups = \"drop\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  group_by(month) |>\n  summarise(total_units = sum(units)) |>\n  filter(total_units > 30) |>\n  arrange(month)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1821,7 +1821,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"import pandas as pd\n\nhours = [1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10]\nscore = [52, 55, 61, 64, 68, 70, 73, 78, 82, 85, 88, 91]\n\nstudy_data = pd.DataFrame({\"hours\": hours, \"score\": score})\nstudy_data.head()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"from sklearn.linear_model import LinearRegression\n\nX = study_data[[\"hours\"]]\ny = study_data[\"score\"]\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprint(\"Intercept:\", model.intercept_)\nprint(\"Coefficient:\", model.coef_[0])","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import numpy as np\n\ntemp = ____\nsales = ____\n\ncorrelation = np.____(temp, sales)[0, 1]\nprint(correlation)","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"import pandas as pd\n\nsales = pd.DataFrame({\n    \"month\":    [\"Jan\",\"Jan\",\"Jan\",\"Feb\",\"Feb\",\"Feb\",\"Mar\",\"Mar\",\"Mar\"],\n    \"category\": [\"Books\",\"Electronics\",\"Clothing\",\n                 \"Books\",\"Electronics\",\"Clothing\",\n                 \"Books\",\"Electronics\",\"Clothing\"],\n    \"revenue\":  [120, 340, 210, 95, 410, 180, 150, 290, 230],\n    \"units\":    [12, 4, 15, 9, 5, 13, 14, 3, 17]\n})\nsales.head()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"(sales\n  .groupby(\"category\")\n  .agg(total_revenue=(\"revenue\", \"sum\"),\n       total_units=(\"units\",   \"sum\"))\n  .sort_values(\"total_revenue\", ascending=False)\n  .reset_index()\n)","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"(sales\n  .query('month != \"Feb\"')\n  .assign(rev_per_unit=lambda df: df[\"revenue\"] / df[\"units\"])\n  .groupby([\"month\", \"category\"])\n  .agg(avg_rev_per_unit=(\"rev_per_unit\", \"mean\"))\n  .reset_index()\n)","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"(sales\n  .groupby(____)\n  .agg(total_units=(____, ____))\n  .reset_index()\n  .query(\"____ > 30\")\n  .sort_values(____)\n)","id":4,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 
 </script>
@@ -2060,7 +2060,7 @@ globalThis._qpyodideGetInstance = function() {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Activity.html">Try it yourself!</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Activity.html">Try It Yourself!</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -2096,7 +2096,7 @@ globalThis._qpyodideGetInstance = function() {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/Activity.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Try it yourself!</span></a>
+ <span class="menu-text">Try It Yourself!</span></a>
   </div>
 </li>
       </ul>
@@ -2404,10 +2404,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Activity.html">Try it yourself!</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Activity.html">Try It Yourself!</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Try it yourself!</h1>
-<p class="subtitle lead">Using AI to translate code between R and Python</p>
+<h1 class="title">Try It Yourself!</h1>
+<p class="subtitle lead">pandas groupby ↔︎ dplyr pipes, with a SQL cameo</p>
 </div>
 
 
@@ -2426,7 +2426,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <style>
 .reveal-btn {
-  background-color: #4CAF50; /* green */
+  background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -2435,85 +2435,87 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   font-size: 16px;
   transition: background-color 0.3s, transform 0.2s;
 }
-
 .reveal-btn:hover {
   background-color: #45a049;
   transform: scale(1.05);
 }
-
 .reveal-btn:active {
   transform: scale(0.98);
 }
-
 .prompt-box, .ai-response-box {
   border-radius: 8px;
   padding: 12px 16px;
   margin: 12px 0;
 }
-
 .prompt-box {
   background-color: #f5f5f5;
   border-left: 4px solid #6c757d;
 }
-
 .ai-response-box {
   background-color: #eef6ff;
   border-left: 4px solid #4A90E2;
 }
-
 .prompt-label, .ai-label {
   font-weight: bold;
   display: block;
   margin-bottom: 6px;
 }
-
 .prompt-label { color: #6c757d; }
 .ai-label { color: #4A90E2; }
-
-.prompt-box pre, .ai-response-box pre {
-  background-color: rgba(255,255,255,0.6);
-  padding: 8px;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
 .match-table {
   width: 100%;
   border-collapse: collapse;
   margin: 15px 0;
 }
-
 .match-table th, .match-table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
   vertical-align: middle;
 }
-
 .match-table th {
   background-color: #4A90E2;
   color: white;
 }
-
-.match-table code {
-  white-space: nowrap;
-}
-
+.match-table code { white-space: nowrap; }
 .match-select {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
-
 .feedback-icon {
   font-size: 18px;
   margin-left: 8px;
 }
+.callout-tip {
+  border-left: 4px solid #4CAF50;
+  background: #f0fff0;
+  border-radius: 5px;
+  padding: 10px 16px;
+  margin: 12px 0;
+}
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.lang-card {
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+}
+.lang-card.r    { background: #fff3f3; border-left: 4px solid #e05c5c; }
+.lang-card.py   { background: #eef6ff; border-left: 4px solid #4A90E2; }
+.lang-card.sql  { background: #fffbe6; border-left: 4px solid #e6a817; }
+.lang-card h4   { margin: 0 0 8px; font-size: 13px; }
+.lang-card pre  { margin: 0; background: rgba(255,255,255,0.6);
+                  padding: 6px 8px; border-radius: 4px; overflow-x: auto; }
 </style>
-<section id="step-1-a-shared-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-a-shared-dataset">Step 1: A shared dataset</h2>
-<p>For this activity, we’ll use a small made-up dataset: <strong>hours studied</strong> vs.&nbsp;<strong>exam score</strong> for 12 students. We’ll define the <em>exact same data</em> in both R and Python so we can compare the two languages side-by-side.</p>
+<section id="the-shared-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="the-shared-dataset">The shared dataset</h2>
+<p>We’ll use a small sales dataset: transactions across three product categories over several months. Define it once in each language — the analysis is identical.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Python</a></li></ul>
 <div class="tab-content">
@@ -2527,110 +2529,242 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 </div>
-<p>Notice the parallels already: <code>c()</code> becomes <code>[]</code>, <code>data.frame()</code> becomes <code>pd.DataFrame()</code>, and <code>head()</code> becomes <code>.head()</code>.</p>
+<hr>
 </section>
-<section id="step-2-fit-a-linear-model-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-fit-a-linear-model-in-r">Step 2: Fit a linear model — in R</h2>
-<p>In R, fitting a linear model and getting a full statistical summary takes just two lines:</p>
+<section id="part-1-group-summarise-and-sort" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-group-summarise-and-sort">Part 1: Group, summarise, and sort</h2>
+<p>The most common data-wrangling task: <strong>total revenue by category, sorted descending</strong>.</p>
+<section id="in-r-the-dplyr-pipe" class="level3">
+<h3 class="anchored" data-anchor-id="in-r-the-dplyr-pipe">In R — the dplyr pipe</h3>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="step-3-from-r-to-python-ask-the-ai" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-from-r-to-python-ask-the-ai">Step 3: From R to Python — ask the AI</h2>
-<p>Suppose you’ve never written Python before, but you need to reproduce this analysis. Let’s ask an AI assistant for help.</p>
-<section id="prompt-translate-this-r-code-to-python" class="level3">
-<h3 class="anchored" data-anchor-id="prompt-translate-this-r-code-to-python">Prompt: “Translate this R code to Python”</h3>
-<div class="prompt-box">
-<p><span class="prompt-label">🧑 Prompt</span></p>
-<pre><code>Translate this R code to Python:
-
-model &lt;- lm(score ~ hours, data = study_data)
-summary(model)</code></pre>
-</div>
-<div class="ai-response-box">
-<p><span class="ai-label">🤖 AI response</span></p>
-<p>In Python, the closest equivalent is <code>scikit-learn</code>’s <code>LinearRegression</code>. Here’s the translation:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> study_data[[<span class="st">"hours"</span>]]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> study_data[<span class="st">"score"</span>]</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>model.fit(X, y)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Intercept:"</span>, model.intercept_)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Coefficient:"</span>, model.coef_[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Try running the translated code below (the first run may take a few seconds while <code>scikit-learn</code> loads):</p>
+<section id="in-python-pandas-groupby" class="level3">
+<h3 class="anchored" data-anchor-id="in-python-pandas-groupby">In Python — pandas groupby</h3>
 <div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="better-prompts-take-me-step-by-step-through-the-differences-and-similarities-in-this-code" class="level3">
-<h3 class="anchored" data-anchor-id="better-prompts-take-me-step-by-step-through-the-differences-and-similarities-in-this-code">Better prompts: “Take me step by step through the differences and similarities in this code”</h3>
-<p>The first translation <em>works</em>, but a better prompt can help us actually <strong>understand</strong> what changed.</p>
-<div class="prompt-box">
-<p><span class="prompt-label">🧑 Prompt</span></p>
-<pre><code>Take me step by step through the differences and similarities
-between the R code and the Python code above.</code></pre>
+<section id="side-by-side-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="side-by-side-comparison">Side-by-side comparison</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="ai-response-box">
-<p><span class="ai-label">🤖 AI response</span></p>
-<p><strong>Similarities</strong></p>
-<ul>
-<li>Both approaches create a <strong>model object</strong> (<code>model</code>) that stores the fitted line.</li>
-<li>Both use the same underlying idea: find the intercept and slope that best fit <code>score</code> as a function of <code>hours</code>.</li>
-<li>Both let you inspect the fitted coefficients afterward.</li>
-</ul>
-<p><strong>Differences</strong></p>
-<ul>
-<li><strong>Formula vs.&nbsp;arrays</strong>: R’s <code>lm(score ~ hours, data = study_data)</code> uses a <em>formula</em> (<code>y ~ x</code>) and the whole data frame. Python’s <code>LinearRegression().fit(X, y)</code> instead expects <code>X</code> (a table of predictors) and <code>y</code> (the outcome) as <em>separate</em> objects.</li>
-<li><strong>Assignment</strong>: R traditionally uses <code>&lt;-</code>; Python always uses <code>=</code>.</li>
-<li><strong>Output detail</strong>: <code>summary(model)</code> in R immediately prints coefficients, standard errors, p-values, and R² — all in one table. <code>scikit-learn</code> doesn’t print any of this by default; you have to ask for each piece (<code>model.intercept_</code>, <code>model.coef_</code>) separately, or switch to the <code>statsmodels</code> package for an R-like <code>summary()</code>.</li>
-<li><strong>Column access</strong>: R uses <code>study_data$hours</code> or <code>study_data["hours"]</code>; pandas uses <code>study_data["hours"]</code> or <code>study_data.hours</code>.</li>
-</ul>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key idiom differences</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>dplyr (R)</th>
+<th>pandas (Python)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Start a chain</td>
+<td><code>df \|&gt; ...</code></td>
+<td><code>(df...)</code></td>
+</tr>
+<tr class="even">
+<td>Group rows</td>
+<td><code>group_by(category)</code></td>
+<td><code>.groupby("category")</code></td>
+</tr>
+<tr class="odd">
+<td>Summarise</td>
+<td><code>summarise(name = fn(col))</code></td>
+<td><code>.agg(name=("col", "fn"))</code></td>
+</tr>
+<tr class="even">
+<td>Sort descending</td>
+<td><code>arrange(desc(col))</code></td>
+<td><code>.sort_values("col", ascending=False)</code></td>
+</tr>
+<tr class="odd">
+<td>Column names quoted?</td>
+<td>Bare names: <code>category</code></td>
+<td>Always strings: <code>"category"</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
 </section>
 </section>
-<section id="step-4-match-the-syntax" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-match-the-syntax">Step 4: Match the syntax!</h2>
-<p>Test what you just learned. For each R snippet, choose its Python equivalent.</p>
+<section id="part-2-filter-then-group" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-filter-then-group">Part 2: Filter, then group</h2>
+<p>Now: <strong>average revenue per unit, for months that aren’t February</strong>.</p>
+<section id="in-r" class="level3">
+<h3 class="anchored" data-anchor-id="in-r">In R</h3>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="in-python" class="level3">
+<h3 class="anchored" data-anchor-id="in-python">In Python</h3>
+<div id="qpyodide-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Idiom flags</strong></p>
+<ul>
+<li><code>filter()</code> → <code>.query()</code> — both accept an expression, but pandas requires a string.</li>
+<li><code>mutate()</code> → <code>.assign()</code> — pandas uses a <code>lambda</code> to reference the DataFrame mid-chain.</li>
+<li><code>.groups = "drop"</code> in dplyr → <code>.reset_index()</code> in pandas — both un-nest the groups.</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-3-sql-tidyverse-cameo" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-sql-tidyverse-cameo">Part 3: SQL ↔︎ tidyverse cameo</h2>
+<p>The same aggregation in all three languages. Notice how SQL is the conceptual middle ground — its <code>GROUP BY</code> maps directly to both <code>group_by()</code> and <code>.groupby()</code>.</p>
+<div class="three-col">
+<div class="lang-card sql">
+<h4 class="anchored">
+🗄 SQL
+</h4>
+<pre>SELECT
+  category,
+  SUM(revenue)  AS total_revenue,
+  SUM(units)    AS total_units
+FROM sales
+GROUP BY category
+ORDER BY total_revenue DESC;
+</pre>
+</div>
+<div class="lang-card r">
+<h4 class="anchored">
+📦 dplyr (R)
+</h4>
+<pre>sales |&gt;
+  group_by(category) |&gt;
+  summarise(
+    total_revenue = sum(revenue),
+    total_units   = sum(units)
+  ) |&gt;
+  arrange(desc(total_revenue))
+</pre>
+</div>
+<div class="lang-card py">
+<h4 class="anchored">
+🐍 pandas (Python)
+</h4>
+<pre>(sales
+  .groupby("category")
+  .agg(
+    total_revenue=("revenue","sum"),
+    total_units  =("units",  "sum"))
+  .sort_values("total_revenue",
+               ascending=False)
+  .reset_index()
+)
+</pre>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>SQL clause</th>
+<th>dplyr verb</th>
+<th>pandas method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>WHERE</code></td>
+<td><code>filter()</code></td>
+<td><code>.query()</code></td>
+</tr>
+<tr class="even">
+<td><code>SELECT col, fn(col)</code></td>
+<td><code>summarise()</code></td>
+<td><code>.agg()</code></td>
+</tr>
+<tr class="odd">
+<td><code>GROUP BY</code></td>
+<td><code>group_by()</code></td>
+<td><code>.groupby()</code></td>
+</tr>
+<tr class="even">
+<td><code>ORDER BY ... DESC</code></td>
+<td><code>arrange(desc(...))</code></td>
+<td><code>.sort_values(..., ascending=False)</code></td>
+</tr>
+<tr class="odd">
+<td><code>AS alias</code></td>
+<td><code>name = expr</code> inside <code>summarise()</code></td>
+<td><code>alias=("col","fn")</code> inside <code>.agg()</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="match-the-syntax" class="level2">
+<h2 class="anchored" data-anchor-id="match-the-syntax">Match the syntax!</h2>
+<p>For each dplyr snippet, choose its pandas equivalent.</p>
 <table class="match-table caption-top table">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th">R</th>
-<th data-quarto-table-cell-role="th">Python</th>
+<th data-quarto-table-cell-role="th">dplyr (R)</th>
+<th data-quarto-table-cell-role="th">pandas (Python)</th>
 <th data-quarto-table-cell-role="th"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>x &lt;- 5</code></td>
-<td><select class="match-select" data-correct="b" data-feedback="fb1"> <option value="">-- choose --</option> <option value="a">x == 5</option> <option value="b">x = 5</option> <option value="c">x :: 5</option> </select></td>
+<td><code>filter(month == "Jan")</code></td>
+<td><select class="match-select" data-correct="b" data-feedback="fb1"> <option value="">-- choose --</option> <option value="a">.filter(month="Jan")</option> <option value="b">.query('month == "Jan"')</option> <option value="c">.where("month", "Jan")</option> </select></td>
 <td><span id="fb1" class="feedback-icon"></span></td>
 </tr>
 <tr class="even">
-<td><code>c(1, 2, 3)</code></td>
-<td><select class="match-select" data-correct="a" data-feedback="fb2"> <option value="">-- choose --</option> <option value="a">[1, 2, 3]</option> <option value="b">(1, 2, 3)</option> <option value="c">{1, 2, 3}</option> </select></td>
+<td><code>group_by(category)</code></td>
+<td><select class="match-select" data-correct="a" data-feedback="fb2"> <option value="">-- choose --</option> <option value="a">.groupby("category")</option> <option value="b">.group("category")</option> <option value="c">.aggregate("category")</option> </select></td>
 <td><span id="fb2" class="feedback-icon"></span></td>
 </tr>
 <tr class="odd">
-<td><code>data.frame(a = x, b = y)</code></td>
-<td><select class="match-select" data-correct="c" data-feedback="fb3"> <option value="">-- choose --</option> <option value="a">np.array([x, y])</option> <option value="b">dict(a = x, b = y)</option> <option value="c">pd.DataFrame({"a": x, "b": y})</option> </select></td>
+<td><code>summarise(total = sum(revenue))</code></td>
+<td><select class="match-select" data-correct="c" data-feedback="fb3"> <option value="">-- choose --</option> <option value="a">.summarise(total=sum("revenue"))</option> <option value="b">.sum("revenue")</option> <option value="c">.agg(total=("revenue", "sum"))</option> </select></td>
 <td><span id="fb3" class="feedback-icon"></span></td>
 </tr>
 <tr class="even">
-<td><code>study_data$hours</code></td>
-<td><select class="match-select" data-correct="b" data-feedback="fb4"> <option value="">-- choose --</option> <option value="a">study_data-&gt;hours</option> <option value="b">study_data["hours"]</option> <option value="c">study_data::hours</option> </select></td>
+<td><code>arrange(desc(revenue))</code></td>
+<td><select class="match-select" data-correct="b" data-feedback="fb4"> <option value="">-- choose --</option> <option value="a">.sort_values("revenue")</option> <option value="b">.sort_values("revenue", ascending=False)</option> <option value="c">.order_by("revenue", desc=True)</option> </select></td>
 <td><span id="fb4" class="feedback-icon"></span></td>
 </tr>
 <tr class="odd">
-<td><code>lm(y ~ x, data = df)</code></td>
-<td><select class="match-select" data-correct="a" data-feedback="fb5"> <option value="">-- choose --</option> <option value="a">LinearRegression().fit(X, y)</option> <option value="b">lm(y, x)</option> <option value="c">regress(df, y, x)</option> </select></td>
+<td><code>mutate(rev_per_unit = revenue / units)</code></td>
+<td><select class="match-select" data-correct="a" data-feedback="fb5"> <option value="">-- choose --</option> <option value="a">.assign(rev_per_unit=lambda df: df["revenue"] / df["units"])</option> <option value="b">.mutate(rev_per_unit="revenue/units")</option> <option value="c">.add_column("rev_per_unit", df["revenue"] / df["units"])</option> </select></td>
 <td><span id="fb5" class="feedback-icon"></span></td>
 </tr>
 <tr class="even">
-<td><code>nrow(df)</code></td>
-<td><select class="match-select" data-correct="c" data-feedback="fb6"> <option value="">-- choose --</option> <option value="a">df.count</option> <option value="b">nrow(df)</option> <option value="c">len(df)</option> </select></td>
+<td><code>select(month, revenue)</code></td>
+<td><select class="match-select" data-correct="c" data-feedback="fb6"> <option value="">-- choose --</option> <option value="a">.select(["month", "revenue"])</option> <option value="b">.keep("month", "revenue")</option> <option value="c">[["month", "revenue"]]</option> </select></td>
 <td><span id="fb6" class="feedback-icon"></span></td>
 </tr>
 </tbody>
@@ -2659,28 +2793,33 @@ function checkMatches() {
     `You got ${correct} out of ${selects.length} correct!`;
 }
 </script>
+<hr>
 </section>
-<section id="step-5-your-turn-fill-in-the-blanks" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-your-turn-fill-in-the-blanks">Step 5: Your turn — fill in the blanks</h2>
-<p>Now let’s try a <strong>different</strong> task on a <strong>different</strong> dataset: the correlation between temperature and ice cream sales.</p>
-<p>Here’s the complete R version:</p>
-<div id="qwebr-insertion-location-3"></div>
+<section id="your-turn-fill-in-the-blanks" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn-fill-in-the-blanks">Your turn — fill in the blanks</h2>
+<p>Here’s the complete R version of a new task: <strong>total units sold per month, keeping only months with more than 30 total units</strong>.</p>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now write the equivalent Python — fill in the blanks below and run it!</p>
-<div id="qpyodide-insertion-location-3"></div>
+<p>Now complete the pandas equivalent below and run it:</p>
+<div id="qpyodide-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <button class="reveal-btn" onclick="document.getElementById('solution').style.display='block'">
 Reveal Solution
 </button>
 <div id="solution" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">95</span>]</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">22</span>, <span class="dv">28</span>, <span class="dv">35</span>, <span class="dv">42</span>, <span class="dv">50</span>, <span class="dv">58</span>, <span class="dv">65</span>, <span class="dv">75</span>]</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>correlation <span class="op">=</span> np.corrcoef(temp, sales)[<span class="dv">0</span>, <span class="dv">1</span>]</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(correlation)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(sales</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  .groupby(<span class="st">"month"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  .agg(total_units<span class="op">=</span>(<span class="st">"units"</span>, <span class="st">"sum"</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  .reset_index()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  .query(<span class="st">"total_units &gt; 30"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  .sort_values(<span class="st">"month"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<hr>
+</section>
+<section id="concept-check" class="level2">
+<h2 class="anchored" data-anchor-id="concept-check">Concept check</h2>
+<p>In dplyr you can write <code>filter(total_units &gt; 30)</code> <strong>immediately</strong> after <code>summarise()</code> because the pipe passes the result forward as a new data frame. In pandas, why do you need <code>.reset_index()</code> <strong>before</strong> <code>.query("total_units &gt; 30")</code> — and what happens if you skip it?</p>
 
 
 </section>

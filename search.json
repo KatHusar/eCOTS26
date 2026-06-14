@@ -158,73 +158,97 @@
   {
     "objectID": "lessons/Activity.html",
     "href": "lessons/Activity.html",
-    "title": "Try it yourself!",
+    "title": "Try It Yourself!",
     "section": "",
-    "text": "For this activity, we’ll use a small made-up dataset: hours studied vs. exam score for 12 students. We’ll define the exact same data in both R and Python so we can compare the two languages side-by-side.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nNotice the parallels already: c() becomes [], data.frame() becomes pd.DataFrame(), and head() becomes .head().",
+    "text": "We’ll use a small sales dataset: transactions across three product categories over several months. Define it once in each language — the analysis is identical.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
-      "Try it yourself!"
+      "Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#step-1-a-shared-dataset",
-    "href": "lessons/Activity.html#step-1-a-shared-dataset",
-    "title": "Try it yourself!",
+    "objectID": "lessons/Activity.html#the-shared-dataset",
+    "href": "lessons/Activity.html#the-shared-dataset",
+    "title": "Try It Yourself!",
     "section": "",
-    "text": "For this activity, we’ll use a small made-up dataset: hours studied vs. exam score for 12 students. We’ll define the exact same data in both R and Python so we can compare the two languages side-by-side.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nNotice the parallels already: c() becomes [], data.frame() becomes pd.DataFrame(), and head() becomes .head().",
+    "text": "We’ll use a small sales dataset: transactions across three product categories over several months. Define it once in each language — the analysis is identical.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
-      "Try it yourself!"
+      "Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#step-2-fit-a-linear-model-in-r",
-    "href": "lessons/Activity.html#step-2-fit-a-linear-model-in-r",
-    "title": "Try it yourself!",
-    "section": "Step 2: Fit a linear model — in R",
-    "text": "Step 2: Fit a linear model — in R\nIn R, fitting a linear model and getting a full statistical summary takes just two lines:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "objectID": "lessons/Activity.html#part-1-group-summarise-and-sort",
+    "href": "lessons/Activity.html#part-1-group-summarise-and-sort",
+    "title": "Try It Yourself!",
+    "section": "Part 1: Group, summarise, and sort",
+    "text": "Part 1: Group, summarise, and sort\nThe most common data-wrangling task: total revenue by category, sorted descending.\n\nIn R — the dplyr pipe\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nIn Python — pandas groupby\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nSide-by-side comparison\n\n\n\n\n\n\nTip\n\n\n\nKey idiom differences\n\n\n\n\n\n\n\n\nConcept\ndplyr (R)\npandas (Python)\n\n\n\n\nStart a chain\ndf \\|&gt; ...\n(df...)\n\n\nGroup rows\ngroup_by(category)\n.groupby(\"category\")\n\n\nSummarise\nsummarise(name = fn(col))\n.agg(name=(\"col\", \"fn\"))\n\n\nSort descending\narrange(desc(col))\n.sort_values(\"col\", ascending=False)\n\n\nColumn names quoted?\nBare names: category\nAlways strings: \"category\"",
     "crumbs": [
       "Home",
       "Content",
-      "Try it yourself!"
+      "Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#step-3-from-r-to-python-ask-the-ai",
-    "href": "lessons/Activity.html#step-3-from-r-to-python-ask-the-ai",
-    "title": "Try it yourself!",
-    "section": "Step 3: From R to Python — ask the AI",
-    "text": "Step 3: From R to Python — ask the AI\nSuppose you’ve never written Python before, but you need to reproduce this analysis. Let’s ask an AI assistant for help.\n\nPrompt: “Translate this R code to Python”\n\n🧑 Prompt\nTranslate this R code to Python:\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nIn Python, the closest equivalent is scikit-learn’s LinearRegression. Here’s the translation:\nfrom sklearn.linear_model import LinearRegression\n\nX = study_data[[\"hours\"]]\ny = study_data[\"score\"]\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprint(\"Intercept:\", model.intercept_)\nprint(\"Coefficient:\", model.coef_[0])\n\nTry running the translated code below (the first run may take a few seconds while scikit-learn loads):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBetter prompts: “Take me step by step through the differences and similarities in this code”\nThe first translation works, but a better prompt can help us actually understand what changed.\n\n🧑 Prompt\nTake me step by step through the differences and similarities\nbetween the R code and the Python code above.\n\n\n🤖 AI response\nSimilarities\n\nBoth approaches create a model object (model) that stores the fitted line.\nBoth use the same underlying idea: find the intercept and slope that best fit score as a function of hours.\nBoth let you inspect the fitted coefficients afterward.\n\nDifferences\n\nFormula vs. arrays: R’s lm(score ~ hours, data = study_data) uses a formula (y ~ x) and the whole data frame. Python’s LinearRegression().fit(X, y) instead expects X (a table of predictors) and y (the outcome) as separate objects.\nAssignment: R traditionally uses &lt;-; Python always uses =.\nOutput detail: summary(model) in R immediately prints coefficients, standard errors, p-values, and R² — all in one table. scikit-learn doesn’t print any of this by default; you have to ask for each piece (model.intercept_, model.coef_) separately, or switch to the statsmodels package for an R-like summary().\nColumn access: R uses study_data$hours or study_data[\"hours\"]; pandas uses study_data[\"hours\"] or study_data.hours.",
+    "objectID": "lessons/Activity.html#part-2-filter-then-group",
+    "href": "lessons/Activity.html#part-2-filter-then-group",
+    "title": "Try It Yourself!",
+    "section": "Part 2: Filter, then group",
+    "text": "Part 2: Filter, then group\nNow: average revenue per unit, for months that aren’t February.\n\nIn R\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nIn Python\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nTip\n\n\n\nIdiom flags\n\nfilter() → .query() — both accept an expression, but pandas requires a string.\nmutate() → .assign() — pandas uses a lambda to reference the DataFrame mid-chain.\n.groups = \"drop\" in dplyr → .reset_index() in pandas — both un-nest the groups.",
     "crumbs": [
       "Home",
       "Content",
-      "Try it yourself!"
+      "Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#step-4-match-the-syntax",
-    "href": "lessons/Activity.html#step-4-match-the-syntax",
-    "title": "Try it yourself!",
-    "section": "Step 4: Match the syntax!",
-    "text": "Step 4: Match the syntax!\nTest what you just learned. For each R snippet, choose its Python equivalent.\n\n\n\nR\nPython\n\n\n\n\n\nx &lt;- 5\n -- choose -- x == 5 x = 5 x :: 5 \n\n\n\nc(1, 2, 3)\n -- choose -- [1, 2, 3] (1, 2, 3) {1, 2, 3} \n\n\n\ndata.frame(a = x, b = y)\n -- choose -- np.array([x, y]) dict(a = x, b = y) pd.DataFrame({\"a\": x, \"b\": y}) \n\n\n\nstudy_data$hours\n -- choose -- study_data-&gt;hours study_data[\"hours\"] study_data::hours \n\n\n\nlm(y ~ x, data = df)\n -- choose -- LinearRegression().fit(X, y) lm(y, x) regress(df, y, x) \n\n\n\nnrow(df)\n -- choose -- df.count nrow(df) len(df) \n\n\n\n\n\n\nCheck Answers",
+    "objectID": "lessons/Activity.html#part-3-sql-tidyverse-cameo",
+    "href": "lessons/Activity.html#part-3-sql-tidyverse-cameo",
+    "title": "Try It Yourself!",
+    "section": "Part 3: SQL ↔︎ tidyverse cameo",
+    "text": "Part 3: SQL ↔︎ tidyverse cameo\nThe same aggregation in all three languages. Notice how SQL is the conceptual middle ground — its GROUP BY maps directly to both group_by() and .groupby().\n\n\n\n🗄 SQL\n\nSELECT\n  category,\n  SUM(revenue)  AS total_revenue,\n  SUM(units)    AS total_units\nFROM sales\nGROUP BY category\nORDER BY total_revenue DESC;\n\n\n\n\n📦 dplyr (R)\n\nsales |&gt;\n  group_by(category) |&gt;\n  summarise(\n    total_revenue = sum(revenue),\n    total_units   = sum(units)\n  ) |&gt;\n  arrange(desc(total_revenue))\n\n\n\n\n🐍 pandas (Python)\n\n(sales\n  .groupby(\"category\")\n  .agg(\n    total_revenue=(\"revenue\",\"sum\"),\n    total_units  =(\"units\",  \"sum\"))\n  .sort_values(\"total_revenue\",\n               ascending=False)\n  .reset_index()\n)\n\n\n\n\n\n\n\n\n\n\n\nSQL clause\ndplyr verb\npandas method\n\n\n\n\nWHERE\nfilter()\n.query()\n\n\nSELECT col, fn(col)\nsummarise()\n.agg()\n\n\nGROUP BY\ngroup_by()\n.groupby()\n\n\nORDER BY ... DESC\narrange(desc(...))\n.sort_values(..., ascending=False)\n\n\nAS alias\nname = expr inside summarise()\nalias=(\"col\",\"fn\") inside .agg()",
     "crumbs": [
       "Home",
       "Content",
-      "Try it yourself!"
+      "Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#step-5-your-turn-fill-in-the-blanks",
-    "href": "lessons/Activity.html#step-5-your-turn-fill-in-the-blanks",
-    "title": "Try it yourself!",
-    "section": "Step 5: Your turn — fill in the blanks",
-    "text": "Step 5: Your turn — fill in the blanks\nNow let’s try a different task on a different dataset: the correlation between temperature and ice cream sales.\nHere’s the complete R version:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow write the equivalent Python — fill in the blanks below and run it!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nReveal Solution\n\n\nimport numpy as np\n\ntemp = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95]\nsales = [10, 15, 22, 28, 35, 42, 50, 58, 65, 75]\n\ncorrelation = np.corrcoef(temp, sales)[0, 1]\nprint(correlation)",
+    "objectID": "lessons/Activity.html#match-the-syntax",
+    "href": "lessons/Activity.html#match-the-syntax",
+    "title": "Try It Yourself!",
+    "section": "Match the syntax!",
+    "text": "Match the syntax!\nFor each dplyr snippet, choose its pandas equivalent.\n\n\n\ndplyr (R)\npandas (Python)\n\n\n\n\n\nfilter(month == \"Jan\")\n -- choose -- .filter(month=\"Jan\") .query('month == \"Jan\"') .where(\"month\", \"Jan\") \n\n\n\ngroup_by(category)\n -- choose -- .groupby(\"category\") .group(\"category\") .aggregate(\"category\") \n\n\n\nsummarise(total = sum(revenue))\n -- choose -- .summarise(total=sum(\"revenue\")) .sum(\"revenue\") .agg(total=(\"revenue\", \"sum\")) \n\n\n\narrange(desc(revenue))\n -- choose -- .sort_values(\"revenue\") .sort_values(\"revenue\", ascending=False) .order_by(\"revenue\", desc=True) \n\n\n\nmutate(rev_per_unit = revenue / units)\n -- choose -- .assign(rev_per_unit=lambda df: df[\"revenue\"] / df[\"units\"]) .mutate(rev_per_unit=\"revenue/units\") .add_column(\"rev_per_unit\", df[\"revenue\"] / df[\"units\"]) \n\n\n\nselect(month, revenue)\n -- choose -- .select([\"month\", \"revenue\"]) .keep(\"month\", \"revenue\") [[\"month\", \"revenue\"]] \n\n\n\n\n\n\nCheck Answers",
     "crumbs": [
       "Home",
       "Content",
-      "Try it yourself!"
+      "Try It Yourself!"
+    ]
+  },
+  {
+    "objectID": "lessons/Activity.html#your-turn-fill-in-the-blanks",
+    "href": "lessons/Activity.html#your-turn-fill-in-the-blanks",
+    "title": "Try It Yourself!",
+    "section": "Your turn — fill in the blanks",
+    "text": "Your turn — fill in the blanks\nHere’s the complete R version of a new task: total units sold per month, keeping only months with more than 30 total units.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow complete the pandas equivalent below and run it:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nReveal Solution\n\n\n(sales\n  .groupby(\"month\")\n  .agg(total_units=(\"units\", \"sum\"))\n  .reset_index()\n  .query(\"total_units &gt; 30\")\n  .sort_values(\"month\")\n)",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Try It Yourself!"
+    ]
+  },
+  {
+    "objectID": "lessons/Activity.html#concept-check",
+    "href": "lessons/Activity.html#concept-check",
+    "title": "Try It Yourself!",
+    "section": "Concept check",
+    "text": "Concept check\nIn dplyr you can write filter(total_units &gt; 30) immediately after summarise() because the pipe passes the result forward as a new data frame. In pandas, why do you need .reset_index() before .query(\"total_units &gt; 30\") — and what happens if you skip it?",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Try It Yourself!"
     ]
   },
   {
