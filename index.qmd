@@ -14,7 +14,7 @@ Tuesday, June 16, 2026\
 ------------------------------------------------------------------------
 
 # Presenters
-[**Kat Husar** and **Marie Neubrander**]() are PhD student in the Department of Statistical Science at Duke University.
+**Kat Husar** and **Marie Neubrander** are PhD student in the Department of Statistical Science at Duke University.
 
 # Abstract
 
