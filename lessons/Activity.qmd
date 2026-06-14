@@ -146,8 +146,6 @@ The most common data-wrangling task: **total revenue by category, sorted descend
 ### In R — the dplyr pipe
 
 ```{webr-r}
-library(dplyr)
-
 sales |>
   group_by(category) |>
   summarise(
@@ -160,13 +158,13 @@ sales |>
 ### In Python — pandas groupby
 
 ```{pyodide-python}
-sales
+(sales
   .groupby("category")
   .agg(total_revenue=("revenue", "sum"),
        total_units=("units",   "sum"))
   .sort_values("total_revenue", ascending=False)
   .reset_index()
-
+)
 ```
 
 ### Side-by-side comparison
@@ -203,13 +201,13 @@ sales |>
 ### In Python
 
 ```{pyodide-python}
-sales
+(sales
   .query('month != "Feb"')
   .assign(rev_per_unit=lambda df: df["revenue"] / df["units"])
   .groupby(["month", "category"])
   .agg(avg_rev_per_unit=("rev_per_unit", "mean"))
   .reset_index()
-
+)
 ```
 
 ::: {.callout-tip}
@@ -255,7 +253,7 @@ sales |>
 <div class="lang-card py">
 <h4>🐍 pandas (Python)</h4>
 <pre>
-sales
+(sales
   .groupby("category")
   .agg(
     total_revenue=("revenue","sum"),
@@ -263,6 +261,7 @@ sales
   .sort_values("total_revenue",
                ascending=False)
   .reset_index()
+  )
 </pre>
 </div>
 </div>
