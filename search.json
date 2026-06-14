@@ -273,11 +273,18 @@
     "text": "Same job. Different syntax.\nThree real entry-level Data Analyst postings. Same kind of role — look at what each one “requires.”\n\n\n\nDisney — SQL & Python\n\n\n\nHaystack — Excel, SQL, Tableau, Python, or R\n\n\n\nNetflix — Python/R + SQL\n\n\n\n\nThese are real postings, pulled while prepping this talk — not hypothetical.\nPoint at the highlighted line in each: same “data analyst” role, different language combinations listed as requirements.\nTies directly back to “The scene”: this is the exact moment a student self-rejects.\nLand the punchline: the underlying skill (query, summarize, model data) is identical across all three — only the syntax differs."
   },
   {
+    "objectID": "slides/slides.html#it-starts-before-graduation",
+    "href": "slides/slides.html#it-starts-before-graduation",
+    "title": "Breaking the Syntax Barrier",
+    "section": "It starts before graduation",
+    "text": "It starts before graduation\nThat “Python required” job posting isn’t the first time syntax becomes a barrier.\n\nIt’s also:\n\nIntro Stats in R → the required Methods course next semester is Python\nA capstone or research lab that “just uses whatever the PI uses”\nA stats elective taught by someone who never coordinated with the intro instructor\n\n\n\nEvery course transition is a small version of “closing the tab.”\n\n\n\nBridges from the job-market framing to the curriculum framing.\nThe point: this isn’t just a graduation-day problem — it’s baked into how courses get sequenced, often without anyone planning the language transitions.\nSets up the poll and the multilingual-childhood analogy."
+  },
+  {
     "objectID": "slides/slides.html#quick-poll",
     "href": "slides/slides.html#quick-poll",
     "title": "Breaking the Syntax Barrier",
     "section": "Quick poll",
-    "text": "Quick poll\nWhich best describes your students?\n\nR-first (intro stats, biostats, social science)\nPython-first (CS-adjacent, data science programs)\nMixed — they see both\nNeither yet — pre-programming\n\n\n\nPre-build this poll in Zoom web portal BEFORE the session.\n~30 sec to launch + vote, ~20 sec to read results.\nTie results to the demo: “Most of you said R-first — so we’ll start there.”"
+    "text": "Quick poll\nWhat do you primarily teach/use?\n\nR\nPython\nSQL\nA mix, depending on the course\n\n\n\nPre-build this poll in Zoom web portal BEFORE the session.\n~30 sec to launch + vote, ~20 sec to read results.\nThe punchline: “Look how split this room is — and we’re all instructors. Now imagine a student moving between our courses.”\nIf results are split: that’s the evidence for the next few slides — your curriculum probably looks like this room.\nIf results aren’t split: ask “is your department’s curriculum this consistent, or more mixed than any one of us individually?”"
   },
   {
     "objectID": "slides/slides.html#fear-of-the-new",
@@ -294,11 +301,18 @@
     "text": "Chat waterfall\nType — but don’t hit send yet\n\nWhat’s one language or tool your students fear?\n\n\n3 … 2 … 1 … send.\n\n\n\nThe “don’t send yet” trick produces a visible wave instead of a trickle.\nRead 3-4 aloud. Look for patterns (“lots of SQL — we’ll touch that”).\nCo-host can screenshot the chat for the GitHub repo later."
   },
   {
+    "objectID": "slides/slides.html#like-a-multilingual-childhood",
+    "href": "slides/slides.html#like-a-multilingual-childhood",
+    "title": "Breaking the Syntax Barrier",
+    "section": "Like a multilingual childhood",
+    "text": "Like a multilingual childhood\nKids raised hearing two languages rarely speak both perfectly — but a third, related language later comes much easier.\n\nEarly exposure doesn’t need to produce fluency. It needs to produce familiarity — so the next language doesn’t look foreign.\n\n\n\nThis is the emotional core of the new framing — give it room to breathe.\nNobody expects a bilingual toddler to be “fluent” the way we’d judge an adult. But that early, low-stakes exposure rewires how easy the THIRD language is later.\nSame with R/Python/SQL in intro courses: a student doesn’t need to master Python in week 3 of an R-based intro course. They just need it to stop looking like an alien alphabet.\nBridge: “So what if intro courses gave students that early exposure — on purpose?”"
+  },
+  {
     "objectID": "slides/slides.html#the-thesis",
     "href": "slides/slides.html#the-thesis",
     "title": "Breaking the Syntax Barrier",
     "section": "The thesis",
-    "text": "The thesis\nAI can lower the syntax barrier\n…if we design the activity so students learn the mapping, not just receive the answer.\nBridge → toward mastery Crutch → away from it\n\n\nPlant the bridge/crutch language. It comes back in section 5."
+    "text": "The thesis\nAI can give students that early exposure — on purpose\n…if we design the activity so students learn the mapping, not just receive the answer.\nBridge → toward comfort, then mastery Crutch → away from it\n\nSame payoff as before — an easier job-market transition — but it starts in week 3 of an intro course, not senior year.\n\n\n\nPlant the bridge/crutch language. It comes back in section 5.\nExplicitly connect: this operationalizes the “multilingual childhood” idea.\nDon’t lose the career framing — it’s still the long-term payoff. The near-term payoff is smoother in-curriculum transitions."
   },
   {
     "objectID": "slides/slides.html#demo-prompt-building",
@@ -336,6 +350,13 @@
     "text": "30-sec SQL cameo\n\n11:30 – 12:30 · DEMO part 4 (1 min)\n\n\n\nSQL\nSELECT cyl, AVG(mpg)\nFROM mtcars\nGROUP BY cyl\nHAVING AVG(mpg) &gt; 20;\n\n\ndplyr\nmtcars |&gt;\n  group_by(cyl) |&gt;\n  summarize(m = mean(mpg)) |&gt;\n  filter(m &gt; 20)\n\n\n\nOne concept. Three costumes.\n\n\n\nMove fast. Don’t explain SQL in depth — just show that GROUP BY/HAVING maps cleanly.\nThis is the moment the “same concept, different costume” line earns its keep."
   },
   {
+    "objectID": "slides/slides.html#bringing-this-into-the-classroom",
+    "href": "slides/slides.html#bringing-this-into-the-classroom",
+    "title": "Breaking the Syntax Barrier",
+    "section": "Bringing this into the classroom",
+    "text": "Bringing this into the classroom\nA few low-stakes ways to build in early exposure, starting week 1:\n\nWarm-up: same 5-line script shown in two languages, side by side — “spot the mapping”\nExit ticket: “translate today’s example to [other language] with AI — flag one thing that surprised you”\nRotating worked example: alternate which language the in-class example uses each week\nLab option: students may submit in either language, with a short AI-assisted translation note\n\n\nNone of these require rewriting your course — they’re additions. Low-stakes, recurring, a few minutes at a time.\n\n\n\nThis is the “menu” slide — give instructors several entry points, not one big lift.\nNow we’ll try the prompt-writing piece of this ourselves."
+  },
+  {
     "objectID": "slides/slides.html#activity",
     "href": "slides/slides.html#activity",
     "title": "Breaking the Syntax Barrier",
@@ -368,7 +389,7 @@
     "href": "slides/slides.html#who-benefits-most",
     "title": "Breaking the Syntax Barrier",
     "section": "Who benefits most?",
-    "text": "Who benefits most?\n\n22:30 – 23:30 · WHO (1 min)\n\nBenefits most:\n\nStudents switching ecosystems mid-program\nCareer-switchers with stats but new to programming\nStudents at teaching-focused institutions w/o industry exposure\n\nAt risk of over-reliance:\n\nStudents who haven’t built the underlying concept yet\nStudents using AI to skip — not to bridge\n\n\n\nBe honest: AI translation is most useful AFTER the concept is solid in one language.\nDon’t introduce it as a first encounter with linear regression."
+    "text": "Who benefits most?\n\n22:30 – 23:30 · WHO (1 min)\n\nBenefits most:\n\nStudents moving between courses that use different languages — the everyday case\nStudents switching ecosystems mid-program (capstone, research lab)\nCareer-switchers with stats but new to programming\nStudents at teaching-focused institutions w/o industry exposure\n\nAt risk of over-reliance:\n\nStudents who haven’t built the underlying concept yet\nStudents using AI to skip — not to bridge\n\n\n\nBe honest: AI translation is most useful AFTER the concept is solid in one language.\nDon’t introduce it as a first encounter with linear regression.\n“Everyday case” is the new through-line — most students hit this every time they change courses, not just at graduation."
   },
   {
     "objectID": "slides/slides.html#quick-poll-1",
@@ -382,7 +403,7 @@
     "href": "slides/slides.html#take-this-with-you",
     "title": "Breaking the Syntax Barrier",
     "section": "Take this with you",
-    "text": "Take this with you\n\n24:00 – 25:00 · CLOSE (1 min)\n\nThree things for Monday\n\nOne prompt template — goal · mapping · idiom · check\nOne guardrail — pick the one you just voted for\nOne concept you’ll teach with translation next week\n\n\nRepo: github.com/mneubrander/ecots-2026 · prompt templates + R↔︎Python examples + rubric\n\n\n\nDrop repo link in chat NOW (have it pre-copied).\n“If you remember one thing: same concept, different costume.”\nThank co-host, attendees. Open for Q&A."
+    "text": "Take this with you\n\n24:00 – 25:00 · CLOSE (1 min)\n\nThree things for Monday\n\nOne prompt template — goal · mapping · idiom · check\nOne low-stakes activity — pick one from the classroom menu\nOne concept you’ll teach with translation next week\n\n\nRepo: github.com/mneubrander/ecots-2026 · prompt templates + R↔︎Python examples + rubric\n\n\n\nDrop repo link in chat NOW (have it pre-copied).\n“If you remember one thing: early exposure builds comfort. Comfort builds the bridge to the next course — and eventually the next job.”\nThank co-host, attendees. Open for Q&A."
   },
   {
     "objectID": "slides/slides.html#qa",
