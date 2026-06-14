@@ -1,13 +1,13 @@
 ---
-title: "Try it yourself!"
-subtitle: "Using AI to translate code between R and Python"
+title: "Try It Yourself!"
+subtitle: "pandas groupby ↔ dplyr pipes, with a SQL cameo"
 webr:
-  show-startup-message: false   # Display status of webR initialization
+  show-startup-message: false
 ---
 
 <style>
 .reveal-btn {
-  background-color: #4CAF50; /* green */
+  background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -16,96 +16,104 @@ webr:
   font-size: 16px;
   transition: background-color 0.3s, transform 0.2s;
 }
-
 .reveal-btn:hover {
   background-color: #45a049;
   transform: scale(1.05);
 }
-
 .reveal-btn:active {
   transform: scale(0.98);
 }
-
 .prompt-box, .ai-response-box {
   border-radius: 8px;
   padding: 12px 16px;
   margin: 12px 0;
 }
-
 .prompt-box {
   background-color: #f5f5f5;
   border-left: 4px solid #6c757d;
 }
-
 .ai-response-box {
   background-color: #eef6ff;
   border-left: 4px solid #4A90E2;
 }
-
 .prompt-label, .ai-label {
   font-weight: bold;
   display: block;
   margin-bottom: 6px;
 }
-
 .prompt-label { color: #6c757d; }
 .ai-label { color: #4A90E2; }
-
-.prompt-box pre, .ai-response-box pre {
-  background-color: rgba(255,255,255,0.6);
-  padding: 8px;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
 .match-table {
   width: 100%;
   border-collapse: collapse;
   margin: 15px 0;
 }
-
 .match-table th, .match-table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
   vertical-align: middle;
 }
-
 .match-table th {
   background-color: #4A90E2;
   color: white;
 }
-
-.match-table code {
-  white-space: nowrap;
-}
-
+.match-table code { white-space: nowrap; }
 .match-select {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
-
 .feedback-icon {
   font-size: 18px;
   margin-left: 8px;
 }
+.callout-tip {
+  border-left: 4px solid #4CAF50;
+  background: #f0fff0;
+  border-radius: 5px;
+  padding: 10px 16px;
+  margin: 12px 0;
+}
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.lang-card {
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+}
+.lang-card.r    { background: #fff3f3; border-left: 4px solid #e05c5c; }
+.lang-card.py   { background: #eef6ff; border-left: 4px solid #4A90E2; }
+.lang-card.sql  { background: #fffbe6; border-left: 4px solid #e6a817; }
+.lang-card h4   { margin: 0 0 8px; font-size: 13px; }
+.lang-card pre  { margin: 0; background: rgba(255,255,255,0.6);
+                  padding: 6px 8px; border-radius: 4px; overflow-x: auto; }
 </style>
 
-## Step 1: A shared dataset
 
-For this activity, we'll use a small made-up dataset: **hours studied** vs. **exam score** for 12 students. We'll define the *exact same data* in both R and Python so we can compare the two languages side-by-side.
+## The shared dataset
+
+We'll use a small sales dataset: transactions across three product categories
+over several months. Define it once in each language — the analysis is identical.
 
 ::: panel-tabset
 ## R
 
 ```{webr-r}
-hours <- c(1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10)
-score <- c(52, 55, 61, 64, 68, 70, 73, 78, 82, 85, 88, 91)
-
-study_data <- data.frame(hours = hours, score = score)
-head(study_data)
+sales <- data.frame(
+  month    = c("Jan","Jan","Jan","Feb","Feb","Feb","Mar","Mar","Mar"),
+  category = c("Books","Electronics","Clothing",
+                "Books","Electronics","Clothing",
+                "Books","Electronics","Clothing"),
+  revenue  = c(120, 340, 210, 95, 410, 180, 150, 290, 230),
+  units    = c(12, 4, 15, 9, 5, 13, 14, 3, 17)
+)
+head(sales)
 ```
 
 ## Python
@@ -113,184 +121,237 @@ head(study_data)
 ```{pyodide-python}
 import pandas as pd
 
-hours = [1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10]
-score = [52, 55, 61, 64, 68, 70, 73, 78, 82, 85, 88, 91]
-
-study_data = pd.DataFrame({"hours": hours, "score": score})
-study_data.head()
+sales = pd.DataFrame({
+    "month":    ["Jan","Jan","Jan","Feb","Feb","Feb","Mar","Mar","Mar"],
+    "category": ["Books","Electronics","Clothing",
+                 "Books","Electronics","Clothing",
+                 "Books","Electronics","Clothing"],
+    "revenue":  [120, 340, 210, 95, 410, 180, 150, 290, 230],
+    "units":    [12, 4, 15, 9, 5, 13, 14, 3, 17]
+})
+sales.head()
 ```
 :::
 
-Notice the parallels already: `c()` becomes `[]`, `data.frame()` becomes `pd.DataFrame()`, and `head()` becomes `.head()`.
+---
 
-## Step 2: Fit a linear model — in R
+## Part 1: Group, summarise, and sort
 
-In R, fitting a linear model and getting a full statistical summary takes just two lines:
+The most common data-wrangling task: **total revenue by category, sorted descending**.
+
+### In R — the dplyr pipe
 
 ```{webr-r}
-model <- lm(score ~ hours, data = study_data)
-summary(model)
+library(dplyr)
+
+sales |>
+  group_by(category) |>
+  summarise(
+    total_revenue = sum(revenue),
+    total_units   = sum(units)
+  ) |>
+  arrange(desc(total_revenue))
 ```
 
-## Step 3: From R to Python — ask the AI
-
-Suppose you've never written Python before, but you need to reproduce this analysis. Let's ask an AI assistant for help.
-
-### Prompt: "Translate this R code to Python"
-
-::: {.prompt-box}
-<span class="prompt-label">🧑 Prompt</span>
-
-```
-Translate this R code to Python:
-
-model <- lm(score ~ hours, data = study_data)
-summary(model)
-```
-:::
-
-::: {.ai-response-box}
-<span class="ai-label">🤖 AI response</span>
-
-In Python, the closest equivalent is `scikit-learn`'s `LinearRegression`. Here's the translation:
-
-```python
-from sklearn.linear_model import LinearRegression
-
-X = study_data[["hours"]]
-y = study_data["score"]
-
-model = LinearRegression()
-model.fit(X, y)
-
-print("Intercept:", model.intercept_)
-print("Coefficient:", model.coef_[0])
-```
-:::
-
-Try running the translated code below (the first run may take a few seconds while `scikit-learn` loads):
+### In Python — pandas groupby
 
 ```{pyodide-python}
-from sklearn.linear_model import LinearRegression
-
-X = study_data[["hours"]]
-y = study_data["score"]
-
-model = LinearRegression()
-model.fit(X, y)
-
-print("Intercept:", model.intercept_)
-print("Coefficient:", model.coef_[0])
+(sales
+  .groupby("category")
+  .agg(total_revenue=("revenue", "sum"),
+       total_units=("units",   "sum"))
+  .sort_values("total_revenue", ascending=False)
+  .reset_index()
+)
 ```
 
-### Better prompts: "Take me step by step through the differences and similarities in this code"
+### Side-by-side comparison
 
-The first translation *works*, but a better prompt can help us actually **understand** what changed.
+::: {.callout-tip}
+**Key idiom differences**
 
-::: {.prompt-box}
-<span class="prompt-label">🧑 Prompt</span>
-
-```
-Take me step by step through the differences and similarities
-between the R code and the Python code above.
-```
+| Concept | dplyr (R) | pandas (Python) |
+|---|---|---|
+| Start a chain | `df \|> ...` | `(df...)`  |
+| Group rows | `group_by(category)` | `.groupby("category")` |
+| Summarise | `summarise(name = fn(col))` | `.agg(name=("col", "fn"))` |
+| Sort descending | `arrange(desc(col))` | `.sort_values("col", ascending=False)` |
+| Column names quoted? | Bare names: `category` | Always strings: `"category"` |
 :::
 
-::: {.ai-response-box}
-<span class="ai-label">🤖 AI response</span>
+---
 
-**Similarities**
+## Part 2: Filter, then group
 
-- Both approaches create a **model object** (`model`) that stores the fitted line.
-- Both use the same underlying idea: find the intercept and slope that best fit `score` as a function of `hours`.
-- Both let you inspect the fitted coefficients afterward.
+Now: **average revenue per unit, for months that aren't February**.
 
-**Differences**
+### In R
 
-- **Formula vs. arrays**: R's `lm(score ~ hours, data = study_data)` uses a *formula* (`y ~ x`) and the whole data frame. Python's `LinearRegression().fit(X, y)` instead expects `X` (a table of predictors) and `y` (the outcome) as *separate* objects.
-- **Assignment**: R traditionally uses `<-`; Python always uses `=`.
-- **Output detail**: `summary(model)` in R immediately prints coefficients, standard errors, p-values, and R² — all in one table. `scikit-learn` doesn't print any of this by default; you have to ask for each piece (`model.intercept_`, `model.coef_`) separately, or switch to the `statsmodels` package for an R-like `summary()`.
-- **Column access**: R uses `study_data$hours` or `study_data["hours"]`; pandas uses `study_data["hours"]` or `study_data.hours`.
+```{webr-r}
+library(dplyr)
+
+sales |>
+  filter(month != "Feb") |>
+  group_by(month, category) |>
+  summarise(avg_rev_per_unit = mean(revenue / units), .groups = "drop")
+```
+
+### In Python
+
+```{pyodide-python}
+(sales
+  .query('month != "Feb"')
+  .assign(rev_per_unit=lambda df: df["revenue"] / df["units"])
+  .groupby(["month", "category"])
+  .agg(avg_rev_per_unit=("rev_per_unit", "mean"))
+  .reset_index()
+)
+```
+
+::: {.callout-tip}
+**Idiom flags**
+
+- `filter()` → `.query()` — both accept an expression, but pandas requires a string.
+- `mutate()` → `.assign()` — pandas uses a `lambda` to reference the DataFrame mid-chain.
+- `.groups = "drop"` in dplyr → `.reset_index()` in pandas — both un-nest the groups.
 :::
 
-## Step 4: Match the syntax!
+---
 
-Test what you just learned. For each R snippet, choose its Python equivalent.
+## Part 3: SQL ↔ tidyverse cameo
+
+The same aggregation in all three languages. Notice how SQL is the conceptual
+middle ground — its `GROUP BY` maps directly to both `group_by()` and `.groupby()`.
+
+<div class="three-col">
+<div class="lang-card sql">
+<h4>🗄 SQL</h4>
+<pre>
+SELECT
+  category,
+  SUM(revenue)  AS total_revenue,
+  SUM(units)    AS total_units
+FROM sales
+GROUP BY category
+ORDER BY total_revenue DESC;
+</pre>
+</div>
+<div class="lang-card r">
+<h4>📦 dplyr (R)</h4>
+<pre>
+sales |>
+  group_by(category) |>
+  summarise(
+    total_revenue = sum(revenue),
+    total_units   = sum(units)
+  ) |>
+  arrange(desc(total_revenue))
+</pre>
+</div>
+<div class="lang-card py">
+<h4>🐍 pandas (Python)</h4>
+<pre>
+(sales
+  .groupby("category")
+  .agg(
+    total_revenue=("revenue","sum"),
+    total_units  =("units",  "sum"))
+  .sort_values("total_revenue",
+               ascending=False)
+  .reset_index()
+)
+</pre>
+</div>
+</div>
+
+| SQL clause | dplyr verb | pandas method |
+|---|---|---|
+| `WHERE` | `filter()` | `.query()` |
+| `SELECT col, fn(col)` | `summarise()` | `.agg()` |
+| `GROUP BY` | `group_by()` | `.groupby()` |
+| `ORDER BY ... DESC` | `arrange(desc(...))` | `.sort_values(..., ascending=False)` |
+| `AS alias` | `name = expr` inside `summarise()` | `alias=("col","fn")` inside `.agg()` |
+
+---
+
+## Match the syntax!
+
+For each dplyr snippet, choose its pandas equivalent.
 
 ```{=html}
 <table class="match-table">
   <thead>
-    <tr><th>R</th><th>Python</th><th></th></tr>
+    <tr><th>dplyr (R)</th><th>pandas (Python)</th><th></th></tr>
   </thead>
   <tbody>
     <tr>
-      <td><code>x &lt;- 5</code></td>
+      <td><code>filter(month == "Jan")</code></td>
       <td>
         <select class="match-select" data-correct="b" data-feedback="fb1">
           <option value="">-- choose --</option>
-          <option value="a"><code>x == 5</code></option>
-          <option value="b"><code>x = 5</code></option>
-          <option value="c"><code>x :: 5</code></option>
+          <option value="a"><code>.filter(month="Jan")</code></option>
+          <option value="b"><code>.query('month == "Jan"')</code></option>
+          <option value="c"><code>.where("month", "Jan")</code></option>
         </select>
       </td>
       <td><span id="fb1" class="feedback-icon"></span></td>
     </tr>
     <tr>
-      <td><code>c(1, 2, 3)</code></td>
+      <td><code>group_by(category)</code></td>
       <td>
         <select class="match-select" data-correct="a" data-feedback="fb2">
           <option value="">-- choose --</option>
-          <option value="a"><code>[1, 2, 3]</code></option>
-          <option value="b"><code>(1, 2, 3)</code></option>
-          <option value="c"><code>{1, 2, 3}</code></option>
+          <option value="a"><code>.groupby("category")</code></option>
+          <option value="b"><code>.group("category")</code></option>
+          <option value="c"><code>.aggregate("category")</code></option>
         </select>
       </td>
       <td><span id="fb2" class="feedback-icon"></span></td>
     </tr>
     <tr>
-      <td><code>data.frame(a = x, b = y)</code></td>
+      <td><code>summarise(total = sum(revenue))</code></td>
       <td>
         <select class="match-select" data-correct="c" data-feedback="fb3">
           <option value="">-- choose --</option>
-          <option value="a"><code>np.array([x, y])</code></option>
-          <option value="b"><code>dict(a = x, b = y)</code></option>
-          <option value="c"><code>pd.DataFrame({"a": x, "b": y})</code></option>
+          <option value="a"><code>.summarise(total=sum("revenue"))</code></option>
+          <option value="b"><code>.sum("revenue")</code></option>
+          <option value="c"><code>.agg(total=("revenue", "sum"))</code></option>
         </select>
       </td>
       <td><span id="fb3" class="feedback-icon"></span></td>
     </tr>
     <tr>
-      <td><code>study_data$hours</code></td>
+      <td><code>arrange(desc(revenue))</code></td>
       <td>
         <select class="match-select" data-correct="b" data-feedback="fb4">
           <option value="">-- choose --</option>
-          <option value="a"><code>study_data-&gt;hours</code></option>
-          <option value="b"><code>study_data["hours"]</code></option>
-          <option value="c"><code>study_data::hours</code></option>
+          <option value="a"><code>.sort_values("revenue")</code></option>
+          <option value="b"><code>.sort_values("revenue", ascending=False)</code></option>
+          <option value="c"><code>.order_by("revenue", desc=True)</code></option>
         </select>
       </td>
       <td><span id="fb4" class="feedback-icon"></span></td>
     </tr>
     <tr>
-      <td><code>lm(y ~ x, data = df)</code></td>
+      <td><code>mutate(rev_per_unit = revenue / units)</code></td>
       <td>
         <select class="match-select" data-correct="a" data-feedback="fb5">
           <option value="">-- choose --</option>
-          <option value="a"><code>LinearRegression().fit(X, y)</code></option>
-          <option value="b"><code>lm(y, x)</code></option>
-          <option value="c"><code>regress(df, y, x)</code></option>
+          <option value="a"><code>.assign(rev_per_unit=lambda df: df["revenue"] / df["units"])</code></option>
+          <option value="b"><code>.mutate(rev_per_unit="revenue/units")</code></option>
+          <option value="c"><code>.add_column("rev_per_unit", df["revenue"] / df["units"])</code></option>
         </select>
       </td>
       <td><span id="fb5" class="feedback-icon"></span></td>
     </tr>
     <tr>
-      <td><code>nrow(df)</code></td>
+      <td><code>select(month, revenue)</code></td>
       <td>
         <select class="match-select" data-correct="c" data-feedback="fb6">
           <option value="">-- choose --</option>
-          <option value="a"><code>df.count</code></option>
-          <option value="b"><code>nrow(df)</code></option>
-          <option value="c"><code>len(df)</code></option>
+          <option value="a"><code>.select(["month", "revenue"])</code></option>
+          <option value="b"><code>.keep("month", "revenue")</code></option>
+          <option value="c"><code>[["month", "revenue"]]</code></option>
         </select>
       </td>
       <td><span id="fb6" class="feedback-icon"></span></td>
@@ -322,31 +383,33 @@ function checkMatches() {
 </script>
 ```
 
-## Step 5: Your turn — fill in the blanks
+---
 
-Now let's try a **different** task on a **different** dataset: the correlation between temperature and ice cream sales.
+## Your turn — fill in the blanks
 
-Here's the complete R version:
+Here's the complete R version of a new task: **total units sold per month, keeping
+only months with more than 30 total units**.
 
 ```{webr-r}
-temp <- c(50, 55, 60, 65, 70, 75, 80, 85, 90, 95)
-sales <- c(10, 15, 22, 28, 35, 42, 50, 58, 65, 75)
+library(dplyr)
 
-ice_cream <- data.frame(temp = temp, sales = sales)
-
-cor(ice_cream$temp, ice_cream$sales)
+sales |>
+  group_by(month) |>
+  summarise(total_units = sum(units)) |>
+  filter(total_units > 30) |>
+  arrange(month)
 ```
 
-Now write the equivalent Python — fill in the blanks below and run it!
+Now complete the pandas equivalent below and run it:
 
 ```{pyodide-python}
-import numpy as np
-
-temp = ____
-sales = ____
-
-correlation = np.____(temp, sales)[0, 1]
-print(correlation)
+(sales
+  .groupby(____)
+  .agg(total_units=(____, ____))
+  .reset_index()
+  .query("____ > 30")
+  .sort_values(____)
+)
 ```
 
 <button class="reveal-btn" onclick="document.getElementById('solution').style.display='block'">
@@ -355,12 +418,21 @@ Reveal Solution
 
 ::: {#solution style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;"}
 ```python
-import numpy as np
-
-temp = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
-sales = [10, 15, 22, 28, 35, 42, 50, 58, 65, 75]
-
-correlation = np.corrcoef(temp, sales)[0, 1]
-print(correlation)
+(sales
+  .groupby("month")
+  .agg(total_units=("units", "sum"))
+  .reset_index()
+  .query("total_units > 30")
+  .sort_values("month")
+)
 ```
 :::
+
+---
+
+## Concept check
+
+In dplyr you can write `filter(total_units > 30)` **immediately** after
+`summarise()` because the pipe passes the result forward as a new data frame.
+In pandas, why do you need `.reset_index()` **before** `.query("total_units > 30")`
+— and what happens if you skip it?
