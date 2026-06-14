@@ -22,4 +22,6 @@ As instructors, we must equip students with the credentials needed for an increa
 
 ## Slides
 
-[View the eCOTS 2026 presentation slides](slides/slides.html)
+<iframe src="slides/slides.html" width="100%" height="700" style="border:1px solid #ccc;" allowfullscreen></iframe>
+
+[Open slides in full screen](slides/slides.html)

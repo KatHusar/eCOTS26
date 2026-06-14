@@ -231,6 +231,25 @@ but it starts in **week 3 of an intro course**, not senior year.
 
 ---
 
+# 🎬 Time for the demo {.center background-color="#1f2937" style="color: white;"}
+
+Switch to the course site:
+
+**kathusar.github.io/eCOTS26/lessons/Demo.html**
+
+::: {.small}
+Real R and Python, running live in your browser — no installs.
+:::
+
+::: {.notes}
+- Section break — switch screenshare to the live site.
+- Drop the link in chat.
+- This is the live webR/pyodide page; the next few slides are the prompts
+  you'll run there.
+:::
+
+---
+
 ## Demo: prompt-building {background-color="#fafafa"}
 
 ::: {.timing}
@@ -370,6 +389,25 @@ mtcars |>
 ::: {.notes}
 - Move fast. Don't explain SQL in depth — just show that GROUP BY/HAVING maps cleanly.
 - This is the moment the "same concept, different costume" line earns its keep.
+:::
+
+---
+
+# 🎯 Time for the activity {.center background-color="#1f2937" style="color: white;"}
+
+Switch to the course site:
+
+**kathusar.github.io/eCOTS26/lessons/Activity.html**
+
+::: {.small}
+"Try It Yourself!" — pandas ↔ dplyr ↔ SQL, live in your browser.
+:::
+
+::: {.notes}
+- Section break — switch screenshare to the live "Try It Yourself" page.
+- Drop the link in chat and set a timer.
+- Page includes the groupby/dplyr/SQL comparison, the matching activity,
+  and the fill-in-the-blank exercise.
 :::
 
 ---
@@ -596,65 +634,4 @@ prompt templates + R↔Python examples + rubric
   - "How do you handle students who just copy-paste?" → scaffolded fading + concept checks
   - "Does this work for [language X]?" → yes, same prompt pattern
   - "What about academic integrity?" → frame as a *learning tool*, like a calculator; disclosure norms
-:::
-
----
-
-# Backup slides {.center background-color="#1f2937" style="color: white;"}
-
-::: {.notes}
-- Anything past here is overflow / Q&A support / safety net.
-:::
-
----
-
-## Activity format options {background-color="#fafafa"}
-
-| Format | Setup | Risk | Best for |
-|---|---|---|---|
-| **Padlet / Google Doc** | 5 min | Low | Default; any room size |
-| **Zoom breakouts** | 2 min mid-session | Medium | Deeper engagement, ≥15 attendees |
-| **Chat-driven live demo** | None | Higher | Small/known room |
-| **Custom API website** | 5+ days | **Too high** | Don't ship in 5 days |
-
-::: {.notes}
-- This slide is for YOU during planning, not for the audience.
-- Decide format 24h before based on registration count.
-:::
-
----
-
-## If demo breaks {background-color="#fef2f2"}
-
-1. Switch to the **pre-recorded demo video** (have it open in a tab).
-2. Or pivot to: *"Let's read this output together"* with a printed/slide screenshot of a known-good run.
-3. Don't troubleshoot live for more than 30 seconds.
-
-::: {.notes}
-- Pre-record a 90-sec backup video of the good-prompt demo.
-- Save 3-4 known-good screenshots as slides 28-31 (TODO).
-:::
-
----
-
-## Prompt template (full) {background-color="#f0fdf4"}
-
-```
-I'm a [level] student fluent in [source language].
-Translate this [source] code to [target], AND:
-
-1. Add inline comments mapping each [source] line to [target].
-2. Flag any idiom differences (formulas, indexing,
-   data structures, default behaviors).
-3. End with one concept-check question I should be
-   able to answer before moving on.
-4. Do NOT explain basic syntax I already know in [source].
-
-Code:
-[paste here]
-```
-
-::: {.notes}
-- This is the full version of the template — the slides earlier showed a stats-specific instantiation.
-- The "do NOT explain basic syntax" line is what stops AI from being condescending.
 :::
