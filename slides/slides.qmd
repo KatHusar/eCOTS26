@@ -14,7 +14,7 @@ format: revealjs
 *Empowering Students to Code in Any Language*
 
 ::: {.small}
-ECOTS 2026 · Breakout Session · ~25 min
+ECOTS 2026 · Breakout Session
 :::
 
 ::: {.notes}
@@ -28,9 +28,6 @@ ECOTS 2026 · Breakout Session · ~25 min
 
 ## The scene {.center}
 
-::: {.timing}
-0:30 – 2:00 · HOOK (1.5 min)
-:::
 
 > *A student fluent in R sees "Python required" in a job posting…*
 >
@@ -51,20 +48,12 @@ They lacked confidence in the **syntax**.
 
 ## Quick poll {background-color="#f0f9ff"}
 
-::: {.timing}
-2:00 – 3:00 · POLL #1 (1 min)
-:::
-
 ### Which best describes your students?
 
 a. **R-first** (intro stats, biostats, social science)
 b. **Python-first** (CS-adjacent, data science programs)
 c. **Mixed** — they see both
 d. **Neither yet** — pre-programming
-
-::: {.small}
-Launch Zoom poll. Read results aloud. Reference back during the demo.
-:::
 
 ::: {.notes}
 - Pre-build this poll in Zoom web portal BEFORE the session.
@@ -76,9 +65,6 @@ Launch Zoom poll. Read results aloud. Reference back during the demo.
 
 ## "Fear of the new" {background-color="#fff7ed"}
 
-::: {.timing}
-3:00 – 5:00 · PROBLEM (2 min)
-:::
 
 The barrier isn't conceptual. It's **psychological**.
 
@@ -113,10 +99,6 @@ The barrier isn't conceptual. It's **psychological**.
 
 ## Chat waterfall {background-color="#f0f9ff"}
 
-::: {.timing}
-5:00 – 6:00 · CHAT (1 min)
-:::
-
 ### Type — but **don't hit send yet**
 
 > *What's one language or tool your students fear?*
@@ -134,10 +116,6 @@ The barrier isn't conceptual. It's **psychological**.
 ---
 
 ## The thesis {.center background-color="#ecfdf5"}
-
-::: {.timing}
-6:00 – 6:30 · THESIS (30 sec)
-:::
 
 ### AI can lower the syntax barrier
 
