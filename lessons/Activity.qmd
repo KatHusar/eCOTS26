@@ -95,6 +95,10 @@ webr:
                   padding: 6px 8px; border-radius: 4px; overflow-x: auto; }
 </style>
 
+## Share your thoughts
+
+As you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in (this slidedeck)[https://docs.google.com/presentation/d/1mI8xHcWrm5yyu6YatNTdiBneGG3GNxB7CitujsBBhXk/edit?usp=sharing]
+
 
 ## The shared dataset
 
