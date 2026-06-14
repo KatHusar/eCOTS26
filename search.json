@@ -278,6 +278,13 @@
     "text": "The scene\n\nA student fluent in R sees “Python required” in a job posting…\n…and closes the tab.\n\n\nThey didn’t lack the statistics. They lacked confidence in the syntax.\n\n\n\nTell the real story (Marie or collaborator picks one — pick one you’ve actually seen).\nPause after “closes the tab” — let it land.\nPivot: this isn’t a knowledge gap. It’s a confidence gap."
   },
   {
+    "objectID": "slides/slides.html#same-job.-different-syntax.",
+    "href": "slides/slides.html#same-job.-different-syntax.",
+    "title": "Breaking the Syntax Barrier",
+    "section": "Same job. Different syntax.",
+    "text": "Same job. Different syntax.\nThree real entry-level Data Analyst postings. Same kind of role — look at what each one “requires.”\n\n\n\nDisney — SQL & Python\n\n\n\nHaystack — Excel, SQL, Tableau, Python, or R\n\n\n\nNetflix — Python/R + SQL\n\n\n\nSame job. Three different “required” stacks. A student who only knows R isn’t underqualified — they’re one prompt away.\n\n\n\nThese are real postings, pulled while prepping this talk — not hypothetical.\nPoint at the highlighted line in each: same “data analyst” role, different language combinations listed as requirements.\nTies directly back to “The scene”: this is the exact moment a student self-rejects.\nLand the punchline: the underlying skill (query, summarize, model data) is identical across all three — only the syntax differs."
+  },
+  {
     "objectID": "slides/slides.html#quick-poll",
     "href": "slides/slides.html#quick-poll",
     "title": "Breaking the Syntax Barrier",
