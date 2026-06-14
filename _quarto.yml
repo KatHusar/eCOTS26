@@ -22,10 +22,6 @@ website:
         text: Home
       - href: lessons/Introduction.qmd
         text: Introduction
-      - href: lessons/RCT.qmd
-        text: Randomized Experiments
-      - href: lessons/ATE.qmd
-        text: Estimation
   sidebar:
     style: "floating"
     contents:
@@ -33,9 +29,6 @@ website:
         contents:
           - index.qmd
           - lessons/Introduction.qmd
-          - lessons/RCT.qmd
-          - lessons/ATE.qmd
-          - lessons/next.qmd
 
   page-footer: 
     left: "Built using Quarto Webr."
@@ -57,3 +50,4 @@ webr:
 # Attach webR to every page
 filters:
   - webr
+  - pyodide

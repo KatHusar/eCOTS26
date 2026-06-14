@@ -19,3 +19,18 @@ Students will be able to:
 
 
 
+
+```{webr-r}
+print("Hello")
+```
+
+## In Python
+
+```{pyodide-python}
+
+import numpy as np
+
+X = np.array([[1], [2], [3]])
+y = np.array([2, 4, 6])
+print(y)
+```
