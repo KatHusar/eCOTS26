@@ -17,6 +17,5 @@ Students will be able to:
 
 3.  Execute a difference–in-means calculation to estimate treatment effect.
 
-[![](images/xkcd_causation.png)](https://xkcd.com/552/)
 
 
