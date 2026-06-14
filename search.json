@@ -2,37 +2,25 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome",
+    "title": "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language",
     "section": "",
-    "text": "Welcome to the casual introduction to Causal Inference!",
+    "text": "Welcome to the casual introduction to Causal Inference!\nIn this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.\nStudents will be able to:",
     "crumbs": [
       "Home",
       "Content",
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "index.html#slides",
-    "href": "index.html#slides",
-    "title": "Welcome",
-    "section": "Slides",
-    "text": "Slides\nView the eCOTS 2026 presentation slides\nIn this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.\nStudents will be able to:\n\nDefine what is the study of causal inference.\nIdentify the difference between randomized experiments and observational studies.\nExecute a difference–in-means calculation to estimate treatment effect.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Welcome"
+      "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language"
     ]
   },
   {
     "objectID": "index.html#in-python",
     "href": "index.html#in-python",
-    "title": "Welcome",
+    "title": "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language",
     "section": "In Python",
     "text": "In Python\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
-      "Welcome"
+      "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language"
     ]
   },
   {
