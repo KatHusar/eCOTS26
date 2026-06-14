@@ -1,14 +1,10 @@
 ---
-title: "Welcome"
+title: "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language"
 webr:  
   show-startup-message: false   # Display status of webR initialization
 ---
 
 Welcome to the casual introduction to Causal Inference!
-
-## Slides
-
-[View the eCOTS 2026 presentation slides](slides/slides.html)
 
 
 In this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.
