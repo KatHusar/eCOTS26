@@ -20,15 +20,18 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: lessons/Introduction.qmd
-        text: Introduction
+      - href: lessons/Demo.qmd
+        text: Demo
+      - href: lessons/Activity.qmd
+        text: Try out yourself!
   sidebar:
     style: "floating"
     contents:
       - section: "Content"
         contents:
           - index.qmd
-          - lessons/Introduction.qmd
+          - lessons/Demo.qmd
+          - lessons/Activity.qmd
 
   page-footer: 
     left: "Built using Quarto Webr."
