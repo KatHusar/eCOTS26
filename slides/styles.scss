@@ -53,6 +53,26 @@ $code-block-bg: #f6f8fa;
   font-size: 0.75em;
 }
 
+.reveal .job-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  align-items: start;
+  margin-top: 1em;
+  font-size: 0.6em;
+  text-align: center;
+}
+
+.reveal .job-row img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
 .reveal pre code {
   max-height: 500px;
 }

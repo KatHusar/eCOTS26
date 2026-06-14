@@ -46,6 +46,47 @@ They lacked confidence in the **syntax**.
 
 ---
 
+## Same job. Different syntax. {background-color="#fff7ed"}
+
+Three real **entry-level Data Analyst** postings. Same kind of role —
+look at what each one "requires."
+
+::: {.job-row}
+::: {}
+![](images/Disney.png)
+
+**Disney** — SQL & Python
+:::
+
+::: {}
+![](images/Haystack.png)
+
+**Haystack** — Excel, SQL, Tableau, Python, *or* R
+:::
+
+::: {}
+![](images/Netflix.png)
+
+**Netflix** — Python/R + SQL
+:::
+:::
+
+::: {.fragment}
+**Same job. Three different "required" stacks.**
+A student who only knows R isn't underqualified — they're one prompt away.
+:::
+
+::: {.notes}
+- These are real postings, pulled while prepping this talk — not hypothetical.
+- Point at the highlighted line in each: same "data analyst" role, different
+  language combinations listed as requirements.
+- Ties directly back to "The scene": this is the exact moment a student self-rejects.
+- Land the punchline: the underlying skill (query, summarize, model data) is
+  identical across all three — only the syntax differs.
+:::
+
+---
+
 ## Quick poll {background-color="#f0f9ff"}
 
 ### Which best describes your students?
