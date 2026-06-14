@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Randomized Experiments – eCOTS 2026</title>
+<title>What is Causal Inference? – eCOTS 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,6 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../lessons/Activity.html" rel="next">
+<link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -71,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -96,8 +127,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lessons/Introduction.html"> 
-<span class="menu-text">Introduction</span></a>
+    <a class="nav-link" href="../lessons/Demo.html"> 
+<span class="menu-text">Demo</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/Activity.html"> 
+<span class="menu-text">Try out yourself!</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -115,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Randomized Experiments</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Demo.html">What is Causal Inference?</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,7 +179,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lessons/Introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/Demo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">What is Causal Inference?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/Activity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">What is Causal Inference?</span></a>
   </div>
 </li>
@@ -159,9 +200,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Demo.html">What is Causal Inference?</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Randomized Experiments</h1>
+<h1 class="title">What is Causal Inference?</h1>
 </div>
 
 
@@ -178,222 +219,77 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-is-a-randomized-experiment" class="level1">
-<h1>What is a randomized experiment?</h1>
-<p>Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?</p>
-<p>To do this, researchers try to compare groups that are as similar as possible — except for the thing they’re testing (like the new teaching method).</p>
-<p>One simple (although not always possible) way to do that is a <strong>randomized experiment</strong>, where individuals are randomly selected into <em>treatment</em> and <em>control</em> groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.</p>
-<p>For example, you might randomly assign some students to get the new method (the “treatment”) and others to continue with the old method (the “control”).</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<style>
+.reveal-btn {
+  background-color: #4CAF50; /* green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.reveal-btn:hover {
+  background-color: #45a049;  /* darker green on hover */
+  transform: scale(1.05);     /* slight grow effect */
+}
+
+.reveal-btn:active {
+  transform: scale(0.98);     /* shrink a little when clicked */
+}
+</style>
+<p>Consider the following plot<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<p>What is the reported correlation coefficient (<span class="math inline">\(r^2\)</span>) value?</p>
+<button class="reveal-btn" onclick="document.getElementById('answer1').style.display='block'">
+<p>Reveal Correct Answer</p>
+</button>
+<div id="answer1" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
+<p>💡 <strong>Answer:</strong> <span class="math inline">\(r^2 = 0.954\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A <strong>randomized experiment</strong> refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied.</p>
+<p>Go to the discussion board on <a href="https://canvas.duke.edu/courses/68577/discussion_topics/235131">Canvas</a> and post a short (1–2 sentence) response explaining <strong>one possible reason</strong> for the trend shown in the graph. What might be driving this pattern? Your name will be hidden from other students.</p>
 </div>
 </div>
-</section>
-<section id="observational-studies" class="level1">
-<h1>Observational Studies</h1>
-<p>While randomized experiments are the gold standard for identifying cause-and-effect relationships, they are not always possible. Sometimes it’s unethical, impractical, or too expensive to assign treatments randomly. In these cases, researchers rely on observational data, where they simply collect information about what naturally happens and look for patterns.</p>
-<p>An <strong>observational study</strong> is a type of research where we observe and collect data on people, groups, or things without actively assigning treatments or interventions. Because the groups may differ in ways other than the factor we’re interested in, it can be harder to tell what actually causes an outcome compared to a randomized experiment.</p>
-</section>
-<section id="test-yourself" class="level1">
-<h1>Test yourself</h1>
-<p>Drag each scenario to the appropriate box: “Randomized Experiment” or “Observational Study”.</p>
-<p>Scenarios:</p>
-<ol type="1">
-<li><p>A pharmaceutical company randomly assigns patients to receive either a new drug or a placebo to test its effect on blood pressure.</p></li>
-<li><p>A researcher looks people’s natural coffee-drinking habits and tracks their sleep quality over a month.</p></li>
-<li><p>A public health study tracks the diets of different communities and measures heart disease rates without assigning specific diets.</p></li>
-<li><p>A school randomly assigns some students to a new math tutoring program and compares their test scores to students in the regular program.</p></li>
+<p>Now read through the following AI-generated explanation for this observed trend with a high correlation:</p>
+<p><em>“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”</em></p>
+<p>Sounds a bit far-fetched, doesn’t it?</p>
+<p>What we’re seeing here is a classic example of <strong>correlation not equaling causation</strong> — just because two things move together doesn’t mean one caused the other.</p>
+<p><strong>Causal inference</strong> is all about answering the question: <em>What actually causes what?</em> It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.</p>
+<div id="tip-example" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explore more spurious correlations at this <a href="https://www.tylervigen.com/spurious-correlations">link</a>.</p>
+</div>
+</div>
+<p>In the next section, we will explore one powerful way to study causal relationships: randomized experiments.</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Illustration and AI explanation with the prompt used to generate it can be found at <a href="https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us">Spurious Correlations</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-<div class="drag-exercise" {="html}">
-  <div style="display:flex; justify-content:space-between; width:650px; font-family:'Inter', sans-serif; color:#333;">
-    <!-- Left column: draggable items -->
-    <div id="left" style="width:45%;">
-      <div draggable="true" id="item1" class="draggable">Scenario 1</div>
-      <div draggable="true" id="item2" class="draggable">Scenario 2</div>
-      <div draggable="true" id="item3" class="draggable">Scenario 3</div>
-      <div draggable="true" id="item4" class="draggable">Scenario 4</div>
-    </div>
-
-    <!-- Right column: droppable boxes -->
-    <div id="right" style="width:45%;">
-      <div id="rct" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <strong>Randomized Experiment</strong>
-      </div>
-      <div id="obs" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <strong>Observational Study</strong>
-      </div>
-    </div>
-  </div>
-
-  <!-- Buttons -->
-  <div style="margin-top:15px; display:flex; gap:10px;">
-    <button class="btn check" onclick="checkAnswer()">Check Answers</button>
-    <button class="btn reset" onclick="resetBoxes()">Reset</button>
-  </div>
-  <div id="result" style="margin-top:12px; font-weight:600;"></div>
-
-  <style>
-    .draggable {
-      padding:10px 12px;
-      margin:6px 0;
-      border-radius:10px;
-      background:#f5f7ff;
-      border:1px solid #d0d7ff;
-      box-shadow:0 1px 3px rgba(0,0,0,0.08);
-      cursor:grab;
-      transition:all 0.2s ease;
-    }
-    .draggable:hover {
-      background:#e8edff;
-      transform:translateY(-2px);
-      box-shadow:0 3px 6px rgba(0,0,0,0.1);
-    }
-    .draggable:active {
-      cursor:grabbing;
-      background:#dbe3ff;
-      transform:scale(0.98);
-    }
-    .dropzone {
-      min-height:140px;
-      border:2px dashed #ccc;
-      border-radius:12px;
-      padding:10px;
-      margin-bottom:14px;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      background:#fafafa;
-      transition:all 0.3s ease;
-      position:relative;
-    }
-    .dropzone::after {
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:0;
-    }
-    .dropzone * {
-      position:relative;
-      z-index:1;
-    }
-    .dropzone.hover {
-      background:#eef6ff !important;
-      border-color:#90b4f8 !important;
-    }
-    #treatment { border-color:#90b4f8; background:#f8fbff; }
-    #outcome { border-color:#a8e6a1; background:#f9fff8; }
-    .btn {
-      padding:8px 14px;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:600;
-      font-size:14px;
-      transition:background 0.2s, transform 0.2s;
-    }
-    .btn.check {
-      background:#5c7cfa;
-      color:white;
-    }
-    .btn.check:hover {
-      background:#4b6ef0;
-      transform:translateY(-2px);
-    }
-    .btn.reset {
-      background:#e8e8e8;
-    }
-    .btn.reset:hover {
-      background:#d5d5d5;
-      transform:translateY(-2px);
-    }
-  </style>
-
-  <script>
-    function allowDrop(ev) {
-      if (ev.target.closest(".dropzone")) {
-        ev.preventDefault();
-        const zone = ev.target.closest(".dropzone");
-        zone.classList.add("hover");
-      }
-    }
-
-    function drag(ev) {
-      ev.dataTransfer.setData("text", ev.target.id);
-      // Disable pointer events on all draggables during drag
-      document.querySelectorAll('.draggable').forEach(el => el.style.pointerEvents = "none");
-    }
-
-    function drop(ev) {
-      ev.preventDefault();
-      const itemId = ev.dataTransfer.getData("text");
-      const target = ev.target.closest(".dropzone");
-      if (target) {
-        target.appendChild(document.getElementById(itemId));
-        target.classList.remove("hover");
-      }
-      // Re-enable pointer events
-      document.querySelectorAll('.draggable').forEach(el => el.style.pointerEvents = "");
-    }
-
-    document.addEventListener("dragleave", (e) => {
-      const zone = e.target.closest(".dropzone");
-      if (zone) zone.classList.remove("hover");
-    });
-
-    document.querySelectorAll('.draggable').forEach(div =>
-      div.addEventListener('dragstart', drag)
-    );
-
-    function checkAnswer() {
-      let correct = { "item1":"rct", "item2":"obs", "item3":"obs", "item4":"rct" };
-      let score = 0;
-      for (let item in correct) {
-        let parentId = document.getElementById(item).parentElement.id;
-        if (parentId === correct[item]) score++;
-      }
-      const res = document.getElementById('result');
-      res.innerText = `You got ${score} out of 4 correct!`;
-      res.style.color = score === 4 ? "#2e7d32" : "#d32f2f";
-    }
-
-    function resetBoxes() {
-      const left = document.getElementById("left");
-      document.querySelectorAll('.draggable').forEach(item => left.appendChild(item));
-      document.getElementById('result').innerText = "";
-    }
-  </script>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Food for thought:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>Randomized experiments are not the only way to study causality. There are other experimental designs, like quasi-experiments or field experiments, that can help when full randomization isn’t possible.</p></li>
-<li><p>Experiments can have multiple treatments. Sometimes researchers want to compare more than two groups (e.g., different doses of a drug, or several teaching methods).</p></li>
-<li><p>Thinking about these ideas now will make future lessons on experimental design even more interesting!</p></li>
-</ul>
-</div>
-</div>
-
-
-</section>
-
-</main> <!-- /main -->
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -794,6 +690,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../lessons/Activity.html" class="pagination-link" aria-label="What is Causal Inference?">
+        <span class="nav-page-text">What is Causal Inference?</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -802,7 +710,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/KatHusar/eCOTS26/edit/main/lessons/RCT.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/KatHusar/eCOTS26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/KatHusar/eCOTS26/edit/main/lessons/Demo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/KatHusar/eCOTS26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

@@ -24,36 +24,8 @@
     ]
   },
   {
-    "objectID": "lessons/next.html",
-    "href": "lessons/next.html",
-    "title": "Looking Ahead",
-    "section": "",
-    "text": "In this lesson, you learned:\n\nWhat causal inference is — the science of figuring out what causes what and separating true effects from confounding relationships.\n\nWhat a randomized experiment is — a study design where participants are randomly assigned to treatment and control groups, allowing us to make causal claims.\nHow to estimate a treatment effect — by comparing the average outcomes of the two groups.\n\nThat not all data comes from experiments — sometimes we rely on observational studies, where we observe what happens naturally rather than assigning treatments ourselves."
-  },
-  {
-    "objectID": "lessons/next.html#summary",
-    "href": "lessons/next.html#summary",
-    "title": "Looking Ahead",
-    "section": "",
-    "text": "In this lesson, you learned:\n\nWhat causal inference is — the science of figuring out what causes what and separating true effects from confounding relationships.\n\nWhat a randomized experiment is — a study design where participants are randomly assigned to treatment and control groups, allowing us to make causal claims.\nHow to estimate a treatment effect — by comparing the average outcomes of the two groups.\n\nThat not all data comes from experiments — sometimes we rely on observational studies, where we observe what happens naturally rather than assigning treatments ourselves."
-  },
-  {
-    "objectID": "lessons/next.html#key-takeaways",
-    "href": "lessons/next.html#key-takeaways",
-    "title": "Looking Ahead",
-    "section": "🔍 Key Takeaways",
-    "text": "🔍 Key Takeaways\n\nRandomization helps ensure that differences between groups are due to the treatment, not preexisting factors.\n\nThe difference in group averages gives us a first look at the treatment effect — but future lessons will help us decide whether the difference is statistically significant.\n\nExperiments aren’t always possible — sometimes for ethical, practical, or cost reasons — and that’s where observational data becomes essential."
-  },
-  {
-    "objectID": "lessons/next.html#whats-next",
-    "href": "lessons/next.html#whats-next",
-    "title": "Looking Ahead",
-    "section": "🚀 What’s Next",
-    "text": "🚀 What’s Next\nIn the next section, we’ll move beyond simple comparisons and start exploring:\n\nHow the design of the experiment can be improved.\nHow to handle data from observational studies.\n\nHow to begin thinking about confounders and adjustment."
-  },
-  {
-    "objectID": "lessons/Introduction.html",
-    "href": "lessons/Introduction.html",
+    "objectID": "lessons/Activity.html",
+    "href": "lessons/Activity.html",
     "title": "What is Causal Inference?",
     "section": "",
     "text": "Consider the following plot1:\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\nNow read through the following AI-generated explanation for this observed trend with a high correlation:\n“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”\nSounds a bit far-fetched, doesn’t it?\nWhat we’re seeing here is a classic example of correlation not equaling causation — just because two things move together doesn’t mean one caused the other.\nCausal inference is all about answering the question: What actually causes what? It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.\nIn the next section, we will explore one powerful way to study causal relationships: randomized experiments.",
@@ -64,8 +36,8 @@
     ]
   },
   {
-    "objectID": "lessons/Introduction.html#footnotes",
-    "href": "lessons/Introduction.html#footnotes",
+    "objectID": "lessons/Activity.html#footnotes",
+    "href": "lessons/Activity.html#footnotes",
     "title": "What is Causal Inference?",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nIllustration and AI explanation with the prompt used to generate it can be found at Spurious Correlations.↩︎",
@@ -76,66 +48,27 @@
     ]
   },
   {
-    "objectID": "lessons/RCT.html",
-    "href": "lessons/RCT.html",
-    "title": "Randomized Experiments",
+    "objectID": "lessons/Demo.html",
+    "href": "lessons/Demo.html",
+    "title": "What is Causal Inference?",
     "section": "",
-    "text": "What is a randomized experiment?\nImagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?\nTo do this, researchers try to compare groups that are as similar as possible — except for the thing they’re testing (like the new teaching method).\nOne simple (although not always possible) way to do that is a randomized experiment, where individuals are randomly selected into treatment and control groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.\nFor example, you might randomly assign some students to get the new method (the “treatment”) and others to continue with the old method (the “control”).\n\n\n\n\n\n\nNoteDefinition\n\n\n\nA randomized experiment refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied.\n\n\n\n\nObservational Studies\nWhile randomized experiments are the gold standard for identifying cause-and-effect relationships, they are not always possible. Sometimes it’s unethical, impractical, or too expensive to assign treatments randomly. In these cases, researchers rely on observational data, where they simply collect information about what naturally happens and look for patterns.\nAn observational study is a type of research where we observe and collect data on people, groups, or things without actively assigning treatments or interventions. Because the groups may differ in ways other than the factor we’re interested in, it can be harder to tell what actually causes an outcome compared to a randomized experiment.\n\n\nTest yourself\nDrag each scenario to the appropriate box: “Randomized Experiment” or “Observational Study”.\nScenarios:\n\nA pharmaceutical company randomly assigns patients to receive either a new drug or a placebo to test its effect on blood pressure.\nA researcher looks people’s natural coffee-drinking habits and tracks their sleep quality over a month.\nA public health study tracks the diets of different communities and measures heart disease rates without assigning specific diets.\nA school randomly assigns some students to a new math tutoring program and compares their test scores to students in the regular program.\n\n\n  \n    \n    \n      Scenario 1\n      Scenario 2\n      Scenario 3\n      Scenario 4\n    \n\n    \n    \n      \n        Randomized Experiment\n      \n      \n        Observational Study\n      \n    \n  \n\n  \n  \n    Check Answers\n    Reset\n  \n  \n\n  \n\n  \n\n\n\n\n\n\n\nNoteFood for thought:\n\n\n\n\nRandomized experiments are not the only way to study causality. There are other experimental designs, like quasi-experiments or field experiments, that can help when full randomization isn’t possible.\nExperiments can have multiple treatments. Sometimes researchers want to compare more than two groups (e.g., different doses of a drug, or several teaching methods).\nThinking about these ideas now will make future lessons on experimental design even more interesting!"
+    "text": "Consider the following plot1:\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\nNow read through the following AI-generated explanation for this observed trend with a high correlation:\n“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”\nSounds a bit far-fetched, doesn’t it?\nWhat we’re seeing here is a classic example of correlation not equaling causation — just because two things move together doesn’t mean one caused the other.\nCausal inference is all about answering the question: What actually causes what? It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.\nIn the next section, we will explore one powerful way to study causal relationships: randomized experiments.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "What is Causal Inference?"
+    ]
   },
   {
-    "objectID": "lessons/ATE.html",
-    "href": "lessons/ATE.html",
-    "title": "Treatment Effect Estimation",
-    "section": "",
-    "text": "Example: Suppose you decided to test whether the new method improves test scores. They randomly assign 10 of your students to the new method (Treatment Group) and 10 students to the regular method (Control Group).\n\n\n\nGroup\nTest Scores\n\n\n\n\nTreatment Group\n88, 90, 85, 92, 87, 91, 89, 93, 90, 88\n\n\nControl Group\n80, 82, 78, 85, 81, 79, 83, 84, 82, 80\n\n\n\nHow can you evaluate the effect of the new method (treatment)?\n\n\n\n\n\n\nTipTreatment effect estimation\n\n\n\nAfter performing a randomized experiment, we can directly compare the two groups by looking at the difference in their average outcomes.\n\n\nStep 1: Calculate the average score\n\nTreatment Group average:\n\\[\\frac{88 + 90 + 85 + 92 + 87 + 91 + 89 + 93 + 90 + 88}{10} = 89.3\\]\nControl Group average:\n\\[\n\\frac{80 + 82 + 78 + 85 + 81 + 79 + 83 + 84 + 82 + 80}{10} = 81.4\n\\]\n\nStep 2: Compare the averages\nThe difference is:\n\\(89.3 - 81.4 = 7.9 \\text{ points}\\)\nSince the students were randomly assigned, we can be confident that this difference is caused by the new study program rather than other factors.\nYou can use the following code chunks as a calculator: just press the Run Code button.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nWarning\n\n\n\nThis gives us a single-number estimate of the difference between the groups. However, we can’t yet conclude whether this difference is statistically significant. Don’t worry — future statistics classes will teach us how to test that! 🙂\n\n\n\n\nExample: A botanist wants to test whether a new fertilizer helps plants grow taller. She randomly assigns 12 plants to receive the new fertilizer (Treatment Group) and 12 plants to receive regular soil (Control Group).\n\n\n\nGroup\nPlant Height (cm)\n\n\n\n\nTreatment Group\n25, 27, 26, 28, 24, 27, 26, 29, 25, 28, 27, 26\n\n\nControl Group\n20, 22, 21, 19, 21, 20, 22, 19, 21, 20, 21, 20\n\n\n\n\nWhat is the average height of the Treatment Group? Enter your answer with one decimal place (tenth place).\n\nFeel free to add calculations to the code chunk below or use an external calculator.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n  \n  \n    Check Answer\n  \n  \n\n\n\nWhat is the average height of the Control Group? Enter your answer with one decimal place (tenth place).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n  \n  \n    Check Answer\n  \n  \n\n\nEstimate the treatment effect? Enter your answer with one decimal place (tenth place).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n  \n  \n    Check Answer"
-  },
-  {
-    "objectID": "lessons/ATE.html#try-it-yourself",
-    "href": "lessons/ATE.html#try-it-yourself",
-    "title": "Treatment Effect Estimation",
-    "section": "",
-    "text": "Example: A botanist wants to test whether a new fertilizer helps plants grow taller. She randomly assigns 12 plants to receive the new fertilizer (Treatment Group) and 12 plants to receive regular soil (Control Group).\n\n\n\nGroup\nPlant Height (cm)\n\n\n\n\nTreatment Group\n25, 27, 26, 28, 24, 27, 26, 29, 25, 28, 27, 26\n\n\nControl Group\n20, 22, 21, 19, 21, 20, 22, 19, 21, 20, 21, 20\n\n\n\n\nWhat is the average height of the Treatment Group? Enter your answer with one decimal place (tenth place).\n\nFeel free to add calculations to the code chunk below or use an external calculator.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n  \n  \n    Check Answer\n  \n  \n\n\n\nWhat is the average height of the Control Group? Enter your answer with one decimal place (tenth place).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n  \n  \n    Check Answer\n  \n  \n\n\nEstimate the treatment effect? Enter your answer with one decimal place (tenth place).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n  \n  \n    Check Answer"
-  },
-  {
-    "objectID": "lessons/try_page.html",
-    "href": "lessons/try_page.html",
-    "title": "TRY out page",
-    "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "lessons/try_page.html#what-is-causal-inference",
-    "href": "lessons/try_page.html#what-is-causal-inference",
-    "title": "TRY out page",
-    "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "lessons/try_page.html#question",
-    "href": "lessons/try_page.html#question",
-    "title": "TRY out page",
-    "section": "Question",
-    "text": "Question\nCompute the difference in means between treated and control groups.\n\n\n\nReveal Correct Answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z."
-  },
-  {
-    "objectID": "lessons/try_page.html#instructions",
-    "href": "lessons/try_page.html#instructions",
-    "title": "TRY out page",
-    "section": "Instructions",
-    "text": "Instructions\nMatch each description on the left with the correct variable type on the right.\n\nTreatment = variable that we manipulate\n\nOutcome = variable we measure\n\n\n\n\nDescription\nMatch\n\n\n\n\n1. Did the student receive the new teaching method?\n❓\n\n\n2. Test score after the intervention\n❓\n\n\n3. Whether the patient got a medication\n❓\n\n\n4. Blood pressure after treatment\n❓\n\n\n\n\n\nReveal Answers\n\n\n\n\nDescription\nAnswer\n\n\n\n\n1. Did the student receive the new teaching method?\nTreatment\n\n\n2. Test score after the intervention\nOutcome\n\n\n3. Whether the patient got a medication\nTreatment\n\n\n4. Blood pressure after treatment\nOutcome"
-  },
-  {
-    "objectID": "lessons/try_page.html#drag-and-drop-matching-treatment-vs-outcome",
-    "href": "lessons/try_page.html#drag-and-drop-matching-treatment-vs-outcome",
-    "title": "TRY out page",
-    "section": "Drag-and-Drop Matching: Treatment vs Outcome",
-    "text": "Drag-and-Drop Matching: Treatment vs Outcome\n\n  \n    \n    \n      Student got new method\n      Test score after intervention\n      Patient received medication\n      Blood pressure after treatment\n    \n\n    \n    \n      \n        Treatment\n      \n      \n        Outcome\n      \n    \n  \n\n  \n  \n    Check Answers\n    Reset"
-  },
-  {
-    "objectID": "lessons/try_page.html#matching-exercise-treatment-vs-outcome",
-    "href": "lessons/try_page.html#matching-exercise-treatment-vs-outcome",
-    "title": "TRY out page",
-    "section": "Matching Exercise: Treatment vs Outcome",
-    "text": "Matching Exercise: Treatment vs Outcome\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSuppose a randomized experiment gives the following group averages:\n\n\n\nTreatment Group average: 89.3\n\n\nControl Group average: 81.4\n\n\n\nWhat is the difference between the Treatment and Control group averages?\n\n Check Answer"
+    "objectID": "lessons/Demo.html#footnotes",
+    "href": "lessons/Demo.html#footnotes",
+    "title": "What is Causal Inference?",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIllustration and AI explanation with the prompt used to generate it can be found at Spurious Correlations.↩︎",
+    "crumbs": [
+      "Home",
+      "Content",
+      "What is Causal Inference?"
+    ]
   }
 ]
