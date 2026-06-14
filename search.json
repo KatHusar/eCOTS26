@@ -2,85 +2,73 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language",
+    "title": "eCOTS 2026: Breaking the Syntax Barrier",
     "section": "",
-    "text": "Welcome to the casual introduction to Causal Inference!\nIn this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.\nStudents will be able to:",
+    "text": "eCOTS 2026\nTuesday, June 16, 2026\n3:45 pm – 4:15 pm",
     "crumbs": [
       "Home",
       "Content",
-      "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language"
-    ]
-  },
-  {
-    "objectID": "index.html#in-python",
-    "href": "index.html#in-python",
-    "title": "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language",
-    "section": "In Python",
-    "text": "In Python\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language"
+      "eCOTS 2026: Breaking the Syntax Barrier"
     ]
   },
   {
     "objectID": "index.html#slides",
     "href": "index.html#slides",
-    "title": "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language",
+    "title": "eCOTS 2026: Breaking the Syntax Barrier",
     "section": "Slides",
     "text": "Slides\nView the eCOTS 2026 presentation slides",
     "crumbs": [
       "Home",
       "Content",
-      "eCOTS 2026: Breaking the Syntax Barrier: Empowering Students to Code in Any Language"
+      "eCOTS 2026: Breaking the Syntax Barrier"
     ]
   },
   {
-    "objectID": "lessons/Demo.html",
-    "href": "lessons/Demo.html",
-    "title": "What is Causal Inference?",
-    "section": "",
-    "text": "Consider the following plot1:\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\nNow read through the following AI-generated explanation for this observed trend with a high correlation:\n“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”\nSounds a bit far-fetched, doesn’t it?\nWhat we’re seeing here is a classic example of correlation not equaling causation — just because two things move together doesn’t mean one caused the other.\nCausal inference is all about answering the question: What actually causes what? It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.\nIn the next section, we will explore one powerful way to study causal relationships: randomized experiments.",
+    "objectID": "lessons/Demo.html#in-python",
+    "href": "lessons/Demo.html#in-python",
+    "title": "Demo",
+    "section": "In Python",
+    "text": "In Python\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nConsider the following plot1:\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\n\nReveal Correct Answer\n\n\n💡 Answer: \\(r^2 = 0.954\\).\n\n\n\n\n\n\n\nImportant\n\n\n\nGo to the discussion board on Canvas and post a short (1–2 sentence) response explaining one possible reason for the trend shown in the graph. What might be driving this pattern? Your name will be hidden from other students.\n\n\nNow read through the following AI-generated explanation for this observed trend with a high correlation:\n“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”\nSounds a bit far-fetched, doesn’t it?\nWhat we’re seeing here is a classic example of correlation not equaling causation — just because two things move together doesn’t mean one caused the other.\nCausal inference is all about answering the question: What actually causes what? It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.\n\n\n\n\n\n\nTip 1\n\n\n\nExplore more spurious correlations at this link.\n\n\nIn the next section, we will explore one powerful way to study causal relationships: randomized experiments.",
     "crumbs": [
       "Home",
       "Content",
-      "What is Causal Inference?"
+      "Demo"
     ]
   },
   {
     "objectID": "lessons/Demo.html#footnotes",
     "href": "lessons/Demo.html#footnotes",
-    "title": "What is Causal Inference?",
+    "title": "Demo",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nIllustration and AI explanation with the prompt used to generate it can be found at Spurious Correlations.↩︎",
     "crumbs": [
       "Home",
       "Content",
-      "What is Causal Inference?"
+      "Demo"
     ]
   },
   {
     "objectID": "lessons/Activity.html",
     "href": "lessons/Activity.html",
-    "title": "What is Causal Inference?",
+    "title": "Try for yourself",
     "section": "",
     "text": "Consider the following plot1:\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\nNow read through the following AI-generated explanation for this observed trend with a high correlation:\n“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”\nSounds a bit far-fetched, doesn’t it?\nWhat we’re seeing here is a classic example of correlation not equaling causation — just because two things move together doesn’t mean one caused the other.\nCausal inference is all about answering the question: What actually causes what? It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.\nIn the next section, we will explore one powerful way to study causal relationships: randomized experiments.",
     "crumbs": [
       "Home",
       "Content",
-      "What is Causal Inference?"
+      "Try for yourself"
     ]
   },
   {
     "objectID": "lessons/Activity.html#footnotes",
     "href": "lessons/Activity.html#footnotes",
-    "title": "What is Causal Inference?",
+    "title": "Try for yourself",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nIllustration and AI explanation with the prompt used to generate it can be found at Spurious Correlations.↩︎",
     "crumbs": [
       "Home",
       "Content",
-      "What is Causal Inference?"
+      "Try for yourself"
     ]
   },
   {
