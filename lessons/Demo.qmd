@@ -1,6 +1,7 @@
 ---
-title: "Demo"
-webr:  
+title: "Demo!"
+subtitle: "Using AI to translate code between R and Python"
+webr:
   show-startup-message: false   # Display status of webR initialization
 ---
 
@@ -17,77 +18,349 @@ webr:
 }
 
 .reveal-btn:hover {
-  background-color: #45a049;  /* darker green on hover */
-  transform: scale(1.05);     /* slight grow effect */
+  background-color: #45a049;
+  transform: scale(1.05);
 }
 
 .reveal-btn:active {
-  transform: scale(0.98);     /* shrink a little when clicked */
+  transform: scale(0.98);
+}
+
+.prompt-box, .ai-response-box {
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+
+.prompt-box {
+  background-color: #f5f5f5;
+  border-left: 4px solid #6c757d;
+}
+
+.ai-response-box {
+  background-color: #eef6ff;
+  border-left: 4px solid #4A90E2;
+}
+
+.prompt-label, .ai-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.prompt-label { color: #6c757d; }
+.ai-label { color: #4A90E2; }
+
+.prompt-box pre, .ai-response-box pre {
+  background-color: rgba(255,255,255,0.6);
+  padding: 8px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.match-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.match-table th, .match-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.match-table th {
+  background-color: #4A90E2;
+  color: white;
+}
+
+.match-table code {
+  white-space: nowrap;
+}
+
+.match-select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.feedback-icon {
+  font-size: 18px;
+  margin-left: 8px;
 }
 </style>
 
+## Step 1: A shared dataset
+
+For this activity, we'll use a small made-up dataset: **hours studied** vs. **exam score** for 12 students. We'll define the *exact same data* in both R and Python so we can compare the two languages side-by-side.
+
+::: panel-tabset
+## R
+
 ```{webr-r}
-print("Hello")
+hours <- c(1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10)
+score <- c(52, 55, 61, 64, 68, 70, 73, 78, 82, 85, 88, 91)
+
+study_data <- data.frame(hours = hours, score = score)
+head(study_data)
 ```
 
-## In Python
+## Python
 
 ```{pyodide-python}
+import pandas as pd
 
-import numpy as np
+hours = [1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10]
+score = [52, 55, 61, 64, 68, 70, 73, 78, 82, 85, 88, 91]
 
-X = np.array([[1], [2], [3]])
-y = np.array([2, 4, 6])
-print(y)
+study_data = pd.DataFrame({"hours": hours, "score": score})
+study_data.head()
+```
+:::
+
+Notice the parallels already: `c()` becomes `[]`, `data.frame()` becomes `pd.DataFrame()`, and `head()` becomes `.head()`.
+
+## Step 2: Fit a linear model — in R
+
+In R, fitting a linear model and getting a full statistical summary takes just two lines:
+
+```{webr-r}
+model <- lm(score ~ hours, data = study_data)
+summary(model)
 ```
 
+## Step 3: From R to Python — ask the AI
 
+Suppose you've never written Python before, but you need to reproduce this analysis. Let's ask an AI assistant for help.
 
-Consider the following plot[^1]:
+### Prompt: "Translate this R code to Python"
 
-[^1]: Illustration from [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us)
+::: {.prompt-box}
+<span class="prompt-label">🧑 Prompt</span>
 
-What is the reported correlation coefficient ($r^2$) value?
+```
+Translate this R code to Python:
 
-<button class="reveal-btn" onclick="document.getElementById(&#39;answer1&#39;).style.display=&#39;block&#39;">
+model <- lm(score ~ hours, data = study_data)
+summary(model)
+```
+:::
 
-Reveal Correct Answer
+::: {.ai-response-box}
+<span class="ai-label">🤖 AI response</span>
 
+In Python, the closest equivalent is `scikit-learn`'s `LinearRegression`. Here's the translation:
+
+```python
+from sklearn.linear_model import LinearRegression
+
+X = study_data[["hours"]]
+y = study_data["score"]
+
+model = LinearRegression()
+model.fit(X, y)
+
+print("Intercept:", model.intercept_)
+print("Coefficient:", model.coef_[0])
+```
+:::
+
+Try running the translated code below (the first run may take a few seconds while `scikit-learn` loads):
+
+```{pyodide-python}
+from sklearn.linear_model import LinearRegression
+
+X = study_data[["hours"]]
+y = study_data["score"]
+
+model = LinearRegression()
+model.fit(X, y)
+
+print("Intercept:", model.intercept_)
+print("Coefficient:", model.coef_[0])
+```
+
+### Better prompts: "Take me step by step through the differences and similarities in this code"
+
+The first translation *works*, but a better prompt can help us actually **understand** what changed.
+
+::: {.prompt-box}
+<span class="prompt-label">🧑 Prompt</span>
+
+```
+Take me step by step through the differences and similarities
+between the R code and the Python code above.
+```
+:::
+
+::: {.ai-response-box}
+<span class="ai-label">🤖 AI response</span>
+
+**Similarities**
+
+- Both approaches create a **model object** (`model`) that stores the fitted line.
+- Both use the same underlying idea: find the intercept and slope that best fit `score` as a function of `hours`.
+- Both let you inspect the fitted coefficients afterward.
+
+**Differences**
+
+- **Formula vs. arrays**: R's `lm(score ~ hours, data = study_data)` uses a *formula* (`y ~ x`) and the whole data frame. Python's `LinearRegression().fit(X, y)` instead expects `X` (a table of predictors) and `y` (the outcome) as *separate* objects.
+- **Assignment**: R traditionally uses `<-`; Python always uses `=`.
+- **Output detail**: `summary(model)` in R immediately prints coefficients, standard errors, p-values, and R² — all in one table. `scikit-learn` doesn't print any of this by default; you have to ask for each piece (`model.intercept_`, `model.coef_`) separately, or switch to the `statsmodels` package for an R-like `summary()`.
+- **Column access**: R uses `study_data$hours` or `study_data["hours"]`; pandas uses `study_data["hours"]` or `study_data.hours`.
+:::
+
+## Step 4: Match the syntax!
+
+Test what you just learned. For each R snippet, choose its Python equivalent.
+
+```{=html}
+<table class="match-table">
+  <thead>
+    <tr><th>R</th><th>Python</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>x &lt;- 5</code></td>
+      <td>
+        <select class="match-select" data-correct="b" data-feedback="fb1">
+          <option value="">-- choose --</option>
+          <option value="a"><code>x == 5</code></option>
+          <option value="b"><code>x = 5</code></option>
+          <option value="c"><code>x :: 5</code></option>
+        </select>
+      </td>
+      <td><span id="fb1" class="feedback-icon"></span></td>
+    </tr>
+    <tr>
+      <td><code>c(1, 2, 3)</code></td>
+      <td>
+        <select class="match-select" data-correct="a" data-feedback="fb2">
+          <option value="">-- choose --</option>
+          <option value="a"><code>[1, 2, 3]</code></option>
+          <option value="b"><code>(1, 2, 3)</code></option>
+          <option value="c"><code>{1, 2, 3}</code></option>
+        </select>
+      </td>
+      <td><span id="fb2" class="feedback-icon"></span></td>
+    </tr>
+    <tr>
+      <td><code>data.frame(a = x, b = y)</code></td>
+      <td>
+        <select class="match-select" data-correct="c" data-feedback="fb3">
+          <option value="">-- choose --</option>
+          <option value="a"><code>np.array([x, y])</code></option>
+          <option value="b"><code>dict(a = x, b = y)</code></option>
+          <option value="c"><code>pd.DataFrame({"a": x, "b": y})</code></option>
+        </select>
+      </td>
+      <td><span id="fb3" class="feedback-icon"></span></td>
+    </tr>
+    <tr>
+      <td><code>study_data$hours</code></td>
+      <td>
+        <select class="match-select" data-correct="b" data-feedback="fb4">
+          <option value="">-- choose --</option>
+          <option value="a"><code>study_data-&gt;hours</code></option>
+          <option value="b"><code>study_data["hours"]</code></option>
+          <option value="c"><code>study_data::hours</code></option>
+        </select>
+      </td>
+      <td><span id="fb4" class="feedback-icon"></span></td>
+    </tr>
+    <tr>
+      <td><code>lm(y ~ x, data = df)</code></td>
+      <td>
+        <select class="match-select" data-correct="a" data-feedback="fb5">
+          <option value="">-- choose --</option>
+          <option value="a"><code>LinearRegression().fit(X, y)</code></option>
+          <option value="b"><code>lm(y, x)</code></option>
+          <option value="c"><code>regress(df, y, x)</code></option>
+        </select>
+      </td>
+      <td><span id="fb5" class="feedback-icon"></span></td>
+    </tr>
+    <tr>
+      <td><code>nrow(df)</code></td>
+      <td>
+        <select class="match-select" data-correct="c" data-feedback="fb6">
+          <option value="">-- choose --</option>
+          <option value="a"><code>df.count</code></option>
+          <option value="b"><code>nrow(df)</code></option>
+          <option value="c"><code>len(df)</code></option>
+        </select>
+      </td>
+      <td><span id="fb6" class="feedback-icon"></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="reveal-btn" onclick="checkMatches()">Check Answers</button>
+<p id="match-score" style="font-weight: bold; margin-top: 10px;"></p>
+
+<script>
+function checkMatches() {
+  const selects = document.querySelectorAll('.match-select');
+  let correct = 0;
+  selects.forEach(sel => {
+    const fb = document.getElementById(sel.dataset.feedback);
+    if (sel.value === "") {
+      fb.textContent = "";
+    } else if (sel.value === sel.dataset.correct) {
+      fb.textContent = "✅";
+      correct++;
+    } else {
+      fb.textContent = "❌";
+    }
+  });
+  document.getElementById('match-score').textContent =
+    `You got ${correct} out of ${selects.length} correct!`;
+}
+</script>
+```
+
+## Step 5: Your turn — fill in the blanks
+
+Now let's try a **different** task on a **different** dataset: the correlation between temperature and ice cream sales.
+
+Here's the complete R version:
+
+```{webr-r}
+temp <- c(50, 55, 60, 65, 70, 75, 80, 85, 90, 95)
+sales <- c(10, 15, 22, 28, 35, 42, 50, 58, 65, 75)
+
+ice_cream <- data.frame(temp = temp, sales = sales)
+
+cor(ice_cream$temp, ice_cream$sales)
+```
+
+Now write the equivalent Python — fill in the blanks below and run it!
+
+```{pyodide-python}
+import numpy as np
+
+temp = ____
+sales = ____
+
+correlation = np.____(temp, sales)[0, 1]
+print(correlation)
+```
+
+<button class="reveal-btn" onclick="document.getElementById('solution').style.display='block'">
+Reveal Solution
 </button>
 
-::: {#answer1 style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;"}
-💡 <strong>Answer:</strong> $r^2 = 0.954$.
+::: {#solution style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;"}
+```python
+import numpy as np
+
+temp = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
+sales = [10, 15, 22, 28, 35, 42, 50, 58, 65, 75]
+
+correlation = np.corrcoef(temp, sales)[0, 1]
+print(correlation)
+```
 :::
-
-
-
-
-::: {.callout-important }
-Go to the discussion board on [Canvas](https://canvas.duke.edu/courses/68577/discussion_topics/235131) and post a short (1–2 sentence) response explaining **one possible reason** for the trend shown in the graph. What might be driving this pattern? Your name will be hidden from other students.
-:::
-
-
-Now read through the following AI-generated explanation for this observed trend with a high correlation:
-
-
-*"As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State's affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it's not just the students who deserve a well-tailored education!"*
-
-Sounds a bit far-fetched, doesn’t it?
-
-What we’re seeing here is a classic example of **correlation not equaling causation** — just because two things move together doesn’t mean one caused the other.
-
-**Causal inference** is all about answering the question: *What actually causes what?*
-It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.
-
-
-
-::: {#tip-example .callout-tip}
-
-Explore more spurious correlations at this [link](https://www.tylervigen.com/spurious-correlations).
-:::
-
-
-In the next section, we will explore one powerful way to study causal relationships: randomized experiments.
-
-
-[^1]: Illustration and AI explanation with the prompt used to generate it can be found at [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us).
