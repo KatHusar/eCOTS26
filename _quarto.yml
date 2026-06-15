@@ -10,6 +10,7 @@ engine: knitr
 format:
   html:
     webR: true
+    theme: styles.scss
 
 website:
   page-navigation: true
