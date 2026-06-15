@@ -10,7 +10,6 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Marie Neubrander &amp; Kat Husar">
-  <meta name="dcterms.date" content="2026-01-01">
   <title>Breaking the Syntax Barrier</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,73 +28,8 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-      }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-    div.sourceCode
-      { color: #24292e;  }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #24292e; } /* Normal */
-    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
-    code span.an { color: #6a737d; } /* Annotation */
-    code span.at { color: #d73a49; } /* Attribute */
-    code span.bn { color: #005cc5; } /* BaseN */
-    code span.bu { color: #d73a49; } /* BuiltIn */
-    code span.cf { color: #d73a49; } /* ControlFlow */
-    code span.ch { color: #032f62; } /* Char */
-    code span.cn { color: #005cc5; } /* Constant */
-    code span.co { color: #6a737d; } /* Comment */
-    code span.cv { color: #6a737d; } /* CommentVar */
-    code span.do { color: #6a737d; } /* Documentation */
-    code span.dt { color: #d73a49; } /* DataType */
-    code span.dv { color: #005cc5; } /* DecVal */
-    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
-    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
-    code span.fl { color: #005cc5; } /* Float */
-    code span.fu { color: #6f42c1; } /* Function */
-    code span.im { color: #032f62; } /* Import */
-    code span.in { color: #6a737d; } /* Information */
-    code span.kw { color: #d73a49; } /* Keyword */
-    code span.op { color: #24292e; } /* Operator */
-    code span.ot { color: #6f42c1; } /* Other */
-    code span.pp { color: #d73a49; } /* Preprocessor */
-    code span.re { color: #6a737d; } /* RegionMarker */
-    code span.sc { color: #005cc5; } /* SpecialChar */
-    code span.ss { color: #032f62; } /* SpecialString */
-    code span.st { color: #032f62; } /* String */
-    code span.va { color: #e36209; } /* Variable */
-    code span.vs { color: #032f62; } /* VerbatimString */
-    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-c268c77ce815e31d3cf70a6d126bb9b5.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-c6490110a4d0e0a0ff9f83e4605e0db5.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -204,11 +138,10 @@ Marie Neubrander &amp; Kat Husar
 </div>
 </div>
 
-  <p class="date">2026-01-01</p>
 </section>
-<section class="slide level2 center">
+<section class="slide level2 center" data-background-color="#ffffff">
 <h2>Welcome</h2>
-<p>: <strong>Breaking the Syntax Barrier</strong></p>
+<p><strong>Breaking the Syntax Barrier</strong></p>
 <p><em>Empowering Students to Code in Any Language</em></p>
 <div class="small">
 <p>ECOTS 2026 · Breakout Session</p>
@@ -216,7 +149,6 @@ Marie Neubrander &amp; Kat Husar
 <aside class="notes">
 <ul>
 <li>Smile, wave, name + institution.</li>
-<li>“Today we want to talk about something we’ve all watched happen: a student who’s perfectly capable in one language sees a job posting in another, and self-rejects.”</li>
 <li>Mention this will be interactive — encourage chat use throughout.</li>
 <li>Have co-host ready to monitor chat.</li>
 </ul>
@@ -232,20 +164,20 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2 center">
-<h2>The scene</h2>
-<blockquote>
-<p><em>A student fluent in R sees “Python required” in a job posting…</em></p>
-<p><em>…and closes the tab.</em></p>
-</blockquote>
-<div class="fragment">
-<p>They didn’t lack the <strong>statistics</strong>. They lacked confidence in the <strong>syntax</strong>.</p>
-</div>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>Quick poll</h2>
+<h3>What language do you — or your students — primarily use in class?</h3>
+<ol type="a">
+<li><strong>R</strong></li>
+<li><strong>Python</strong></li>
+<li><strong>SQL</strong></li>
+<li><strong>A mix, depending on the course</strong></li>
+</ol>
 <aside class="notes">
 <ul>
-<li>Tell the real story (Marie or collaborator picks one — pick one you’ve actually seen).</li>
-<li>Pause after “closes the tab” — let it land.</li>
-<li>Pivot: this isn’t a knowledge gap. It’s a confidence gap.</li>
+<li>Pre-build this poll in Zoom web portal BEFORE the session.</li>
+<li>~30 sec to launch + vote, ~20 sec to read results.</li>
+<li>Don’t over-explain the result yet — just bank it. We’ll come back to “a mix” in a few slides.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -259,9 +191,100 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2" data-background-color="#fff7ed">
+<section class="slide level2 center" data-background-color="#ffffff">
+<h2>Personal Experience</h2>
+<p>I learned statistics in <strong>R</strong>.</p>
+<div class="fragment">
+<p>Then a required CS course — <strong>“Intro to AI”</strong> — expected every assignment in <strong>Python</strong>. I’d never written a line of it.</p>
+</div>
+<div class="fragment">
+<p><strong>It was intimidating.</strong></p>
+</div>
+<div class="fragment">
+<p>But once I got past the unfamiliar syntax, most of what I needed — data frames, indexing, fitting a model, reading output — <strong>wasn’t that different.</strong></p>
+</div>
+<div class="box box-important fragment">
+<p><span class="box-label">The big question</span> <strong>So why don’t we let students dip their toes in earlier?</strong></p>
+</div>
+<aside class="notes">
+<ul>
+<li>This is a true personal story — tell it like one, not a slide of bullets.</li>
+<li>Beat 1: confidence in R after stats coursework.</li>
+<li>Beat 2: the syllabus said “submit a .py file” and the panic was real.</li>
+<li>Beat 3: let “intimidating” sit for a second — emotional core of the talk.</li>
+<li>Beat 4: “same ideas, new spelling” — the realization.</li>
+<li>Beat 5: the closing question is the thesis of the whole talk. Let it land.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>More than “the next class”</h2>
+<p>Making the next course less scary is reason enough. But there’s more:</p>
+<div class="box box-tip fragment">
+<p><span class="box-label">Reason 1 · Easier to learn now</span> <strong>It’s easier to learn now than later</strong> — early exposure builds familiarity, and familiarity makes the next language easier.</p>
+</div>
+<div class="box box-highlight fragment">
+<p><span class="box-label">Reason 2 · Industry expects it</span> <strong>Real jobs mix languages</strong> — and teams collaborate across them every day.</p>
+</div>
+<div class="box box-warning fragment">
+<p><span class="box-label">Reason 3 · Languages come and go</span> <strong>MATLAB used to dominate engineering curricula; far less so now.</strong> Comfort <em>moving between</em> languages outlasts any single one of them.</p>
+</div>
+<aside class="notes">
+<ul>
+<li>Overview slide — three reasons, don’t over-explain any one yet.</li>
+<li>#1 gets its own slide next (multilingual childhood).</li>
+<li>#2 gets concrete evidence in a couple of slides (the job postings).</li>
+<li>#3 (MATLAB) is mostly self-contained here — good moment for the room to nod along with their own “remember when everyone used X” example.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 center" data-background-color="#ffffff">
+<h2>Like a multilingual childhood</h2>
+<p>Kids raised hearing two languages rarely speak both <em>perfectly</em> — but a <strong>third</strong>, related language later comes much easier.</p>
+<div class="box box-tip fragment">
+<p><span class="box-label">Key idea</span> <strong>Early exposure doesn’t need to produce fluency.</strong> It needs to produce <em>familiarity</em> — so the next language doesn’t look foreign.</p>
+</div>
+<aside class="notes">
+<ul>
+<li>This is the emotional core of motivation #1 — give it room to breathe.</li>
+<li>Nobody expects a bilingual toddler to be “fluent” the way we’d judge an adult. But that early, low-stakes exposure rewires how easy the THIRD language is later.</li>
+<li>Same with R/Python/SQL in intro courses: a student doesn’t need to master Python in week 3 of an R-based intro course. They just need it to stop looking like an alien alphabet.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2" data-background-color="#ffffff">
 <h2>Same job. Different syntax.</h2>
-<p>Three real <strong>entry-level Data Analyst</strong> postings. Same kind of role — look at what each one “requires.”</p>
+<p>Three real <strong>entry-level Data Analyst</strong> postings.</p>
 <div class="job-row">
 <div>
 <p><img data-src="images/Disney.png"></p>
@@ -269,18 +292,21 @@ Marie Neubrander &amp; Kat Husar
 </div>
 <div>
 <p><img data-src="images/Haystack.png"></p>
-<p><strong>Haystack</strong> — Excel, SQL, Tableau, Python, <em>or</em> R</p>
+<p><strong>Haystack</strong> —SQL, Python, <em>or</em> R</p>
 </div>
 <div>
 <p><img data-src="images/Netflix.png"></p>
 <p><strong>Netflix</strong> — Python/R + SQL</p>
 </div>
 </div>
+<div class="box box-highlight fragment">
+<p><span class="box-label">Takeaway</span> <strong>Same role. Same skills. Different syntax listed as a “requirement.”</strong></p>
+</div>
 <aside class="notes">
 <ul>
 <li>These are real postings, pulled while prepping this talk — not hypothetical.</li>
+<li>This is the evidence for motivation #2 (industry expects it).</li>
 <li>Point at the highlighted line in each: same “data analyst” role, different language combinations listed as requirements.</li>
-<li>Ties directly back to “The scene”: this is the exact moment a student self-rejects.</li>
 <li>Land the punchline: the underlying skill (query, summarize, model data) is identical across all three — only the syntax differs.</li>
 </ul>
 <style type="text/css">
@@ -295,25 +321,31 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2" data-background-color="#fff7ed">
-<h2>It starts before graduation</h2>
-<p>That “Python required” job posting isn’t the <em>first</em> time syntax becomes a barrier.</p>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>What’s coming</h2>
+<p>For the rest of our time together:</p>
 <div class="fragment">
-<p>It’s also:</p>
-<ul>
-<li>Intro Stats in <strong>R</strong> → the required Methods course next semester is <strong>Python</strong></li>
-<li>A capstone or research lab that “just uses whatever the PI uses”</li>
-<li>A stats elective taught by someone who never coordinated with the intro instructor</li>
-</ul>
+<p><strong>A demo</strong> — <em>a</em> way (not <em>the</em> way) to bring another language into your course without installing a second IDE</p>
 </div>
 <div class="fragment">
-<p><strong>Every course transition is a small version of “closing the tab.”</strong></p>
+<p><strong>Prompt-building</strong> — how to ask AI for a translation that teaches, not just one that works</p>
+</div>
+<div class="fragment">
+<p><strong>Guardrails</strong> — a few ways to keep students from just copy-pasting</p>
+</div>
+<div class="fragment">
+<p><strong>Parallels</strong> — the same idea, side by side, in different languages</p>
+</div>
+<div class="fragment">
+<p><strong>Us, too</strong> — how we use AI to build and maintain bilingual materials</p>
+</div>
+<div class="fragment">
+<p><strong>Then it’s your turn</strong> — an activity, and a chance to share your thoughts</p>
 </div>
 <aside class="notes">
 <ul>
-<li>Bridges from the job-market framing to the curriculum framing.</li>
-<li>The point: this isn’t just a graduation-day problem — it’s baked into how courses get sequenced, often without anyone planning the language transitions.</li>
-<li>Sets up the poll and the multilingual-childhood analogy.</li>
+<li>This is the roadmap slide — keep it brisk, one breath per fragment.</li>
+<li>Each of these becomes its own beat during the demo; this just previews the shape of the next 15-20 minutes.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -327,162 +359,9 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2" data-background-color="#f0f9ff">
-<h2>Quick poll</h2>
-<h3>What do <em>you</em> primarily teach/use?</h3>
-<ol type="a">
-<li><strong>R</strong></li>
-<li><strong>Python</strong></li>
-<li><strong>SQL</strong></li>
-<li><strong>A mix, depending on the course</strong></li>
-</ol>
-<aside class="notes">
-<ul>
-<li>Pre-build this poll in Zoom web portal BEFORE the session.</li>
-<li>~30 sec to launch + vote, ~20 sec to read results.</li>
-<li>The punchline: “Look how split this room is — and we’re all instructors. Now imagine a student moving between our courses.”</li>
-<li>If results are split: that’s the evidence for the next few slides — your curriculum probably looks like this room.</li>
-<li>If results aren’t split: ask “is your <em>department’s</em> curriculum this consistent, or more mixed than any one of us individually?”</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#fff7ed">
-<h2>“Fear of the new”</h2>
-<p>The barrier isn’t conceptual. It’s <strong>psychological</strong>.</p>
-<div class="two-col">
-<div>
-<p><strong>Students who know:</strong></p>
-<ul>
-<li>What a linear model <em>is</em></li>
-<li>How to interpret coefficients</li>
-<li>When to use a t-test</li>
-</ul>
-</div>
-<div>
-<p><strong>Freeze when they see:</strong></p>
-<ul>
-<li><code>model.fit(X, y)</code> instead of <code>lm(y ~ x)</code></li>
-<li><code>pd.DataFrame</code> instead of <code>data.frame</code></li>
-<li><code>:=</code> instead of <code>&lt;-</code></li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Same concept. Different costume.</strong></p>
-</div>
-<aside class="notes">
-<ul>
-<li>This framing — “same concept, different costume” — is the through-line. Repeat it in the demo.</li>
-<li>Mention groups disproportionately affected: career-switchers, first-gen students, students from teaching-focused programs without industry exposure.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#f0f9ff">
-<h2>Chat waterfall</h2>
-<h3>Type — but <strong>don’t hit send yet</strong></h3>
-<blockquote>
-<p><em>What’s one language or tool your students fear?</em></p>
-</blockquote>
-<div class="fragment">
-<p><strong>3 … 2 … 1 … send.</strong></p>
-</div>
-<aside class="notes">
-<ul>
-<li>The “don’t send yet” trick produces a visible wave instead of a trickle.</li>
-<li>Read 3-4 aloud. Look for patterns (“lots of SQL — we’ll touch that”).</li>
-<li>Co-host can screenshot the chat for the GitHub repo later.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2 center" data-background-color="#ecfdf5">
-<h2>Like a multilingual childhood</h2>
-<p>Kids raised hearing two languages rarely speak both <em>perfectly</em> — but a <strong>third</strong>, related language later comes much easier.</p>
-<div class="fragment">
-<p><strong>Early exposure doesn’t need to produce fluency.</strong> It needs to produce <em>familiarity</em> — so the next language doesn’t look foreign.</p>
-</div>
-<aside class="notes">
-<ul>
-<li>This is the emotional core of the new framing — give it room to breathe.</li>
-<li>Nobody expects a bilingual toddler to be “fluent” the way we’d judge an adult. But that early, low-stakes exposure rewires how easy the THIRD language is later.</li>
-<li>Same with R/Python/SQL in intro courses: a student doesn’t need to master Python in week 3 of an R-based intro course. They just need it to stop looking like an alien alphabet.</li>
-<li>Bridge: “So what if intro courses gave students that early exposure — on purpose?”</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2 center" data-background-color="#ecfdf5">
-<h2>The thesis</h2>
-<h3>AI can give students that early exposure — on purpose</h3>
-<p>…<strong>if</strong> we design the activity so students learn the <em>mapping</em>, not just receive the <em>answer</em>.</p>
-<p><span class="bridge">Bridge</span> → toward comfort, then mastery <span class="crutch">Crutch</span> → away from it</p>
-<div class="fragment">
-<p>Same payoff as before — an easier job-market transition — but it starts in <strong>week 3 of an intro course</strong>, not senior year.</p>
-</div>
-<aside class="notes">
-<ul>
-<li>Plant the bridge/crutch language. It comes back in section 5.</li>
-<li>Explicitly connect: this operationalizes the “multilingual childhood” idea.</li>
-<li>Don’t lose the career framing — it’s still the long-term payoff. The near-term payoff is smoother in-curriculum transitions.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2">
-
-</section>
-<section>
-<section class="title-slide slide level1 center" data-background-color="#1f2937" style="color: white;">
-<h1>🎬 Time for the demo</h1>
-<p>Switch to the course site:</p>
-<p><strong>kathusar.github.io/eCOTS26/lessons/Demo.html</strong></p>
+<section class="slide level2 center section-break" data-background-color="#ffffff">
+<h2>🎬 Time for the demo</h2>
+<p><a href="kathusar.github.io/eCOTS26/lessons/Demo.html"><strong>kathusar.github.io/eCOTS26/lessons/Demo.html</strong></a></p>
 <div class="small">
 <p>Real R and Python, running live in your browser — no installs.</p>
 </div>
@@ -490,7 +369,7 @@ Marie Neubrander &amp; Kat Husar
 <ul>
 <li>Section break — switch screenshare to the live site.</li>
 <li>Drop the link in chat.</li>
-<li>This is the live webR/pyodide page; the next few slides are the prompts you’ll run there.</li>
+<li>Everything from here through “Quick recap” happens in or alongside the live demo.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -504,53 +383,21 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2" data-background-color="#fafafa">
-<h2>Demo: prompt-building</h2>
-<div class="timing">
-<p>6:30 – 12:30 · DEMO (6 min)</p>
-</div>
-<h3>Two prompts. Same task. Very different output.</h3>
-<p>We’ll translate:</p>
-<ol type="1">
-<li><code>lm()</code> in R → <code>LinearRegression</code> in Python</li>
-<li><code>pandas</code> groupby → <code>dplyr</code> pipe</li>
-<li>A 30-second SQL ↔︎ tidyverse cameo</li>
-</ol>
-<aside class="notes">
+<section class="slide level2" data-background-color="#ffffff">
+<h2>Quick recap</h2>
 <ul>
-<li>Open ChatGPT/Claude in a separate window BEFORE you start so screenshare is ready.</li>
-<li>Have a pre-recorded backup video of this demo in case the AI is slow.</li>
-<li>Talk through what you’re doing — don’t just type silently.</li>
+<li>A way to skip the install barrier</li>
+<li>A prompt template that teaches, not just translates</li>
+<li>A couple of checks so AI stays a bridge, not a crutch</li>
+<li>As instructors, we can use AI for a faster course prep (and maybe to touch up on some languages too)</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#fef2f2">
-<h2>Bad prompt</h2>
-<div class="timing">
-<p>6:30 – 8:00 · DEMO part 1 (1.5 min)</p>
-</div>
-<pre><code>Convert this R code to Python:
-
-lm(mpg ~ wt + hp, data = mtcars)</code></pre>
-<div class="fragment">
-<p><strong>You get:</strong> working code.</p>
-<p><strong>You don’t get:</strong> why <code>~</code> became a design matrix, why <code>sklearn</code> separates <code>X</code> and <code>y</code>, or that <code>summary()</code> has no direct equivalent.</p>
+<div class="box box-important fragment">
+<p><span class="box-label">Up next</span> <strong>Now it’s your turn.</strong></p>
 </div>
 <aside class="notes">
 <ul>
-<li>Run this live. Show the output.</li>
-<li>Pause on what’s MISSING: the conceptual map.</li>
-<li>“This produces an answer. It doesn’t produce learning.”</li>
+<li>Quick recap before handing off to the activity — don’t re-teach, just name the four things that just happened.</li>
+<li>Transition: “let’s put this into practice.”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -564,116 +411,9 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2" data-background-color="#f0fdf4">
-<h2>Good prompt</h2>
-<div class="timing">
-<p>8:00 – 10:00 · DEMO part 2 (2 min)</p>
-</div>
-<pre><code>I'm an intro stats student fluent in R.
-Translate this R code to Python, AND:
-
-1. Add inline comments mapping each R line to its Python equivalent.
-2. Flag any idiom differences (e.g., formula interface vs. design matrix).
-3. End with one concept-check question I should be able to answer
-   before I move on.
-
-R code:
-lm(mpg ~ wt + hp, data = mtcars)</code></pre>
-<aside class="notes">
-<ul>
-<li>Run this live. Show the output — it should include comments + a check question.</li>
-<li>This is the centerpiece pattern. Name it: “learning goal + mapping + idiom flags + concept check.”</li>
-<li>This pattern is in the GitHub repo as a template.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#f0fdf4">
-<h2>Python → R: same trick</h2>
-<div class="timing">
-<p>10:00 – 11:30 · DEMO part 3 (1.5 min)</p>
-</div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">"cyl"</span>)[<span class="st">"mpg"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment">
-<p><strong>AI maps it to:</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">group_by</span>(cyl) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>…and explains that method chaining ↔︎ the pipe.</p>
-</div>
-<aside class="notes">
-<ul>
-<li>This is the tidyverse cameo. Highlight that the pipe is the same idea as <code>.</code> chaining in pandas.</li>
-<li>Students who learned dplyr first often “get” pandas faster once they see this.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#f0fdf4">
-<h2>30-sec SQL cameo</h2>
-<div class="timing">
-<p>11:30 – 12:30 · DEMO part 4 (1 min)</p>
-</div>
-<div class="two-col">
-<div>
-<p><strong>SQL</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> cyl, <span class="fu">AVG</span>(mpg)</span>
-<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> mtcars</span>
-<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> cyl</span>
-<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(mpg) <span class="op">&gt;</span> <span class="dv">20</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div>
-<p><strong>dplyr</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">m =</span> <span class="fu">mean</span>(mpg)) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(m <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>One concept. Three costumes.</strong></p>
-</div>
-<aside class="notes">
-<ul>
-<li>Move fast. Don’t explain SQL in depth — just show that GROUP BY/HAVING maps cleanly.</li>
-<li>This is the moment the “same concept, different costume” line earns its keep.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section class="title-slide slide level1 center" data-background-color="#1f2937" style="color: white;">
-<h1>🎯 Time for the activity</h1>
-<p>Switch to the course site:</p>
-<p><strong>kathusar.github.io/eCOTS26/lessons/Activity.html</strong></p>
+<section class="slide level2 center section-break" data-background-color="#ffffff">
+<h2>🎯 Time for the activity</h2>
+<p><a href="kathusar.github.io/eCOTS26/lessons/Activity.html"><strong>kathusar.github.io/eCOTS26/lessons/Activity.html</strong></a></p>
 <div class="small">
 <p>“Try It Yourself!” — pandas ↔︎ dplyr ↔︎ SQL, live in your browser.</p>
 </div>
@@ -695,195 +435,25 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2" data-background-color="#f0f9ff">
-<h2>Bringing this into the classroom</h2>
-<p>A few low-stakes ways to build in early exposure, starting week 1:</p>
-<ul>
-<li><strong>Warm-up</strong>: same 5-line script shown in two languages, side by side — “spot the mapping”</li>
-<li><strong>Exit ticket</strong>: “translate today’s example to [other language] with AI — flag one thing that surprised you”</li>
-<li><strong>Rotating worked example</strong>: alternate which language the in-class example uses each week</li>
-<li><strong>Lab option</strong>: students may submit in <em>either</em> language, with a short AI-assisted translation note</li>
-</ul>
-<div class="fragment">
-<p>None of these require rewriting your course — they’re additions. Low-stakes, recurring, a few minutes at a time.</p>
-</div>
-<aside class="notes">
-<ul>
-<li>This is the “menu” slide — give instructors several entry points, not one big lift.</li>
-<li>Now we’ll try the prompt-writing piece of this ourselves.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#f0f9ff">
-<h2>Activity</h2>
-<div class="timing">
-<p>12:30 – 17:30 · HANDS-ON (5 min)</p>
-</div>
-<h3>Your turn</h3>
-<p>You’ll take a code snippet, write a prompt that produces a <strong>pedagogically useful</strong> translation, and evaluate it.</p>
-<div class="fragment">
-<p><strong>Rubric:</strong></p>
-<ol type="1">
-<li>Does it run?</li>
-<li>Does it <em>teach the mapping</em>?</li>
-<li>Does it flag idiom differences?</li>
-<li>Does it leave the student able to do the next problem alone?</li>
-</ol>
-</div>
-<aside class="notes">
-<ul>
-<li>Format is flexible — see backup slide for options.</li>
-<li>DEFAULT format: shared Padlet/Google Doc. Drop link in chat.</li>
-<li>If running Padlet: have 4 snippets pre-loaded as columns. Attendees pick one.</li>
-<li>Set a 4-min timer. Call attention back at 4 min.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#f0f9ff">
-<h2>Activity — what to do</h2>
-<div class="timing">
-<p>(visible during the 5-min activity)</p>
-</div>
-<div class="small">
-<p><strong>Link:</strong> [padlet link / Google Doc link goes here]</p>
-</div>
-<ol type="1">
-<li>Pick a snippet (R, Python, or SQL).</li>
-<li>Write a prompt using the template: <em>learning goal · mapping · idiom flags · concept check</em></li>
-<li>Paste the AI output.</li>
-<li>Score 1–4 on the rubric. Drop one insight in the chat.</li>
-</ol>
-<aside class="notes">
-<ul>
-<li>Leave this slide up while attendees work.</li>
-<li>Co-host watches chat for early finishers; you watch the Padlet.</li>
-<li>At the 4-min mark: “30 seconds — wrap up your score.”</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#f0f9ff">
-<h2>What patterns showed up?</h2>
-<div class="timing">
-<p>17:30 – 18:30 · DEBRIEF (1 min)</p>
-</div>
-<ul>
-<li>Which prompts worked best?</li>
-<li>Where did AI over-explain or under-explain?</li>
-<li>Which snippets surprised people?</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Narrate live from what you saw in the Padlet/chat.</li>
-<li>Pick 2-3 to call out by name (if comfortable) or anonymously.</li>
-<li>Bridge to next section: “This is how we tell bridge from crutch.”</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#ecfdf5">
-<h2>Bridge vs.&nbsp;crutch</h2>
-<div class="timing">
-<p>18:30 – 22:30 · GUARDRAILS (4 min)</p>
-</div>
-<div class="two-col">
-<div>
-<p><span class="bridge"><strong>Bridge</strong></span></p>
-<ul>
-<li>Annotate AI output</li>
-<li>Translate, then close the tab and re-derive</li>
-<li>Pair with a concept check</li>
-<li>Scaffolded fading (week 1 → week 5)</li>
-</ul>
-</div>
-<div>
-<p><span class="crutch"><strong>Crutch</strong></span></p>
-<ul>
-<li>Copy-paste without reading</li>
-<li>Skip the <em>why</em></li>
-<li>Never reproduce unaided</li>
-<li>Same level of help every week</li>
-</ul>
-</div>
-</div>
-<aside class="notes">
-<ul>
-<li>This is the most “Monday-morning useful” section. Slow down.</li>
-<li>Each bullet is a real classroom move — give one quick example for each on the left.</li>
-<li>“Scaffolded fading” = the key term they’ll Google later.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#ecfdf5">
+<section class="slide level2" data-background-color="#ffffff">
 <h2>Who benefits most?</h2>
-<div class="timing">
-<p>22:30 – 23:30 · WHO (1 min)</p>
-</div>
-<p><strong>Benefits most:</strong></p>
 <ul>
 <li>Students moving between courses that use different languages — <em>the everyday case</em></li>
 <li>Students switching ecosystems mid-program (capstone, research lab)</li>
-<li>Career-switchers with stats but new to programming</li>
-<li>Students at teaching-focused institutions w/o industry exposure</li>
+<li>Students interviewing for internships and jobs</li>
 </ul>
-<p><strong>At risk of over-reliance:</strong></p>
+<div class="box box-warning">
+<p><span class="box-label">Watch out</span> <strong>At risk of over-reliance:</strong></p>
 <ul>
 <li>Students who haven’t built the underlying concept yet</li>
 <li>Students using AI to skip — not to bridge</li>
 </ul>
+</div>
 <aside class="notes">
 <ul>
 <li>Be honest: AI translation is most useful AFTER the concept is solid in one language.</li>
 <li>Don’t introduce it as a first encounter with linear regression.</li>
-<li>“Everyday case” is the new through-line — most students hit this every time they change courses, not just at graduation.</li>
+<li>“Everyday case” is the through-line — most students hit this every time they change courses, not just at graduation.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -897,48 +467,16 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2" data-background-color="#f0f9ff">
-<h2>Quick poll</h2>
-<div class="timing">
-<p>23:30 – 24:00 · POLL #2 (30 sec)</p>
-</div>
-<h3>Which guardrail will you try first?</h3>
-<ol type="a">
-<li>Annotate AI output</li>
-<li>Translate-then-close-the-tab</li>
-<li>AI + concept-check pairing</li>
-<li>Scaffolded fading across the term</li>
-</ol>
-<aside class="notes">
-<ul>
-<li>Quick poll, no deep discussion. Just commitment.</li>
-<li>Read top result aloud.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section class="slide level2" data-background-color="#fefce8">
+<section class="slide level2" data-background-color="#ffffff">
 <h2>Take this with you</h2>
-<div class="timing">
-<p>24:00 – 25:00 · CLOSE (1 min)</p>
-</div>
-<h3>Three things for Monday</h3>
+<h3>Three things</h3>
 <ol type="1">
-<li><strong>One prompt template</strong> — <em>goal · mapping · idiom · check</em></li>
+<li><strong>Prompt template insipration</strong> — <em>goal · mapping · idiom · check</em></li>
 <li><strong>One low-stakes activity</strong> — pick one from the classroom menu</li>
-<li><strong>One concept</strong> you’ll teach with translation next week</li>
+<li><strong>One concept</strong> you can teach with translation</li>
 </ol>
-<div class="small">
-<p><strong>Repo:</strong> github.com/mneubrander/ecots-2026 · prompt templates + R↔︎Python examples + rubric</p>
+<div class="box box-tip small">
+<p><span class="box-label">Take it home</span> <a href="https://github.com/KatHusar/eCOTS26"><strong>Repo:</strong> https://github.com/KatHusar/eCOTS26</a> — prompt templates + R ↔︎ Python examples</p>
 </div>
 <aside class="notes">
 <ul>
@@ -958,11 +496,13 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2 center">
+<section class="slide level2 center" data-background-color="#ffffff">
 <h2>Q&amp;A</h2>
 <h3>Questions?</h3>
 <div class="small">
-<p><strong>Marie Neubrander</strong> — [email] <strong>Kat Husar</strong> — [email] <strong>Repo:</strong> github.com/mneubrander/ecots-2026</p>
+<p><strong>Kat Husar</strong> — kat.husar@duke.edu</p>
+<p><strong>Marie Neubrander</strong> — marie.neubrander@duke.edu</p>
+<p><strong>Repo:</strong> <a href="https://github.com/KatHusar/eCOTS26">https://github.com/KatHusar/eCOTS26</a></p>
 </div>
 <aside class="notes">
 <ul>
@@ -986,7 +526,7 @@ lm(mpg ~ wt + hp, data = mtcars)</code></pre>
           display:block!important;
       }</style></aside>
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

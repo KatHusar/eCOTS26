@@ -76,3 +76,69 @@ $code-block-bg: #f6f8fa;
 .reveal pre code {
   max-height: 500px;
 }
+
+/* Emphasis boxes */
+.reveal .box {
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  border-left: 6px solid #94a3b8;
+  background: #f8fafc;
+  font-size: 0.85em;
+  text-align: left;
+}
+
+.reveal .box-label {
+  display: block;
+  font-size: 0.65em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25em;
+  opacity: 0.8;
+}
+
+.reveal .box-tip {
+  background: #ecfdf5;
+  border-left-color: #10b981;
+}
+
+.reveal .box-tip .box-label {
+  color: #047857;
+}
+
+.reveal .box-important {
+  background: #eff6ff;
+  border-left-color: #2563eb;
+}
+
+.reveal .box-important .box-label {
+  color: #1d4ed8;
+}
+
+.reveal .box-warning {
+  background: #fffbeb;
+  border-left-color: #f59e0b;
+}
+
+.reveal .box-warning .box-label {
+  color: #b45309;
+}
+
+.reveal .box-highlight {
+  background: #fff7ed;
+  border-left-color: #f97316;
+}
+
+.reveal .box-highlight .box-label {
+  color: #c2410c;
+}
+
+/* Section-break slides: badge the heading instead of inverting the slide */
+.reveal .section-break h1 {
+  display: inline-block;
+  padding: 0.25em 0.7em;
+  border-radius: 12px;
+  background: #1f2937;
+  color: white;
+}

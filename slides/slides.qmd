@@ -2,13 +2,12 @@
 title: "Breaking the Syntax Barrier"
 subtitle: "Empowering Students to Code in Any Language"
 author: "Marie Neubrander & Kat Husar"
-date: "ECOTS 2026"
+date: ""
 format: revealjs
 ---
 
-## Welcome {.center}
+## Welcome {.center background-color="#ffffff"}
 
-:
 **Breaking the Syntax Barrier**
 
 *Empowering Students to Code in Any Language*
@@ -19,37 +18,123 @@ ECOTS 2026 · Breakout Session
 
 ::: {.notes}
 - Smile, wave, name + institution.
-- "Today we want to talk about something we've all watched happen: a student who's perfectly capable in one language sees a job posting in another, and self-rejects."
 - Mention this will be interactive — encourage chat use throughout.
 - Have co-host ready to monitor chat.
 :::
 
 ---
 
-## The scene {.center}
+## Quick poll {background-color="#ffffff"}
 
+### What language do you — or your students — primarily use in class?
 
-> *A student fluent in R sees "Python required" in a job posting…*
->
-> *…and closes the tab.*
-
-::: {.fragment}
-They didn't lack the **statistics**.
-They lacked confidence in the **syntax**.
-:::
+a. **R**
+b. **Python**
+c. **SQL**
+d. **A mix, depending on the course**
 
 ::: {.notes}
-- Tell the real story (Marie or collaborator picks one — pick one you've actually seen).
-- Pause after "closes the tab" — let it land.
-- Pivot: this isn't a knowledge gap. It's a confidence gap.
+- Pre-build this poll in Zoom web portal BEFORE the session.
+- ~30 sec to launch + vote, ~20 sec to read results.
+- Don't over-explain the result yet — just bank it. We'll come back to
+  "a mix" in a few slides.
 :::
 
 ---
 
-## Same job. Different syntax. {background-color="#fff7ed"}
+## Personal Experience {.center background-color="#ffffff"}
 
-Three real **entry-level Data Analyst** postings. Same kind of role —
-look at what each one "requires."
+I learned statistics in **R**.
+
+::: {.fragment}
+Then a required CS course — **"Intro to AI"** — expected every
+assignment in **Python**. I'd never written a line of it.
+:::
+
+::: {.fragment}
+**It was intimidating.**
+:::
+
+::: {.fragment}
+But once I got past the unfamiliar syntax, most of what I needed —
+data frames, indexing, fitting a model, reading output —
+**wasn't that different.**
+:::
+
+::: {.box .box-important .fragment}
+[The big question]{.box-label}
+**So why don't we let students dip their toes in earlier?**
+:::
+
+::: {.notes}
+- This is a true personal story — tell it like one, not a slide of bullets.
+- Beat 1: confidence in R after stats coursework.
+- Beat 2: the syllabus said "submit a .py file" and the panic was real.
+- Beat 3: let "intimidating" sit for a second — emotional core of the talk.
+- Beat 4: "same ideas, new spelling" — the realization.
+- Beat 5: the closing question is the thesis of the whole talk. Let it land.
+:::
+
+---
+
+## More than "the next class" {background-color="#ffffff"}
+
+Making the next course less scary is reason enough. But there's more:
+
+::: {.box .box-tip .fragment}
+[Reason 1 · Easier to learn now]{.box-label}
+**It's easier to learn now than later** — early exposure builds
+familiarity, and familiarity makes the next language easier.
+:::
+
+::: {.box .box-highlight .fragment}
+[Reason 2 · Industry expects it]{.box-label}
+**Real jobs mix languages** — and teams collaborate across them every day.
+:::
+
+::: {.box .box-warning .fragment}
+[Reason 3 · Languages come and go]{.box-label}
+**MATLAB used to dominate engineering curricula; far less so now.**
+Comfort *moving between* languages outlasts any single one of them.
+:::
+
+::: {.notes}
+- Overview slide — three reasons, don't over-explain any one yet.
+- #1 gets its own slide next (multilingual childhood).
+- #2 gets concrete evidence in a couple of slides (the job postings).
+- #3 (MATLAB) is mostly self-contained here — good moment for the room
+  to nod along with their own "remember when everyone used X" example.
+:::
+
+---
+
+## Like a multilingual childhood {.center background-color="#ffffff"}
+
+Kids raised hearing two languages rarely speak both *perfectly* —
+but a **third**, related language later comes much easier.
+
+::: {.box .box-tip .fragment}
+[Key idea]{.box-label}
+**Early exposure doesn't need to produce fluency.**
+It needs to produce *familiarity* — so the next language
+doesn't look foreign.
+:::
+
+::: {.notes}
+- This is the emotional core of motivation #1 — give it room to breathe.
+- Nobody expects a bilingual toddler to be "fluent" the way we'd judge an
+  adult. But that early, low-stakes exposure rewires how easy the THIRD
+  language is later.
+- Same with R/Python/SQL in intro courses: a student doesn't need to master
+  Python in week 3 of an R-based intro course. They just need it to stop
+  looking like an alien alphabet.
+:::
+
+---
+
+## Same job. Different syntax. {background-color="#ffffff"}
+
+Three real **entry-level Data Analyst** postings.
 
 ::: {.job-row}
 ::: {}
@@ -61,7 +146,7 @@ look at what each one "requires."
 ::: {}
 ![](images/Haystack.png)
 
-**Haystack** — Excel, SQL, Tableau, Python, *or* R
+**Haystack** —SQL, Python, *or* R
 :::
 
 ::: {}
@@ -71,171 +156,64 @@ look at what each one "requires."
 :::
 :::
 
+::: {.box .box-highlight .fragment}
+[Takeaway]{.box-label}
+**Same role. Same skills. Different syntax listed as a "requirement."**
+:::
 
 ::: {.notes}
 - These are real postings, pulled while prepping this talk — not hypothetical.
+- This is the evidence for motivation #2 (industry expects it).
 - Point at the highlighted line in each: same "data analyst" role, different
   language combinations listed as requirements.
-- Ties directly back to "The scene": this is the exact moment a student self-rejects.
 - Land the punchline: the underlying skill (query, summarize, model data) is
   identical across all three — only the syntax differs.
 :::
 
 ---
 
-## It starts before graduation {background-color="#fff7ed"}
+## What's coming {background-color="#ffffff"}
 
-That "Python required" job posting isn't the *first* time syntax
-becomes a barrier.
+For the rest of our time together:
 
 ::: {.fragment}
-It's also:
-
-- Intro Stats in **R** → the required Methods course next semester is **Python**
-- A capstone or research lab that "just uses whatever the PI uses"
-- A stats elective taught by someone who never coordinated with the intro instructor
+**A demo** — *a* way (not *the* way) to bring another language into your
+course without installing a second IDE
 :::
 
 ::: {.fragment}
-**Every course transition is a small version of "closing the tab."**
+**Prompt-building** — how to ask AI for a translation that teaches,
+not just one that works
+:::
+
+::: {.fragment}
+**Guardrails** — a few ways to keep students from just copy-pasting
+:::
+
+::: {.fragment}
+**Parallels** — the same idea, side by side, in different languages
+:::
+
+::: {.fragment}
+**Us, too** — how we use AI to build and maintain bilingual materials
+:::
+
+::: {.fragment}
+**Then it's your turn** — an activity, and a chance to share your thoughts
 :::
 
 ::: {.notes}
-- Bridges from the job-market framing to the curriculum framing.
-- The point: this isn't just a graduation-day problem — it's baked into how
-  courses get sequenced, often without anyone planning the language transitions.
-- Sets up the poll and the multilingual-childhood analogy.
+- This is the roadmap slide — keep it brisk, one breath per fragment.
+- Each of these becomes its own beat during the demo; this just previews
+  the shape of the next 15-20 minutes.
 :::
 
 ---
 
-## Quick poll {background-color="#f0f9ff"}
-
-### What do *you* primarily teach/use?
-
-a. **R**
-b. **Python**
-c. **SQL**
-d. **A mix, depending on the course**
-
-::: {.notes}
-- Pre-build this poll in Zoom web portal BEFORE the session.
-- ~30 sec to launch + vote, ~20 sec to read results.
-- The punchline: "Look how split this room is — and we're all instructors.
-  Now imagine a student moving between our courses."
-- If results are split: that's the evidence for the next few slides — your
-  curriculum probably looks like this room.
-- If results aren't split: ask "is your *department's* curriculum this
-  consistent, or more mixed than any one of us individually?"
-:::
-
----
-
-## "Fear of the new" {background-color="#fff7ed"}
+## 🎬 Time for the demo {.center .section-break background-color="#ffffff"}
 
 
-The barrier isn't conceptual. It's **psychological**.
-
-::: {.two-col}
-::: {}
-**Students who know:**
-
-- What a linear model *is*
-- How to interpret coefficients
-- When to use a t-test
-:::
-
-::: {}
-**Freeze when they see:**
-
-- `model.fit(X, y)` instead of `lm(y ~ x)`
-- `pd.DataFrame` instead of `data.frame`
-- `:=` instead of `<-`
-:::
-:::
-
-::: {.fragment}
-**Same concept. Different costume.**
-:::
-
-::: {.notes}
-- This framing — "same concept, different costume" — is the through-line. Repeat it in the demo.
-- Mention groups disproportionately affected: career-switchers, first-gen students, students from teaching-focused programs without industry exposure.
-:::
-
----
-
-## Chat waterfall {background-color="#f0f9ff"}
-
-### Type — but **don't hit send yet**
-
-> *What's one language or tool your students fear?*
-
-::: {.fragment}
-**3 … 2 … 1 … send.**
-:::
-
-::: {.notes}
-- The "don't send yet" trick produces a visible wave instead of a trickle.
-- Read 3-4 aloud. Look for patterns ("lots of SQL — we'll touch that").
-- Co-host can screenshot the chat for the GitHub repo later.
-:::
-
----
-
-## Like a multilingual childhood {.center background-color="#ecfdf5"}
-
-Kids raised hearing two languages rarely speak both *perfectly* —
-but a **third**, related language later comes much easier.
-
-::: {.fragment}
-**Early exposure doesn't need to produce fluency.**
-It needs to produce *familiarity* — so the next language
-doesn't look foreign.
-:::
-
-::: {.notes}
-- This is the emotional core of the new framing — give it room to breathe.
-- Nobody expects a bilingual toddler to be "fluent" the way we'd judge an
-  adult. But that early, low-stakes exposure rewires how easy the THIRD
-  language is later.
-- Same with R/Python/SQL in intro courses: a student doesn't need to master
-  Python in week 3 of an R-based intro course. They just need it to stop
-  looking like an alien alphabet.
-- Bridge: "So what if intro courses gave students that early exposure — on purpose?"
-:::
-
----
-
-## The thesis {.center background-color="#ecfdf5"}
-
-### AI can give students that early exposure — on purpose
-
-…**if** we design the activity so students learn the *mapping*,
-not just receive the *answer*.
-
-[Bridge]{.bridge} → toward comfort, then mastery
-[Crutch]{.crutch} → away from it
-
-::: {.fragment}
-Same payoff as before — an easier job-market transition —
-but it starts in **week 3 of an intro course**, not senior year.
-:::
-
-::: {.notes}
-- Plant the bridge/crutch language. It comes back in section 5.
-- Explicitly connect: this operationalizes the "multilingual childhood" idea.
-- Don't lose the career framing — it's still the long-term payoff. The
-  near-term payoff is smoother in-curriculum transitions.
-:::
-
----
-
-# 🎬 Time for the demo {.center background-color="#1f2937" style="color: white;"}
-
-Switch to the course site:
-
-**kathusar.github.io/eCOTS26/lessons/Demo.html**
+[**kathusar.github.io/eCOTS26/lessons/Demo.html**](kathusar.github.io/eCOTS26/lessons/Demo.html)
 
 ::: {.small}
 Real R and Python, running live in your browser — no installs.
@@ -244,160 +222,37 @@ Real R and Python, running live in your browser — no installs.
 ::: {.notes}
 - Section break — switch screenshare to the live site.
 - Drop the link in chat.
-- This is the live webR/pyodide page; the next few slides are the prompts
-  you'll run there.
+- Everything from here through "Quick recap" happens in or alongside the
+  live demo.
 :::
 
 ---
 
-## Demo: prompt-building {background-color="#fafafa"}
 
-::: {.timing}
-6:30 – 12:30 · DEMO (6 min)
-:::
+## Quick recap {background-color="#ffffff"}
 
-### Two prompts. Same task. Very different output.
+- A way to skip the install barrier
+- A prompt template that teaches, not just translates
+- A couple of checks so AI stays a bridge, not a crutch
+- As instructors, we can use AI for a faster course prep (and maybe to touch up on some languages too)
 
-We'll translate:
-
-1. `lm()` in R → `LinearRegression` in Python
-2. `pandas` groupby → `dplyr` pipe
-3. A 30-second SQL ↔ tidyverse cameo
-
-::: {.notes}
-- Open ChatGPT/Claude in a separate window BEFORE you start so screenshare is ready.
-- Have a pre-recorded backup video of this demo in case the AI is slow.
-- Talk through what you're doing — don't just type silently.
-:::
-
----
-
-## Bad prompt {background-color="#fef2f2"}
-
-::: {.timing}
-6:30 – 8:00 · DEMO part 1 (1.5 min)
-:::
-
-```
-Convert this R code to Python:
-
-lm(mpg ~ wt + hp, data = mtcars)
-```
-
-::: {.fragment}
-**You get:** working code.
-
-**You don't get:** why `~` became a design matrix, why
-`sklearn` separates `X` and `y`, or that `summary()`
-has no direct equivalent.
+::: {.box .box-important .fragment}
+[Up next]{.box-label}
+**Now it's your turn.**
 :::
 
 ::: {.notes}
-- Run this live. Show the output.
-- Pause on what's MISSING: the conceptual map.
-- "This produces an answer. It doesn't produce learning."
+- Quick recap before handing off to the activity — don't re-teach, just
+  name the four things that just happened.
+- Transition: "let's put this into practice."
 :::
 
 ---
 
-## Good prompt {background-color="#f0fdf4"}
+## 🎯 Time for the activity {.center .section-break background-color="#ffffff"}
 
-::: {.timing}
-8:00 – 10:00 · DEMO part 2 (2 min)
-:::
 
-```
-I'm an intro stats student fluent in R.
-Translate this R code to Python, AND:
-
-1. Add inline comments mapping each R line to its Python equivalent.
-2. Flag any idiom differences (e.g., formula interface vs. design matrix).
-3. End with one concept-check question I should be able to answer
-   before I move on.
-
-R code:
-lm(mpg ~ wt + hp, data = mtcars)
-```
-
-::: {.notes}
-- Run this live. Show the output — it should include comments + a check question.
-- This is the centerpiece pattern. Name it: "learning goal + mapping + idiom flags + concept check."
-- This pattern is in the GitHub repo as a template.
-:::
-
----
-
-## Python → R: same trick {background-color="#f0fdf4"}
-
-::: {.timing}
-10:00 – 11:30 · DEMO part 3 (1.5 min)
-:::
-
-```python
-df.groupby("cyl")["mpg"].mean()
-```
-
-::: {.fragment}
-**AI maps it to:**
-
-```r
-df |> group_by(cyl) |> summarize(mean_mpg = mean(mpg))
-```
-
-…and explains that method chaining ↔ the pipe.
-:::
-
-::: {.notes}
-- This is the tidyverse cameo. Highlight that the pipe is the same idea as `.` chaining in pandas.
-- Students who learned dplyr first often "get" pandas faster once they see this.
-:::
-
----
-
-## 30-sec SQL cameo {background-color="#f0fdf4"}
-
-::: {.timing}
-11:30 – 12:30 · DEMO part 4 (1 min)
-:::
-
-::: {.two-col}
-::: {}
-**SQL**
-```sql
-SELECT cyl, AVG(mpg)
-FROM mtcars
-GROUP BY cyl
-HAVING AVG(mpg) > 20;
-```
-:::
-
-::: {}
-**dplyr**
-```r
-mtcars |>
-  group_by(cyl) |>
-  summarize(m = mean(mpg)) |>
-  filter(m > 20)
-```
-:::
-:::
-
-::: {.fragment}
-**One concept. Three costumes.**
-:::
-
-::: {.notes}
-- Move fast. Don't explain SQL in depth — just show that GROUP BY/HAVING maps cleanly.
-- This is the moment the "same concept, different costume" line earns its keep.
-:::
-
----
-
-# 🎯 Time for the activity {.center background-color="#1f2937" style="color: white;"}
-
-Switch to the course site:
-
-**kathusar.github.io/eCOTS26/lessons/Activity.html**
+[**kathusar.github.io/eCOTS26/lessons/Activity.html**](kathusar.github.io/eCOTS26/lessons/Activity.html)
 
 ::: {.small}
 "Try It Yourself!" — pandas ↔ dplyr ↔ SQL, live in your browser.
@@ -412,201 +267,43 @@ Switch to the course site:
 
 ---
 
-## Bringing this into the classroom {background-color="#f0f9ff"}
-
-A few low-stakes ways to build in early exposure, starting week 1:
-
-- **Warm-up**: same 5-line script shown in two languages, side by side —
-  "spot the mapping"
-- **Exit ticket**: "translate today's example to [other language] with AI —
-  flag one thing that surprised you"
-- **Rotating worked example**: alternate which language the in-class example
-  uses each week
-- **Lab option**: students may submit in *either* language, with a short
-  AI-assisted translation note
-
-::: {.fragment}
-None of these require rewriting your course — they're additions.
-Low-stakes, recurring, a few minutes at a time.
-:::
-
-::: {.notes}
-- This is the "menu" slide — give instructors several entry points, not one
-  big lift.
-- Now we'll try the prompt-writing piece of this ourselves.
-:::
-
----
-
-## Activity {background-color="#f0f9ff"}
-
-::: {.timing}
-12:30 – 17:30 · HANDS-ON (5 min)
-:::
-
-### Your turn
-
-You'll take a code snippet, write a prompt that
-produces a **pedagogically useful** translation,
-and evaluate it.
-
-::: {.fragment}
-**Rubric:**
-
-1. Does it run?
-2. Does it *teach the mapping*?
-3. Does it flag idiom differences?
-4. Does it leave the student able to do the next problem alone?
-:::
-
-::: {.notes}
-- Format is flexible — see backup slide for options.
-- DEFAULT format: shared Padlet/Google Doc. Drop link in chat.
-- If running Padlet: have 4 snippets pre-loaded as columns. Attendees pick one.
-- Set a 4-min timer. Call attention back at 4 min.
-:::
-
----
-
-## Activity — what to do {background-color="#f0f9ff"}
-
-::: {.timing}
-(visible during the 5-min activity)
-:::
-
-::: {.small}
-**Link:** [padlet link / Google Doc link goes here]
-:::
-
-1. Pick a snippet (R, Python, or SQL).
-2. Write a prompt using the template:
-   *learning goal · mapping · idiom flags · concept check*
-3. Paste the AI output.
-4. Score 1–4 on the rubric. Drop one insight in the chat.
-
-::: {.notes}
-- Leave this slide up while attendees work.
-- Co-host watches chat for early finishers; you watch the Padlet.
-- At the 4-min mark: "30 seconds — wrap up your score."
-:::
-
----
-
-## What patterns showed up? {background-color="#f0f9ff"}
-
-::: {.timing}
-17:30 – 18:30 · DEBRIEF (1 min)
-:::
-
-- Which prompts worked best?
-- Where did AI over-explain or under-explain?
-- Which snippets surprised people?
-
-::: {.notes}
-- Narrate live from what you saw in the Padlet/chat.
-- Pick 2-3 to call out by name (if comfortable) or anonymously.
-- Bridge to next section: "This is how we tell bridge from crutch."
-:::
-
----
-
-## Bridge vs. crutch {background-color="#ecfdf5"}
-
-::: {.timing}
-18:30 – 22:30 · GUARDRAILS (4 min)
-:::
-
-::: {.two-col}
-::: {}
-[**Bridge**]{.bridge}
-
-- Annotate AI output
-- Translate, then close the tab and re-derive
-- Pair with a concept check
-- Scaffolded fading (week 1 → week 5)
-:::
-
-::: {}
-[**Crutch**]{.crutch}
-
-- Copy-paste without reading
-- Skip the *why*
-- Never reproduce unaided
-- Same level of help every week
-:::
-:::
-
-::: {.notes}
-- This is the most "Monday-morning useful" section. Slow down.
-- Each bullet is a real classroom move — give one quick example for each on the left.
-- "Scaffolded fading" = the key term they'll Google later.
-:::
-
----
-
-## Who benefits most? {background-color="#ecfdf5"}
-
-::: {.timing}
-22:30 – 23:30 · WHO (1 min)
-:::
-
-**Benefits most:**
+## Who benefits most? {background-color="#ffffff"}
 
 - Students moving between courses that use different languages —
   *the everyday case*
 - Students switching ecosystems mid-program (capstone, research lab)
-- Career-switchers with stats but new to programming
-- Students at teaching-focused institutions w/o industry exposure
+- Students interviewing for internships and jobs
 
+::: {.box .box-warning}
+[Watch out]{.box-label}
 **At risk of over-reliance:**
 
 - Students who haven't built the underlying concept yet
 - Students using AI to skip — not to bridge
+:::
 
 ::: {.notes}
 - Be honest: AI translation is most useful AFTER the concept is solid in one language.
 - Don't introduce it as a first encounter with linear regression.
-- "Everyday case" is the new through-line — most students hit this every
+- "Everyday case" is the through-line — most students hit this every
   time they change courses, not just at graduation.
 :::
 
----
-
-## Quick poll {background-color="#f0f9ff"}
-
-::: {.timing}
-23:30 – 24:00 · POLL #2 (30 sec)
-:::
-
-### Which guardrail will you try first?
-
-a. Annotate AI output
-b. Translate-then-close-the-tab
-c. AI + concept-check pairing
-d. Scaffolded fading across the term
-
-::: {.notes}
-- Quick poll, no deep discussion. Just commitment.
-- Read top result aloud.
-:::
 
 ---
 
-## Take this with you {background-color="#fefce8"}
+## Take this with you {background-color="#ffffff"}
 
-::: {.timing}
-24:00 – 25:00 · CLOSE (1 min)
-:::
+### Three things
 
-### Three things for Monday
-
-1. **One prompt template** — *goal · mapping · idiom · check*
+1. **Prompt template insipration** — *goal · mapping · idiom · check*
 2. **One low-stakes activity** — pick one from the classroom menu
-3. **One concept** you'll teach with translation next week
+3. **One concept** you can teach with translation
 
-::: {.small}
-**Repo:** github.com/mneubrander/ecots-2026 ·
-prompt templates + R↔Python examples + rubric
+::: {.box .box-tip .small}
+[Take it home]{.box-label}
+[**Repo:** https://github.com/KatHusar/eCOTS26](https://github.com/KatHusar/eCOTS26) —
+prompt templates + R ↔ Python examples
 :::
 
 ::: {.notes}
@@ -618,14 +315,16 @@ prompt templates + R↔Python examples + rubric
 
 ---
 
-## Q&A {.center}
+## Q&A {.center background-color="#ffffff"}
 
 ### Questions?
 
 ::: {.small}
-**Marie Neubrander** — [email]
-**Kat Husar** — [email]
-**Repo:** github.com/mneubrander/ecots-2026
+**Kat Husar** — kat.husar@duke.edu
+
+**Marie Neubrander** — marie.neubrander@duke.edu
+
+**Repo:** [https://github.com/KatHusar/eCOTS26](https://github.com/KatHusar/eCOTS26)
 :::
 
 ::: {.notes}
