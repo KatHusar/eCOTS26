@@ -99,6 +99,26 @@ library(dplyr)
                   padding: 6px 8px; border-radius: 4px; overflow-x: auto; }
 </style>
 
+
+## In your groups {background-color="#ffffff"}
+
+Take one course you actually teach:
+
+::: {.box .box-tip}
+[1 · Where it fits and where it would backfire]{.box-label}
+Think about places a second language could appear succesfully and places it might break.
+:::
+
+::: {.box .box-highlight}
+[2 · Make it concrete]{.box-label}
+Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.
+:::
+
+::: {.box .box-important}
+[Share back]{.box-label}
+We'll discuss and share back as a group!
+:::
+
 ## Share your thoughts
 
 As you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in [this slidedeck](https://docs.google.com/presentation/d/1mI8xHcWrm5yyu6YatNTdiBneGG3GNxB7CitujsBBhXk/edit?usp=sharing)
