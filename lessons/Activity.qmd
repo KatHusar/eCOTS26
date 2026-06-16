@@ -32,6 +32,31 @@ subtitle: "Bringing a second language into your own course"
   padding: 12px 16px;
   margin: 16px 0;
 }
+.box {
+  border-radius: 10px;
+  padding: 0.6em 1em;
+  margin: 0.8em 0;
+  border-left: 6px solid #94a3b8;
+  background: #f8fafc;
+  text-align: left;
+}
+.box-label {
+  display: block;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25em;
+  opacity: 0.85;
+}
+.box-tip { background: #ecfdf5; border-left-color: #10b981; }
+.box-tip .box-label { color: #047857; }
+.box-important { background: #eff6ff; border-left-color: #2563eb; }
+.box-important .box-label { color: #1d4ed8; }
+.box-warning { background: #fffbeb; border-left-color: #f59e0b; }
+.box-warning .box-label { color: #b45309; }
+.box-highlight { background: #fff7ed; border-left-color: #f97316; }
+.box-highlight .box-label { color: #c2410c; }
 </style>
 ```
 
@@ -40,13 +65,13 @@ subtitle: "Bringing a second language into your own course"
 Take one course you actually teach and discuss the following points. Add any insightful ideas [here](https://docs.google.com/document/d/1C7kTMqHfCuPqkcYHEn1o2Q0wMTnGjvkxp2OU0BHMYwo/edit?usp=sharing)!
 
 ::: {.box .box-tip}
-[1 Where it fits and where it would backfire]{.box-label} Think about places a second language could appear succesfully and places it might break.
+[1 Where it fits and where it would backfire]{.box-label} Think about places a second language could appear successfully and places it might break.
 :::
 
 ::: {.box .box-highlight}
 [2 Make it concrete]{.box-label} Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.
 :::
 
-::: {.box .box-highlight}
+::: {.box .box-important}
 [3 Share back]{.box-label} When we regroup, we will share any insights we found particularly valuable.
 :::
