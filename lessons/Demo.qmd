@@ -95,7 +95,7 @@ webr:
 
 ## Step 1: A shared dataset
 
-For this activity, we'll use a small made-up dataset: **hours studied** vs. **exam score** for 12 students. We'll define the *exact same data* in both R and Python so we can compare the two languages side-by-side.
+We'll use a small made-up dataset: **hours studied** vs. **exam score** for 12 students defined in both R and Python.
 
 ::: panel-tabset
 ## R
@@ -121,9 +121,9 @@ study_data.head()
 ```
 :::
 
-Notice the parallels already: `c()` becomes `[]`, `data.frame()` becomes `pd.DataFrame()`, and `head()` becomes `.head()`.
+Many of us have seen these parallels: `c()` becomes `[]`, `data.frame()` becomes `pd.DataFrame()`, and `head()` becomes `.head()`.
 
-## Step 2: Fit a linear model — in R
+## Step 2: Fit a linear model in R
 
 In R, fitting a linear model and getting a full statistical summary takes just two lines:
 
@@ -209,15 +209,21 @@ summary(model)
 ::: {.ai-response-box}
 <span class="ai-label">🤖 AI response</span>
 
+Here's the same translation, broken into pieces — click through each tab:
+
+::: panel-tabset
+
+## Packages
+
 ::: {.columns}
 ::: {.column width="50%"}
-**R** — Base only, no imports needed
+**R** — base only, no imports needed
 
 `lm()` and `summary()` ship with base R.
 :::
 
 ::: {.column width="50%"}
-**Python** — Install and import
+**Python** — install and import
 
 ```bash
 pip install scikit-learn numpy pandas
@@ -232,18 +238,16 @@ from sklearn.metrics import r2_score
 :::
 :::
 
----
+## Annotated code
 
-## R original
+**R original**
 
 ```r
 model <- lm(score ~ hours, data = study_data)
 summary(model)
 ```
 
----
-
-## Python (sklearn) — annotated
+**Python (sklearn) — annotated**
 
 ```python
 # ── R: model <- lm(score ~ hours, data = study_data) ──────────────────
@@ -270,8 +274,6 @@ print("R²         :", model.score(X, y))   # R: summary(model)$r.squared
 # Use statsmodels.formula.api.ols() if you need full inference output.
 ```
 
----
-
 ## Idiom flags
 
 > **Formula interface vs. design matrix.** R's `score ~ hours` is declarative — R
@@ -291,9 +293,7 @@ print("R²         :", model.score(X, y))   # R: summary(model)$r.squared
 > and `model.intercept_`. The trailing underscore is a sklearn convention signalling
 > "set after fitting."
 
----
-
-## Additional notes
+## Notes
 
 - **The statsmodels alternative** is often the right call for real statistics.
   `statsmodels.formula.api.ols('score ~ hours', data=study_data).fit()` accepts
@@ -308,13 +308,13 @@ print("R²         :", model.score(X, y))   # R: summary(model)$r.squared
 - **`model.score(X, y)` gives R², not adjusted R².** R's `summary()` reports both.
   If you need adjusted R², compute it manually from n, p, and the raw R².
 
----
-
 ## Concept check
 
 When you write `X = study_data[['hours']]` with double brackets instead of
 `study_data['hours']` with single brackets, what is the difference in shape —
 and why does `model.fit()` require that specific shape?
+
+:::
 :::
 
 ## Step 4: Match the syntax!
