@@ -52,7 +52,6 @@ Talk through how you might keep students using AI for translating-to-understand,
 ::: {.box .box-highlight}
 [3  Share back]{.box-label}
 When we regroup, we will share any insights we found particularly valuable.
-
 :::
 
 
