@@ -172,10 +172,6 @@ not just one that works
 :::
 
 ::: {.fragment}
-**Us, too**: how we use AI to build and maintain bilingual materials
-:::
-
-::: {.fragment}
 **Then it's your turn**: an activity, and a chance to share your thoughts
 :::
 
