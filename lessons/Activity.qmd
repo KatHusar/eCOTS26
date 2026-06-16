@@ -3,6 +3,7 @@ title: "Your Turn"
 subtitle: "Bringing a second language into your own course"
 ---
 
+```{=html}
 <style>
 .prompt-box {
   background-color: #f5f5f5;
@@ -32,26 +33,20 @@ subtitle: "Bringing a second language into your own course"
   margin: 16px 0;
 }
 </style>
-
-
+```
 
 ## In your groups {background-color="#ffffff"}
 
-Take one course you actually teach:
+Take one course you actually teach and discuss the following points. Add any insightful ideas [here](https://docs.google.com/document/d/1C7kTMqHfCuPqkcYHEn1o2Q0wMTnGjvkxp2OU0BHMYwo/edit?usp=sharing)!
 
 ::: {.box .box-tip}
-[1  Where it fits and where it would backfire]{.box-label}
-Think about places a second language could appear succesfully and places it might break.
+[1 Where it fits and where it would backfire]{.box-label} Think about places a second language could appear succesfully and places it might break.
 :::
 
 ::: {.box .box-highlight}
-[2  Make it concrete]{.box-label}
-Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.
+[2 Make it concrete]{.box-label} Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.
 :::
 
 ::: {.box .box-highlight}
-[3  Share back]{.box-label}
-When we regroup, we will share any insights we found particularly valuable.
+[3 Share back]{.box-label} When we regroup, we will share any insights we found particularly valuable.
 :::
-
-
