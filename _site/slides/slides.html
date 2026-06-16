@@ -28,8 +28,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-3cd10682ed1c7636aaff15fef7afe441.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-6fae5808db85455125be8f4ccaf987ae.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -195,7 +261,7 @@ Marie Neubrander &amp; Kat Husar
 <h2>Personal Experience</h2>
 <p>I learned statistics in <strong>R</strong>.</p>
 <div class="fragment">
-<p>Then a required CS course — <strong>“Intro to AI”</strong> — expected every assignment in <strong>Python</strong>. I’d never written a line of it.</p>
+<p>Then a required CS course, <strong>“Intro to AI”</strong>, expected every assignment in <strong>Python</strong>. I’d never written a line of it.</p>
 </div>
 <div class="fragment">
 <p><strong>It was intimidating.</strong></p>
@@ -208,7 +274,7 @@ Marie Neubrander &amp; Kat Husar
 </div>
 <aside class="notes">
 <ul>
-<li>This is a true personal story — tell it like one, not a slide of bullets.</li>
+<li>This is a true personal story. Tell it like one, not a slide of bullets.</li>
 <li>Beat 1: confidence in R after stats coursework.</li>
 <li>Beat 2: the syllabus said “submit a .py file” and the panic was real.</li>
 <li>Beat 3: let “intimidating” sit for a second, emotional core of the talk.</li>
@@ -228,7 +294,7 @@ Marie Neubrander &amp; Kat Husar
       }</style></aside>
 </section>
 <section class="slide level2" data-background-color="#ffffff">
-<h2>More than “the next class”</h2>
+<h2>More than just for “the next class”</h2>
 <p>Making the next course less scary is reason enough. But there’s more:</p>
 <div class="box box-tip fragment">
 <p><span class="box-label">Reason 1 · Easier to learn now</span> <strong>It’s easier to learn now than later</strong>: early exposure builds familiarity, and familiarity makes the next language easier.</p>
@@ -241,10 +307,10 @@ Marie Neubrander &amp; Kat Husar
 </div>
 <aside class="notes">
 <ul>
-<li>Overview slide — three reasons, don’t over-explain any one yet.</li>
+<li>Overview slide: three reasons, don’t over-explain any one yet.</li>
 <li>#1 gets its own slide next (multilingual childhood).</li>
 <li>#2 gets concrete evidence in a couple of slides (the job postings).</li>
-<li>#3 (MATLAB) is mostly self-contained here — good moment for the room to nod along with their own “remember when everyone used X” example.</li>
+<li>#3 (MATLAB) is mostly self-contained here. Good moment for the room to nod along with their own “remember when everyone used X” example.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -258,6 +324,14 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
+<section class="slide level2">
+
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
+
+</section>
 <section class="slide level2 center" data-background-color="#ffffff">
 <h2>Like a multilingual childhood</h2>
 <p>Kids raised hearing two languages rarely speak both <em>perfectly</em>, but a <strong>third</strong>, related language later comes much easier.</p>
@@ -266,7 +340,7 @@ Marie Neubrander &amp; Kat Husar
 </div>
 <aside class="notes">
 <ul>
-<li>This is the emotional core of motivation #1 — give it room to breathe.</li>
+<li>This is the emotional core of motivation #1. Give it room to breathe.</li>
 <li>Nobody expects a bilingual toddler to be “fluent” the way we’d judge an adult. But that early, low-stakes exposure rewires how easy the THIRD language is later.</li>
 <li>Same with R/Python/SQL in intro courses: a student doesn’t need to master Python in week 3 of an R-based intro course. They just need it to stop looking like an alien alphabet.</li>
 </ul>
@@ -282,21 +356,36 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2" data-background-color="#ffffff">
-<h2>Same job. Different syntax.</h2>
+<section class="slide level2">
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>a7b7206 (updates) ## Same job. Different syntax. {background-color=“#ffffff”}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>Three real <strong>entry-level Data Analyst</strong> postings.</p>
 <div class="job-row">
 <div>
 <p><img data-src="images/Disney.png"></p>
-<p><strong>Disney</strong> — SQL &amp; Python</p>
+<p><strong>Disney</strong>: SQL &amp; Python</p>
 </div>
 <div>
 <p><img data-src="images/Haystack.png"></p>
-<p><strong>Haystack</strong> —SQL, Python, <em>or</em> R</p>
+<p><strong>Haystack</strong>: SQL, Python, <em>or</em> R</p>
 </div>
 <div>
 <p><img data-src="images/Netflix.png"></p>
-<p><strong>Netflix</strong> — Python/R + SQL</p>
+<p><strong>Netflix</strong>: Python/R + SQL</p>
 </div>
 </div>
 <div class="box box-highlight fragment">
@@ -304,10 +393,10 @@ Marie Neubrander &amp; Kat Husar
 </div>
 <aside class="notes">
 <ul>
-<li>These are real postings, pulled while prepping this talk — not hypothetical.</li>
+<li>These are real postings, pulled while prepping this talk, not hypothetical.</li>
 <li>This is the evidence for motivation #2 (industry expects it).</li>
 <li>Point at the highlighted line in each: same “data analyst” role, different language combinations listed as requirements.</li>
-<li>Land the punchline: the underlying skill (query, summarize, model data) is identical across all three — only the syntax differs.</li>
+<li>Land the punchline: the underlying skill (query, summarize, model data) is identical across all three: only the syntax differs.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -344,7 +433,7 @@ Marie Neubrander &amp; Kat Husar
 </div>
 <aside class="notes">
 <ul>
-<li>This is the roadmap slide — keep it brisk, one breath per fragment.</li>
+<li>This is the roadmap slide. Keep it brisk, one breath per fragment.</li>
 <li>Each of these becomes its own beat during the demo; this just previews the shape of the next 15-20 minutes.</li>
 </ul>
 <style type="text/css">
@@ -368,14 +457,11 @@ Marie Neubrander &amp; Kat Husar
 <div class="box box-tip fragment">
 <p><span class="box-label">The point</span> <strong>One environment, both languages.</strong> Students see R and Python side by side, instead of treating them as separate worlds.</p>
 </div>
-<div class="fragment small">
-<p><em>(It’s also what we built the upcoming demo in.)</em></p>
-</div>
 <aside class="notes">
 <ul>
 <li>Introduce Quarto as a student-facing tool, not a behind-the-scenes detail.</li>
-<li>Core message: one place to write and run both R and Python — lowers the barrier to seeing them as the same ideas in different syntax.</li>
-<li>The “we built the demo in it” line is just a side note — don’t dwell.</li>
+<li>Core message: one place to write and run both R and Python, which lowers the barrier to seeing them as the same ideas in different syntax.</li>
+<li>The “we built the demo in it” line is just a side note. Don’t dwell.</li>
 <li>Keep it short; the demo makes it concrete.</li>
 </ul>
 <style type="text/css">
@@ -390,17 +476,134 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2 center section-break" data-background-color="#ffffff">
-<h2>🎬 Time for the demo</h2>
-<p><a href="kathusar.github.io/eCOTS26/lessons/Demo.html"><strong>kathusar.github.io/eCOTS26/lessons/Demo.html</strong></a></p>
-<div class="small">
-<p>Real R and Python, running live in your browser with no installs.</p>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>Demo: R → Python with AI</h2>
+<p>A student has a regression working in R:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> hours, <span class="at">data =</span> study_data)</span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>They need it in Python. The obvious move is to ask an AI to translate.</p>
+<div class="box box-important fragment">
+<p><span class="box-label">The real question</span> <strong>Not <em>can</em> it translate, but what the student learns when it does.</strong></p>
 </div>
 <aside class="notes">
 <ul>
-<li>Section break — switch screenshare to the live site.</li>
-<li>Drop the link in chat.</li>
-<li>Everything from here through “Quick recap” happens in or alongside the live demo.</li>
+<li>Frame for this room: everyone here can do this translation themselves. The point is what the <em>student</em> gets out of the exchange.</li>
+<li>Keep the R snippet up just long enough to anchor the next two slides.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>The lazy prompt</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Prompt</strong></p>
+<blockquote>
+<p>“Translate this R code to Python.”</p>
+</blockquote>
+</div><div class="column" style="width:52%;">
+<p><strong>What comes back</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> study_data[[<span class="st">"hours"</span>]]</span>
+<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> study_data[<span class="st">"score"</span>]</span>
+<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a>LinearRegression().fit(X, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="small">
+<p>Correct slope, correct intercept. runs first try.</p>
+</div>
+</div></div>
+<div class="box box-warning fragment">
+<p><span class="box-label">The catch</span> <strong>It works, but what does it teach?</strong> A correct answer feels like a finished lesson. The student copies it, it runs, and they never understand the exact syntactic differences.</p>
+</div>
+<aside class="notes">
+<ul>
+<li>The result is genuinely fine. That’s the trap. A working answer feels like a finished lesson.</li>
+<li>The gap is everything the student didn’t have to think about.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>A prompt that teaches</h2>
+<p>Same task, but ask for the <em>reasoning</em>, not just the code:</p>
+<div class="prompt-recipe">
+<blockquote>
+<p>I know R. Translate this to Python with sklearn, and:</p>
+<ul>
+<li>name the packages I need to import</li>
+<li>map each R line to its Python equivalent</li>
+<li>flag the idiom differences</li>
+<li>end with one concept-check question</li>
+</ul>
+</blockquote>
+</div>
+<div class="box box-tip fragment">
+<p><span class="box-label">Reusable shape</span> <strong>goal · mapping · idiom · check</strong>. The same moves work for any language pair you teach.</p>
+</div>
+</section>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>What the prompt surfaced</h2>
+<p>It returned working Python and flagged what a simpler prompt would have hidden from the student:</p>
+<div class="box box-highlight fragment">
+<p><span class="box-label">A hidden idiom</span> That R’s <code>score ~ hours</code> builds the design matrix on its own, while sklearn has you hand it <code>X</code> and <code>y</code>.</p>
+</div>
+<div class="box box-warning fragment">
+<p><span class="box-label">A statistics gap</span> That <code>LinearRegression</code> gives no SEs, t-stats, or p-values and pointed to <code>statsmodels</code>’ <code>ols()</code> for an R-style <code>summary()</code>.</p>
+</div>
+<aside class="notes">
+<ul>
+<li>This slide is evidence the prompt did its job, NOT a lesson on R vs Python for this room (they already know it).</li>
+<li>The point: the student gets these insights handed to them, with a built-in check that forces them to apply it.</li>
+<li>Don’t dwell on the stats content; emphasize that the prompt <em>surfaced</em> it.</li>
+<li>Live, annotated walkthrough at kathusar.github.io/eCOTS26/lessons/Demo.html. Drop in chat for later.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>Activities to try in class</h2>
+<div class="box box-highlight fragment">
+<p><span class="box-label">Matching</span> Show an R snippet, pick the Python equivalent. A quick warm-up or exit ticket.</p>
+</div>
+<div class="box box-tip fragment">
+<p><span class="box-label">Fill-in-the-blank</span> Give the working code in one language; blank key differences in the other.</p>
+</div>
+<div class="box box-warning fragment">
+<p><span class="box-label">Open Ended</span> Explain the differences between two pieces of code they can see.</p>
+</div>
+<aside class="notes">
+<ul>
+<li>This is the “guardrails” beat: activity types that keep AI a bridge, not a crutch.</li>
+<li>It’s a menu: pick whichever fits the class, you don’t need all three.</li>
+<li>Matching and fill-in-the-blank are both live on the demo/activity pages. Show them in the browser if there’s time.</li>
+<li>Ties to the “classroom menu” line on the takeaways slide.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -417,17 +620,16 @@ Marie Neubrander &amp; Kat Husar
 <section class="slide level2" data-background-color="#ffffff">
 <h2>Quick recap</h2>
 <ul>
-<li>A way to skip the install barrier</li>
+<li>Quarto as a way to run languages side by side</li>
 <li>A prompt template that teaches, not just translates</li>
 <li>A couple of checks so AI stays a bridge, not a crutch</li>
-<li>As instructors, we can use AI for a faster course prep (and maybe to touch up on some languages too)</li>
 </ul>
 <div class="box box-important fragment">
 <p><span class="box-label">Up next</span> <strong>Now it’s your turn.</strong></p>
 </div>
 <aside class="notes">
 <ul>
-<li>Quick recap before handing off to the activity — don’t re-teach, just name the four things that just happened.</li>
+<li>Quick recap before handing off to the activity. Don’t re-teach, just name the four things that just happened.</li>
 <li>Transition: “let’s put this into practice.”</li>
 </ul>
 <style type="text/css">
@@ -443,16 +645,44 @@ Marie Neubrander &amp; Kat Husar
       }</style></aside>
 </section>
 <section class="slide level2 center section-break" data-background-color="#ffffff">
-<h2>🎯 Time for the activity</h2>
-<p><a href="kathusar.github.io/eCOTS26/lessons/Activity.html"><strong>kathusar.github.io/eCOTS26/lessons/Activity.html</strong></a></p>
-<div class="small">
-<p>“Try It Yourself!” — pandas ↔︎ dplyr ↔︎ SQL, live in your browser.</p>
+<h2>🎯 Your turn</h2>
+<p><strong>Where could this live in <em>your</em> courses?</strong></p>
+<aside class="notes">
+<ul>
+<li>Section break: shift from “here’s what we did” to “here’s what YOU could do.”</li>
+<li>This is the most interactive stretch; set the expectation that they’ll talk.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2" data-background-color="#ffffff">
+<h2>In your groups</h2>
+<p>Take one course you actually teach:</p>
+<div class="box box-tip">
+<p><span class="box-label">1 · Where it fits and where it would backfire</span> Think about places a second language could appear succesfully and places it might break.</p>
+</div>
+<div class="box box-highlight">
+<p><span class="box-label">2 · Make it concrete</span> Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.</p>
+</div>
+<div class="box box-important">
+<p><span class="box-label">Share back</span> We’ll discuss and share back as a group!</p>
 </div>
 <aside class="notes">
 <ul>
-<li>Section break — switch screenshare to the live “Try It Yourself” page.</li>
-<li>Drop the link in chat and set a timer.</li>
-<li>Page includes the groupby/dplyr/SQL comparison, the matching activity, and the fill-in-the-blank exercise.</li>
+<li>Co-host: open breakout rooms (groups of 3-4), ~6-8 min, broadcast a 1-min warning.</li>
+<li>The “where would it backfire?” question is deliberate: it signals we trust the room to poke holes, not just cheerlead. Experienced teachers engage more with the failure mode than the happy path.</li>
+<li>Hybrid by design: the hands-on crowd builds a prompt for THEIR concept (not our regression, so it’s not a demo repeat); everyone else just discusses.</li>
+<li>On return, read out 3-4 from the chat/shared slide (especially a good “backfire”) and react briefly.</li>
+<li>Take-home: the pandas/dplyr/SQL exercise still lives at kathusar.github.io/eCOTS26/lessons/Appendix.html for anyone who wants a ready-made one.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -469,7 +699,7 @@ Marie Neubrander &amp; Kat Husar
 <section class="slide level2" data-background-color="#ffffff">
 <h2>Who benefits most?</h2>
 <ul>
-<li>Students moving between courses that use different languages — <em>the everyday case</em></li>
+<li>Students moving between courses that use different languages: <em>the everyday case</em></li>
 <li>Students switching ecosystems mid-program (capstone, research lab)</li>
 <li>Students interviewing for internships and jobs</li>
 </ul>
@@ -477,14 +707,14 @@ Marie Neubrander &amp; Kat Husar
 <p><span class="box-label">Watch out</span> <strong>At risk of over-reliance:</strong></p>
 <ul>
 <li>Students who haven’t built the underlying concept yet</li>
-<li>Students using AI to skip — not to bridge</li>
+<li>Students using AI to skip learning</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
 <li>Be honest: AI translation is most useful AFTER the concept is solid in one language.</li>
 <li>Don’t introduce it as a first encounter with linear regression.</li>
-<li>“Everyday case” is the through-line — most students hit this every time they change courses, not just at graduation.</li>
+<li>“Everyday case” is the through-line. Most students hit this every time they change courses, not just at graduation.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -502,17 +732,17 @@ Marie Neubrander &amp; Kat Husar
 <h2>Take this with you</h2>
 <h3>Three things</h3>
 <ol type="1">
-<li><strong>Prompt template insipration</strong> — <em>goal · mapping · idiom · check</em></li>
-<li><strong>One low-stakes activity</strong> — pick one from the classroom menu</li>
+<li><strong>Prompt template insipration</strong>: <em>goal · mapping · idiom · check</em></li>
 <li><strong>One concept</strong> you can teach with translation</li>
+<li><strong>One low-stakes activity</strong> to make languge incorporation natural</li>
 </ol>
 <div class="box box-tip small">
-<p><span class="box-label">Take it home</span> <a href="https://github.com/KatHusar/eCOTS26"><strong>Repo:</strong> https://github.com/KatHusar/eCOTS26</a> — prompt templates + R ↔︎ Python examples</p>
+<p><span class="box-label">Take it home</span> <a href="https://github.com/KatHusar/eCOTS26"><strong>Repo:</strong> https://github.com/KatHusar/eCOTS26</a>: prompt templates + R ↔︎ Python examples</p>
 </div>
 <aside class="notes">
 <ul>
 <li>Drop repo link in chat NOW (have it pre-copied).</li>
-<li>“If you remember one thing: early exposure builds comfort. Comfort builds the bridge to the next course — and eventually the next job.”</li>
+<li>“If you remember one thing: early exposure builds comfort. Comfort builds the bridge to the next course, and eventually the next job.”</li>
 <li>Thank co-host, attendees. Open for Q&amp;A.</li>
 </ul>
 <style type="text/css">
@@ -531,8 +761,8 @@ Marie Neubrander &amp; Kat Husar
 <h2>Q&amp;A</h2>
 <h3>Questions?</h3>
 <div class="small">
-<p><strong>Kat Husar</strong> — kat.husar@duke.edu</p>
-<p><strong>Marie Neubrander</strong> — marie.neubrander@duke.edu</p>
+<p><strong>Kat Husar</strong>, kat.husar@duke.edu</p>
+<p><strong>Marie Neubrander</strong>, marie.neubrander@duke.edu</p>
 <p><strong>Repo:</strong> <a href="https://github.com/KatHusar/eCOTS26">https://github.com/KatHusar/eCOTS26</a></p>
 </div>
 <aside class="notes">
@@ -557,7 +787,7 @@ Marie Neubrander &amp; Kat Husar
           display:block!important;
       }</style></aside>
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

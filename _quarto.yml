@@ -27,7 +27,9 @@ website:
       - href: lessons/Demo.qmd
         text: Demo
       - href: lessons/Activity.qmd
-        text: Try out yourself!
+        text: Your Turn
+      - href: lessons/Appendix.qmd
+        text: Appendix
   sidebar:
     style: "floating"
     contents:
@@ -36,6 +38,7 @@ website:
           - index.qmd
           - lessons/Demo.qmd
           - lessons/Activity.qmd
+          - lessons/Appendix.qmd
 
   page-footer: 
     left: "Built using Quarto Webr."

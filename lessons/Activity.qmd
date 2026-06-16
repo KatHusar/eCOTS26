@@ -1,77 +1,21 @@
 ---
-title: "Try It Yourself!"
-subtitle: "pandas groupby ↔ dplyr pipes, with a SQL cameo"
-webr:
-  show-startup-message: false
+title: "Your Turn"
+subtitle: "Bringing a second language into your own course"
 ---
-```{webr-r}
-#| context: setup
 
-library(dplyr)
-```
 <style>
-.reveal-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-.reveal-btn:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
-}
-.reveal-btn:active {
-  transform: scale(0.98);
-}
-.prompt-box, .ai-response-box {
+.prompt-box {
+  background-color: #f5f5f5;
+  border-left: 4px solid #6c757d;
   border-radius: 8px;
   padding: 12px 16px;
   margin: 12px 0;
 }
-.prompt-box {
-  background-color: #f5f5f5;
-  border-left: 4px solid #6c757d;
-}
-.ai-response-box {
-  background-color: #eef6ff;
-  border-left: 4px solid #4A90E2;
-}
-.prompt-label, .ai-label {
+.prompt-label {
   font-weight: bold;
   display: block;
   margin-bottom: 6px;
-}
-.prompt-label { color: #6c757d; }
-.ai-label { color: #4A90E2; }
-.match-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0;
-}
-.match-table th, .match-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-  vertical-align: middle;
-}
-.match-table th {
-  background-color: #4A90E2;
-  color: white;
-}
-.match-table code { white-space: nowrap; }
-.match-select {
-  width: 100%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.feedback-icon {
-  font-size: 18px;
-  margin-left: 8px;
+  color: #6c757d;
 }
 .callout-tip {
   border-left: 4px solid #4CAF50;
@@ -80,24 +24,15 @@ library(dplyr)
   padding: 10px 16px;
   margin: 12px 0;
 }
-.three-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-.lang-card {
+.share-box {
+  border-left: 4px solid #4A90E2;
+  background: #eef6ff;
   border-radius: 8px;
-  padding: 12px 14px;
-  font-size: 13px;
+  padding: 12px 16px;
+  margin: 16px 0;
 }
-.lang-card.r    { background: #fff3f3; border-left: 4px solid #e05c5c; }
-.lang-card.py   { background: #eef6ff; border-left: 4px solid #4A90E2; }
-.lang-card.sql  { background: #fffbe6; border-left: 4px solid #e6a817; }
-.lang-card h4   { margin: 0 0 8px; font-size: 13px; }
-.lang-card pre  { margin: 0; background: rgba(255,255,255,0.6);
-                  padding: 6px 8px; border-radius: 4px; overflow-x: auto; }
 </style>
+
 
 
 ## In your groups {background-color="#ffffff"}
@@ -114,347 +49,10 @@ Think about places a second language could appear succesfully and places it migh
 Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.
 :::
 
+::: {.box .box-highlight}
+[3  Share back]{.box-label}
+When we regroup, we will share any insights we found particularly valuable.
 
-## Share your thoughts
-
-As you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in [this slidedeck](https://docs.google.com/presentation/d/1mI8xHcWrm5yyu6YatNTdiBneGG3GNxB7CitujsBBhXk/edit?usp=sharing)
-
-
-## The shared dataset
-
-We'll use a small sales dataset: transactions across three product categories
-over several months. Define it once in each language — the analysis is identical.
-
-::: panel-tabset
-## R
-
-```{webr-r}
-sales <- data.frame(
-  month    = c("Jan","Jan","Jan","Feb","Feb","Feb","Mar","Mar","Mar"),
-  category = c("Books","Electronics","Clothing",
-                "Books","Electronics","Clothing",
-                "Books","Electronics","Clothing"),
-  revenue  = c(120, 340, 210, 95, 410, 180, 150, 290, 230),
-  units    = c(12, 4, 15, 9, 5, 13, 14, 3, 17)
-)
-head(sales)
-```
-
-## Python
-
-```{pyodide-python}
-import pandas as pd
-
-sales = pd.DataFrame({
-    "month":    ["Jan","Jan","Jan","Feb","Feb","Feb","Mar","Mar","Mar"],
-    "category": ["Books","Electronics","Clothing",
-                 "Books","Electronics","Clothing",
-                 "Books","Electronics","Clothing"],
-    "revenue":  [120, 340, 210, 95, 410, 180, 150, 290, 230],
-    "units":    [12, 4, 15, 9, 5, 13, 14, 3, 17]
-})
-sales.head()
-```
 :::
 
----
 
-## Part 1: Group, summarise, and sort
-
-The most common data-wrangling task: **total revenue by category, sorted descending**.
-
-### In R — the dplyr pipe
-
-```{webr-r}
-sales |>
-  group_by(category) |>
-  summarise(
-    total_revenue = sum(revenue),
-    total_units   = sum(units)
-  ) |>
-  arrange(desc(total_revenue))
-```
-
-### In Python — pandas groupby
-
-```{pyodide-python}
-(sales
-  .groupby("category")
-  .agg(total_revenue=("revenue", "sum"),
-       total_units=("units",   "sum"))
-  .sort_values("total_revenue", ascending=False)
-  .reset_index()
-)
-```
-
-### Side-by-side comparison
-
-::: {.callout-tip}
-**Key idiom differences**
-
-| Concept | dplyr (R) | pandas (Python) |
-|---|---|---|
-| Start a chain | `df |> ...` | `(df...)`  |
-| Group rows | `group_by(category)` | `.groupby("category")` |
-| Summarise | `summarise(name = fn(col))` | `.agg(name=("col", "fn"))` |
-| Sort descending | `arrange(desc(col))` | `.sort_values("col", ascending=False)` |
-| Column names quoted? | Bare names: `category` | Always strings: `"category"` |
-:::
-
----
-
-## Part 2: Filter, then group
-
-Now: **average revenue per unit, for months that aren't February**.
-
-### In R
-
-```{webr-r}
-library(dplyr)
-
-sales |>
-  filter(month != "Feb") |>
-  group_by(month, category) |>
-  summarise(avg_rev_per_unit = mean(revenue / units), .groups = "drop")
-```
-
-### In Python
-
-```{pyodide-python}
-(sales
-  .query('month != "Feb"')
-  .assign(rev_per_unit=lambda df: df["revenue"] / df["units"])
-  .groupby(["month", "category"])
-  .agg(avg_rev_per_unit=("rev_per_unit", "mean"))
-  .reset_index()
-)
-```
-
-::: {.callout-tip}
-**Idiom flags**
-
-- `filter()` → `.query()` — both accept an expression, but pandas requires a string.
-- `mutate()` → `.assign()` — pandas uses a `lambda` to reference the DataFrame mid-chain.
-- `.groups = "drop"` in dplyr → `.reset_index()` in pandas — both un-nest the groups.
-:::
-
----
-
-## Part 3: SQL ↔ tidyverse cameo
-
-The same aggregation in all three languages. Notice how SQL is the conceptual
-middle ground — its `GROUP BY` maps directly to both `group_by()` and `.groupby()`.
-
-<div class="three-col">
-<div class="lang-card sql">
-<h4>🗄 SQL</h4>
-<pre>
-SELECT
-  category,
-  SUM(revenue)  AS total_revenue,
-  SUM(units)    AS total_units
-FROM sales
-GROUP BY category
-ORDER BY total_revenue DESC;
-</pre>
-</div>
-<div class="lang-card r">
-<h4>📦 dplyr (R)</h4>
-<pre>
-sales |>
-  group_by(category) |>
-  summarise(
-    total_revenue = sum(revenue),
-    total_units   = sum(units)
-  ) |>
-  arrange(desc(total_revenue))
-</pre>
-</div>
-<div class="lang-card py">
-<h4>🐍 pandas (Python)</h4>
-<pre>
-(sales
-  .groupby("category")
-  .agg(
-    total_revenue=("revenue","sum"),
-    total_units  =("units",  "sum"))
-  .sort_values("total_revenue",
-               ascending=False)
-  .reset_index()
-  )
-</pre>
-</div>
-</div>
-
-| SQL clause | dplyr verb | pandas method |
-|---|---|---|
-| `WHERE` | `filter()` | `.query()` |
-| `SELECT col, fn(col)` | `summarise()` | `.agg()` |
-| `GROUP BY` | `group_by()` | `.groupby()` |
-| `ORDER BY ... DESC` | `arrange(desc(...))` | `.sort_values(..., ascending=False)` |
-| `AS name` | `name = expr` inside `summarise()` | `name=("col","fn")` inside `.agg()` |
-
----
-
-## Match the syntax!
-
-For each dplyr snippet, choose its pandas equivalent.
-
-```{=html}
-<table class="match-table">
-  <thead>
-    <tr><th>dplyr (R)</th><th>pandas (Python)</th><th></th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>filter(month == "Jan")</code></td>
-      <td>
-        <select class="match-select" data-correct="b" data-feedback="fb1">
-          <option value="">-- choose --</option>
-          <option value="a"><code>.filter(month="Jan")</code></option>
-          <option value="b"><code>.query('month == "Jan"')</code></option>
-          <option value="c"><code>.where("month", "Jan")</code></option>
-        </select>
-      </td>
-      <td><span id="fb1" class="feedback-icon"></span></td>
-    </tr>
-    <tr>
-      <td><code>group_by(category)</code></td>
-      <td>
-        <select class="match-select" data-correct="a" data-feedback="fb2">
-          <option value="">-- choose --</option>
-          <option value="a"><code>.groupby("category")</code></option>
-          <option value="b"><code>.group("category")</code></option>
-          <option value="c"><code>.aggregate("category")</code></option>
-        </select>
-      </td>
-      <td><span id="fb2" class="feedback-icon"></span></td>
-    </tr>
-    <tr>
-      <td><code>summarise(total = sum(revenue))</code></td>
-      <td>
-        <select class="match-select" data-correct="c" data-feedback="fb3">
-          <option value="">-- choose --</option>
-          <option value="a"><code>.summarise(total=sum("revenue"))</code></option>
-          <option value="b"><code>.sum("revenue")</code></option>
-          <option value="c"><code>.agg(total=("revenue", "sum"))</code></option>
-        </select>
-      </td>
-      <td><span id="fb3" class="feedback-icon"></span></td>
-    </tr>
-    <tr>
-      <td><code>arrange(desc(revenue))</code></td>
-      <td>
-        <select class="match-select" data-correct="b" data-feedback="fb4">
-          <option value="">-- choose --</option>
-          <option value="a"><code>.sort_values("revenue")</code></option>
-          <option value="b"><code>.sort_values("revenue", ascending=False)</code></option>
-          <option value="c"><code>.order_by("revenue", desc=True)</code></option>
-        </select>
-      </td>
-      <td><span id="fb4" class="feedback-icon"></span></td>
-    </tr>
-    <tr>
-      <td><code>mutate(rev_per_unit = revenue / units)</code></td>
-      <td>
-        <select class="match-select" data-correct="a" data-feedback="fb5">
-          <option value="">-- choose --</option>
-          <option value="a"><code>.assign(rev_per_unit=lambda df: df["revenue"] / df["units"])</code></option>
-          <option value="b"><code>.mutate(rev_per_unit="revenue/units")</code></option>
-          <option value="c"><code>.add_column("rev_per_unit", df["revenue"] / df["units"])</code></option>
-        </select>
-      </td>
-      <td><span id="fb5" class="feedback-icon"></span></td>
-    </tr>
-    <tr>
-      <td><code>select(month, revenue)</code></td>
-      <td>
-        <select class="match-select" data-correct="c" data-feedback="fb6">
-          <option value="">-- choose --</option>
-          <option value="a"><code>.select(["month", "revenue"])</code></option>
-          <option value="b"><code>.keep("month", "revenue")</code></option>
-          <option value="c"><code>[["month", "revenue"]]</code></option>
-        </select>
-      </td>
-      <td><span id="fb6" class="feedback-icon"></span></td>
-    </tr>
-  </tbody>
-</table>
-
-<button class="reveal-btn" onclick="checkMatches()">Check Answers</button>
-<p id="match-score" style="font-weight: bold; margin-top: 10px;"></p>
-
-<script>
-function checkMatches() {
-  const selects = document.querySelectorAll('.match-select');
-  let correct = 0;
-  selects.forEach(sel => {
-    const fb = document.getElementById(sel.dataset.feedback);
-    if (sel.value === "") {
-      fb.textContent = "";
-    } else if (sel.value === sel.dataset.correct) {
-      fb.textContent = "✅";
-      correct++;
-    } else {
-      fb.textContent = "❌";
-    }
-  });
-  document.getElementById('match-score').textContent =
-    `You got ${correct} out of ${selects.length} correct!`;
-}
-</script>
-```
-
----
-
-## Your turn — fill in the blanks
-
-Here's the complete R version of a new task: **total units sold per month, keeping
-only months with more than 30 total units**.
-
-```{webr-r}
-library(dplyr)
-
-sales |>
-  group_by(month) |>
-  summarise(total_units = sum(units)) |>
-  filter(total_units > 30) |>
-  arrange(month)
-```
-
-Now complete the pandas equivalent below and run it:
-
-```{pyodide-python}
-sales
-  .groupby(____)
-  .agg(total_units=(____, ____))
-  .reset_index()
-  .query("____ > 30")
-  .sort_values(____)
-
-```
-
-<button class="reveal-btn" onclick="document.getElementById('solution').style.display='block'">
-Reveal Solution
-</button>
-
-::: {#solution style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;"}
-```python
-sales
-  .groupby("month")
-  .agg(total_units=("units", "sum"))
-  .reset_index()
-  .query("total_units > 30")
-  .sort_values("month")
-
-```
-:::
-
----
-
-## Concept check
-
-In dplyr you can write `filter(total_units > 30)` **immediately** after
-`summarise()` because the pipe passes the result forward as a new data frame.
-In pandas, why do you need `.reset_index()` **before** `.query("total_units > 30")`
-— and what happens if you skip it?

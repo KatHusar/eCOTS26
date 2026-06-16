@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Try It Yourself! – eCOTS 2026</title>
+<title>Your Turn – eCOTS 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,16 +30,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../lessons/Appendix.html" rel="next">
 <link href="../lessons/Demo.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bcc623201724f4c1844e957023c69b96.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-33058fb48e1c413f923b02ddd4b0ff45.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -379,7 +347,7 @@ iframe.qwebr-output-code-browse {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = [''];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'dplyr'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -401,7 +369,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(dplyr)","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sales <- data.frame(\n  month    = c(\"Jan\",\"Jan\",\"Jan\",\"Feb\",\"Feb\",\"Feb\",\"Mar\",\"Mar\",\"Mar\"),\n  category = c(\"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\"),\n  revenue  = c(120, 340, 210, 95, 410, 180, 150, 290, 230),\n  units    = c(12, 4, 15, 9, 5, 13, 14, 3, 17)\n)\nhead(sales)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sales |>\n  group_by(category) |>\n  summarise(\n    total_revenue = sum(revenue),\n    total_units   = sum(units)\n  ) |>\n  arrange(desc(total_revenue))","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  filter(month != \"Feb\") |>\n  group_by(month, category) |>\n  summarise(avg_rev_per_unit = mean(revenue / units), .groups = \"drop\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\n\nsales |>\n  group_by(month) |>\n  summarise(total_units = sum(units)) |>\n  filter(total_units > 30) |>\n  arrange(month)","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"sales <- data.frame(\n  month    = c(\"Jan\",\"Jan\",\"Jan\",\"Feb\",\"Feb\",\"Feb\",\"Mar\",\"Mar\",\"Mar\"),\n  category = c(\"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\",\n                \"Books\",\"Electronics\",\"Clothing\"),\n  revenue  = c(120, 340, 210, 95, 410, 180, 150, 290, 230),\n  units    = c(12, 4, 15, 9, 5, 13, 14, 3, 17)\n)\nhead(sales)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1816,7 +1784,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"import pandas as pd\n\nsales = pd.DataFrame({\n    \"month\":    [\"Jan\",\"Jan\",\"Jan\",\"Feb\",\"Feb\",\"Feb\",\"Mar\",\"Mar\",\"Mar\"],\n    \"category\": [\"Books\",\"Electronics\",\"Clothing\",\n                 \"Books\",\"Electronics\",\"Clothing\",\n                 \"Books\",\"Electronics\",\"Clothing\"],\n    \"revenue\":  [120, 340, 210, 95, 410, 180, 150, 290, 230],\n    \"units\":    [12, 4, 15, 9, 5, 13, 14, 3, 17]\n})\nsales.head()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"(sales\n  .groupby(\"category\")\n  .agg(total_revenue=(\"revenue\", \"sum\"),\n       total_units=(\"units\",   \"sum\"))\n  .sort_values(\"total_revenue\", ascending=False)\n  .reset_index()\n)","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"(sales\n  .query('month != \"Feb\"')\n  .assign(rev_per_unit=lambda df: df[\"revenue\"] / df[\"units\"])\n  .groupby([\"month\", \"category\"])\n  .agg(avg_rev_per_unit=(\"rev_per_unit\", \"mean\"))\n  .reset_index()\n)","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sales\n  .groupby(____)\n  .agg(total_units=(____, ____))\n  .reset_index()\n  .query(\"____ > 30\")\n  .sort_values(____)","id":4,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"import pandas as pd\n\nsales = pd.DataFrame({\n    \"month\":    [\"Jan\",\"Jan\",\"Jan\",\"Feb\",\"Feb\",\"Feb\",\"Mar\",\"Mar\",\"Mar\"],\n    \"category\": [\"Books\",\"Electronics\",\"Clothing\",\n                 \"Books\",\"Electronics\",\"Clothing\",\n                 \"Books\",\"Electronics\",\"Clothing\"],\n    \"revenue\":  [120, 340, 210, 95, 410, 180, 150, 290, 230],\n    \"units\":    [12, 4, 15, 9, 5, 13, 14, 3, 17]\n})\nsales.head()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 
 </script>
@@ -2010,7 +1978,7 @@ globalThis._qpyodideGetInstance = function() {
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -2037,7 +2005,11 @@ globalThis._qpyodideGetInstance = function() {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../lessons/Activity.html"> 
-<span class="menu-text">Try out yourself!</span></a>
+<span class="menu-text">Your Turn</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/Appendix.html"> 
+<span class="menu-text">Appendix</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -2055,7 +2027,7 @@ globalThis._qpyodideGetInstance = function() {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Activity.html">Try It Yourself!</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Activity.html">Your Turn</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -2091,7 +2063,13 @@ globalThis._qpyodideGetInstance = function() {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/Activity.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Try It Yourself!</span></a>
+ <span class="menu-text">Your Turn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/Appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix: Try It Yourself!</span></a>
   </div>
 </li>
       </ul>
@@ -2399,10 +2377,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Activity.html">Try It Yourself!</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Activity.html">Your Turn</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Try It Yourself!</h1>
-<p class="subtitle lead">pandas groupby ↔︎ dplyr pipes, with a SQL cameo</p>
+<h1 class="title">Your Turn</h1>
+<p class="subtitle lead">Bringing a second language into your own course</p>
 </div>
 
 
@@ -2419,71 +2397,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<div id="qwebr-insertion-location-1"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <style>
-.reveal-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-.reveal-btn:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
-}
-.reveal-btn:active {
-  transform: scale(0.98);
-}
-.prompt-box, .ai-response-box {
+.prompt-box {
+  background-color: #f5f5f5;
+  border-left: 4px solid #6c757d;
   border-radius: 8px;
   padding: 12px 16px;
   margin: 12px 0;
 }
-.prompt-box {
-  background-color: #f5f5f5;
-  border-left: 4px solid #6c757d;
-}
-.ai-response-box {
-  background-color: #eef6ff;
-  border-left: 4px solid #4A90E2;
-}
-.prompt-label, .ai-label {
+.prompt-label {
   font-weight: bold;
   display: block;
   margin-bottom: 6px;
-}
-.prompt-label { color: #6c757d; }
-.ai-label { color: #4A90E2; }
-.match-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0;
-}
-.match-table th, .match-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-  vertical-align: middle;
-}
-.match-table th {
-  background-color: #4A90E2;
-  color: white;
-}
-.match-table code { white-space: nowrap; }
-.match-select {
-  width: 100%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.feedback-icon {
-  font-size: 18px;
-  margin-left: 8px;
+  color: #6c757d;
 }
 .callout-tip {
   border-left: 4px solid #4CAF50;
@@ -2492,24 +2418,15 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   padding: 10px 16px;
   margin: 12px 0;
 }
-.three-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-.lang-card {
+.share-box {
+  border-left: 4px solid #4A90E2;
+  background: #eef6ff;
   border-radius: 8px;
-  padding: 12px 14px;
-  font-size: 13px;
+  padding: 12px 16px;
+  margin: 16px 0;
 }
-.lang-card.r    { background: #fff3f3; border-left: 4px solid #e05c5c; }
-.lang-card.py   { background: #eef6ff; border-left: 4px solid #4A90E2; }
-.lang-card.sql  { background: #fffbe6; border-left: 4px solid #e6a817; }
-.lang-card h4   { margin: 0 0 8px; font-size: 13px; }
-.lang-card pre  { margin: 0; background: rgba(255,255,255,0.6);
-                  padding: 6px 8px; border-radius: 4px; overflow-x: auto; }
 </style>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <section id="in-your-groups" class="level2" data-background-color="#ffffff">
 <h2 data-background-color="#ffffff" class="anchored" data-anchor-id="in-your-groups">In your groups</h2>
 <p>Take one course you actually teach:</p>
@@ -2531,7 +2448,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
@@ -2540,23 +2457,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 </div>
+<p>======= In your breakout group, pick <strong>one course you actually teach</strong> and a <strong>concept you already cover</strong>. Work through the two questions below. The goal is a concrete, course-specific idea, not a polished plan. &gt;&gt;&gt;&gt;&gt;&gt;&gt; a7b7206 (updates)</p>
 <hr>
 </section>
-<section id="part-1-group-summarise-and-sort" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-group-summarise-and-sort">Part 1: Group, summarise, and sort</h2>
-<p>The most common data-wrangling task: <strong>total revenue by category, sorted descending</strong>.</p>
-<section id="in-r-the-dplyr-pipe" class="level3">
-<h3 class="anchored" data-anchor-id="in-r-the-dplyr-pipe">In R — the dplyr pipe</h3>
-<div id="qwebr-insertion-location-3"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="in-python-pandas-groupby" class="level3">
-<h3 class="anchored" data-anchor-id="in-python-pandas-groupby">In Python — pandas groupby</h3>
-<div id="qpyodide-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="side-by-side-comparison" class="level3">
-<h3 class="anchored" data-anchor-id="side-by-side-comparison">Side-by-side comparison</h3>
+<section id="where-it-fits-and-where-it-would-backfire" class="level2">
+<h2 class="anchored" data-anchor-id="where-it-fits-and-where-it-would-backfire">1. Where it fits, and where it would backfire</h2>
+<p>Name one <strong>10-minute</strong> spot where a second language could appear. It might be a lab, a single problem-set question, a warm-up, or an exit ticket.</p>
+<p>Then ask the harder question:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2567,505 +2474,274 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Key idiom differences</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Concept</th>
-<th>dplyr (R)</th>
-<th>pandas (Python)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Start a chain</td>
-<td><code>df |&gt; ...</code></td>
-<td><code>(df...)</code></td>
-</tr>
-<tr class="even">
-<td>Group rows</td>
-<td><code>group_by(category)</code></td>
-<td><code>.groupby("category")</code></td>
-</tr>
-<tr class="odd">
-<td>Summarise</td>
-<td><code>summarise(name = fn(col))</code></td>
-<td><code>.agg(name=("col", "fn"))</code></td>
-</tr>
-<tr class="even">
-<td>Sort descending</td>
-<td><code>arrange(desc(col))</code></td>
-<td><code>.sort_values("col", ascending=False)</code></td>
-</tr>
-<tr class="odd">
-<td>Column names quoted?</td>
-<td>Bare names: <code>category</code></td>
-<td>Always strings: <code>"category"</code></td>
-</tr>
-</tbody>
-</table>
+<p><strong>Where would it break?</strong> Which students would it lose, and at what moment? The failure mode usually tells you more than the happy path does.</p>
 </div>
 </div>
 <hr>
 </section>
-</section>
-<section id="part-2-filter-then-group" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-filter-then-group">Part 2: Filter, then group</h2>
-<p>Now: <strong>average revenue per unit, for months that aren’t February</strong>.</p>
-<section id="in-r" class="level3">
-<h3 class="anchored" data-anchor-id="in-r">In R</h3>
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="in-python" class="level3">
-<h3 class="anchored" data-anchor-id="in-python">In Python</h3>
-<div id="qpyodide-insertion-location-3"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Idiom flags</strong></p>
+<section id="make-it-concrete" class="level2">
+<h2 class="anchored" data-anchor-id="make-it-concrete">2. Make it concrete</h2>
 <ul>
-<li><code>filter()</code> → <code>.query()</code> — both accept an expression, but pandas requires a string.</li>
-<li><code>mutate()</code> → <code>.assign()</code> — pandas uses a <code>lambda</code> to reference the DataFrame mid-chain.</li>
-<li><code>.groups = "drop"</code> in dplyr → <code>.reset_index()</code> in pandas — both un-nest the groups.</li>
+<li><strong>Build a teaching-prompt</strong> for your concept and try it on an AI tool live. See what it returns, and ask whether it would actually <em>teach</em> rather than just hand over code.</li>
+<li><strong>Talk it through.</strong> How would you keep students translating-to-understand instead of copy-pasting?</li>
 </ul>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="part-3-sql-tidyverse-cameo" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-sql-tidyverse-cameo">Part 3: SQL ↔︎ tidyverse cameo</h2>
-<p>The same aggregation in all three languages. Notice how SQL is the conceptual middle ground — its <code>GROUP BY</code> maps directly to both <code>group_by()</code> and <code>.groupby()</code>.</p>
-<div class="three-col">
-<div class="lang-card sql">
-<h4 class="anchored">
-🗄 SQL
-</h4>
-<pre>SELECT
-  category,
-  SUM(revenue)  AS total_revenue,
-  SUM(units)    AS total_units
-FROM sales
-GROUP BY category
-ORDER BY total_revenue DESC;
-</pre>
-</div>
-<div class="lang-card r">
-<h4 class="anchored">
-📦 dplyr (R)
-</h4>
-<pre>sales |&gt;
-  group_by(category) |&gt;
-  summarise(
-    total_revenue = sum(revenue),
-    total_units   = sum(units)
-  ) |&gt;
-  arrange(desc(total_revenue))
-</pre>
-</div>
-<div class="lang-card py">
-<h4 class="anchored">
-🐍 pandas (Python)
-</h4>
-<pre>(sales
-  .groupby("category")
-  .agg(
-    total_revenue=("revenue","sum"),
-    total_units  =("units",  "sum"))
-  .sort_values("total_revenue",
-               ascending=False)
-  .reset_index()
-  )
-</pre>
-</div>
-</div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>SQL clause</th>
-<th>dplyr verb</th>
-<th>pandas method</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>WHERE</code></td>
-<td><code>filter()</code></td>
-<td><code>.query()</code></td>
-</tr>
-<tr class="even">
-<td><code>SELECT col, fn(col)</code></td>
-<td><code>summarise()</code></td>
-<td><code>.agg()</code></td>
-</tr>
-<tr class="odd">
-<td><code>GROUP BY</code></td>
-<td><code>group_by()</code></td>
-<td><code>.groupby()</code></td>
-</tr>
-<tr class="even">
-<td><code>ORDER BY ... DESC</code></td>
-<td><code>arrange(desc(...))</code></td>
-<td><code>.sort_values(..., ascending=False)</code></td>
-</tr>
-<tr class="odd">
-<td><code>AS name</code></td>
-<td><code>name = expr</code> inside <code>summarise()</code></td>
-<td><code>name=("col","fn")</code> inside <code>.agg()</code></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="match-the-syntax" class="level2">
-<h2 class="anchored" data-anchor-id="match-the-syntax">Match the syntax!</h2>
-<p>For each dplyr snippet, choose its pandas equivalent.</p>
-<table class="match-table caption-top table" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">dplyr (R)</th>
-<th data-quarto-table-cell-role="th">pandas (Python)</th>
-<th data-quarto-table-cell-role="th"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>filter(month == "Jan")</code></td>
-<td><select class="match-select" data-correct="b" data-feedback="fb1"> <option value="">-- choose --</option> <option value="a">.filter(month="Jan")</option> <option value="b">.query('month == "Jan"')</option> <option value="c">.where("month", "Jan")</option> </select></td>
-<td><span id="fb1" class="feedback-icon"></span></td>
-</tr>
-<tr class="even">
-<td><code>group_by(category)</code></td>
-<td><select class="match-select" data-correct="a" data-feedback="fb2"> <option value="">-- choose --</option> <option value="a">.groupby("category")</option> <option value="b">.group("category")</option> <option value="c">.aggregate("category")</option> </select></td>
-<td><span id="fb2" class="feedback-icon"></span></td>
-</tr>
-<tr class="odd">
-<td><code>summarise(total = sum(revenue))</code></td>
-<td><select class="match-select" data-correct="c" data-feedback="fb3"> <option value="">-- choose --</option> <option value="a">.summarise(total=sum("revenue"))</option> <option value="b">.sum("revenue")</option> <option value="c">.agg(total=("revenue", "sum"))</option> </select></td>
-<td><span id="fb3" class="feedback-icon"></span></td>
-</tr>
-<tr class="even">
-<td><code>arrange(desc(revenue))</code></td>
-<td><select class="match-select" data-correct="b" data-feedback="fb4"> <option value="">-- choose --</option> <option value="a">.sort_values("revenue")</option> <option value="b">.sort_values("revenue", ascending=False)</option> <option value="c">.order_by("revenue", desc=True)</option> </select></td>
-<td><span id="fb4" class="feedback-icon"></span></td>
-</tr>
-<tr class="odd">
-<td><code>mutate(rev_per_unit = revenue / units)</code></td>
-<td><select class="match-select" data-correct="a" data-feedback="fb5"> <option value="">-- choose --</option> <option value="a">.assign(rev_per_unit=lambda df: df["revenue"] / df["units"])</option> <option value="b">.mutate(rev_per_unit="revenue/units")</option> <option value="c">.add_column("rev_per_unit", df["revenue"] / df["units"])</option> </select></td>
-<td><span id="fb5" class="feedback-icon"></span></td>
-</tr>
-<tr class="even">
-<td><code>select(month, revenue)</code></td>
-<td><select class="match-select" data-correct="c" data-feedback="fb6"> <option value="">-- choose --</option> <option value="a">.select(["month", "revenue"])</option> <option value="b">.keep("month", "revenue")</option> <option value="c">[["month", "revenue"]]</option> </select></td>
-<td><span id="fb6" class="feedback-icon"></span></td>
-</tr>
-</tbody>
-</table>
+<p>If you build a prompt, here is a posible shape to start from:</p>
+<div class="prompt-box">
+<p><span class="prompt-label">🧑 Teaching-prompt template</span></p>
+<pre><code>I know [language A]. Translate this code to [language B], and:
 
-
-<button class="reveal-btn" onclick="checkMatches()">Check Answers</button>
-<p id="match-score" style="font-weight: bold; margin-top: 10px;"></p>
-
-<script>
-function checkMatches() {
-  const selects = document.querySelectorAll('.match-select');
-  let correct = 0;
-  selects.forEach(sel => {
-    const fb = document.getElementById(sel.dataset.feedback);
-    if (sel.value === "") {
-      fb.textContent = "";
-    } else if (sel.value === sel.dataset.correct) {
-      fb.textContent = "✅";
-      correct++;
-    } else {
-      fb.textContent = "❌";
-    }
-  });
-  document.getElementById('match-score').textContent =
-    `You got ${correct} out of ${selects.length} correct!`;
-}
-</script>
-<hr>
-</section>
-<section id="your-turn-fill-in-the-blanks" class="level2">
-<h2 class="anchored" data-anchor-id="your-turn-fill-in-the-blanks">Your turn — fill in the blanks</h2>
-<p>Here’s the complete R version of a new task: <strong>total units sold per month, keeping only months with more than 30 total units</strong>.</p>
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now complete the pandas equivalent below and run it:</p>
-<div id="qpyodide-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<button class="reveal-btn" onclick="document.getElementById('solution').style.display='block'">
-Reveal Solution
-</button>
-<div id="solution" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sales</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  .groupby(<span class="st">"month"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  .agg(total_units<span class="op">=</span>(<span class="st">"units"</span>, <span class="st">"sum"</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  .reset_index()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  .query(<span class="st">"total_units &gt; 30"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  .sort_values(<span class="st">"month"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+1. name the packages I need to import
+2. map each line to its equivalent
+3. flag the idiom differences 
+4. end with one concept-check question I should be able to answer</code></pre>
 </div>
 <hr>
 </section>
-<section id="concept-check" class="level2">
-<h2 class="anchored" data-anchor-id="concept-check">Concept check</h2>
-<p>In dplyr you can write <code>filter(total_units &gt; 30)</code> <strong>immediately</strong> after <code>summarise()</code> because the pipe passes the result forward as a new data frame. In pandas, why do you need <code>.reset_index()</code> <strong>before</strong> <code>.query("total_units &gt; 30")</code> — and what happens if you skip it?</p>
+<section id="share-back" class="level2">
+<h2 class="anchored" data-anchor-id="share-back">3. Share back</h2>
+<p>When we regroup, we will share any insights we found particularly valuable. ::: {.share-box} <strong>Add some notes:</strong> share your ideas, a challenge you ran into, or an AI output in <a href="https://docs.google.com/document/d/1C7kTMqHfCuPqkcYHEn1o2Q0wMTnGjvkxp2OU0BHMYwo/edit?usp=sharing">this shared doc</a>. :::</p>
 
 
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/kathusar\.github\.io\/eCOTS26\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/kathusar\.github\.io\/eCOTS26\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -3073,185 +2749,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../lessons/Demo.html" class="pagination-link" aria-label="Demo!">
@@ -3259,6 +2911,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../lessons/Appendix.html" class="pagination-link" aria-label="Appendix: Try It Yourself!">
+        <span class="nav-page-text">Appendix: Try It Yourself!</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

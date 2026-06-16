@@ -132,7 +132,7 @@ model <- lm(score ~ hours, data = study_data)
 summary(model)
 ```
 
-## Step 3: From R to Python — ask the AI
+## Step 3: From R to Python: ask the AI
 
 Suppose you've never written Python before, but you need to reproduce this analysis. Let's ask an AI assistant for help.
 
@@ -201,7 +201,6 @@ Translate this R code to Python using sklearn, AND:
 4. Make sure to tell me which packages have to be loaded and how to load them.
 
 model <- lm(score ~ hours, data = study_data)
-summary(model) ~ hours, data = study_data)
 summary(model)
 ```
 :::
@@ -209,7 +208,7 @@ summary(model)
 ::: {.ai-response-box}
 <span class="ai-label">🤖 AI response</span>
 
-Here's the same translation, broken into pieces — click through each tab:
+Here's the same translation, broken into pieces. Click through each tab:
 
 ::: panel-tabset
 
@@ -217,13 +216,13 @@ Here's the same translation, broken into pieces — click through each tab:
 
 ::: {.columns}
 ::: {.column width="50%"}
-**R** — base only, no imports needed
+**R**: base only, no imports needed
 
 `lm()` and `summary()` ship with base R.
 :::
 
 ::: {.column width="50%"}
-**Python** — install and import
+**Python**: install and import
 
 ```bash
 pip install scikit-learn numpy pandas
@@ -247,23 +246,23 @@ model <- lm(score ~ hours, data = study_data)
 summary(model)
 ```
 
-**Python (sklearn) — annotated**
+**Python (sklearn): annotated**
 
 ```python
 # ── R: model <- lm(score ~ hours, data = study_data) ──────────────────
 # R uses a formula interface: 'score ~ hours' is a symbolic expression.
-# sklearn has NO formula interface — you must build X and y manually.
+# sklearn has NO formula interface. You must build X and y manually.
 
 X = study_data[['hours']]   # double brackets → 2-D DataFrame (n×1)
                              # R adds intercept automatically; sklearn does too (fit_intercept=True default)
 y = study_data['score']     # single bracket → 1-D Series
 
-model = LinearRegression()  # equivalent to specifying lm() — no fitting yet
+model = LinearRegression()  # equivalent to specifying lm(), no fitting yet
 model.fit(X, y)             # <- this is where lm() actually does its work
 
 # ── R: summary(model) ─────────────────────────────────────────────────
 # R's summary() prints coefs, SEs, t-stats, p-values, F-stat, R² in one call.
-# sklearn gives NONE of that directly — it is a prediction library, not inference.
+# sklearn gives NONE of that directly. It is a prediction library, not inference.
 # You reconstruct the pieces manually:
 
 print("Intercept :", model.intercept_)     # R: coef(model)[1]
@@ -276,14 +275,14 @@ print("R²         :", model.score(X, y))   # R: summary(model)$r.squared
 
 ## Idiom flags
 
-> **Formula interface vs. design matrix.** R's `score ~ hours` is declarative — R
+> **Formula interface vs. design matrix.** R's `score ~ hours` is declarative: R
 > parses variable names, builds the design matrix, and adds an intercept for you.
 > sklearn is imperative: you construct `X` as an explicit 2-D array and `y` as a
 > 1-D array before fitting. If you accidentally pass a 1-D array as `X`, sklearn
 > raises a `ValueError`.
 
-> **Inference vs. prediction focus.** R's `lm()` is built for statistical inference
-> — standard errors, t-tests, F-tests are first-class output. sklearn's
+> **Inference vs. prediction focus.** R's `lm()` is built for statistical inference:
+> standard errors, t-tests, F-tests are first-class output. sklearn's
 > `LinearRegression` is optimised for predictive accuracy; it deliberately omits
 > p-values. For inference in Python, use `statsmodels.formula.api.ols()`, which
 > also supports the formula syntax.
@@ -302,7 +301,7 @@ print("R²         :", model.score(X, y))   # R: summary(model)$r.squared
 
 - **`fit_intercept=True` default.** sklearn includes an intercept by default (same
   as R's `lm()`). If you manually dummy-code all levels of a categorical variable
-  and pass them in, you'll get perfect multicollinearity — the same trap as
+  and pass them in, you'll get perfect multicollinearity, the same trap as
   forgetting to drop a reference level in R with `-1` in your formula.
 
 - **`model.score(X, y)` gives R², not adjusted R².** R's `summary()` reports both.
@@ -311,7 +310,7 @@ print("R²         :", model.score(X, y))   # R: summary(model)$r.squared
 ## Concept check
 
 When you write `X = study_data[['hours']]` with double brackets instead of
-`study_data['hours']` with single brackets, what is the difference in shape —
+`study_data['hours']` with single brackets, what is the difference in shape,
 and why does `model.fit()` require that specific shape?
 
 :::
@@ -426,7 +425,7 @@ function checkMatches() {
 </script>
 ```
 
-## Step 5: Your turn — fill in the blanks
+## Step 5: Your turn: fill in the blanks
 
 Now let's try a **different** task on a **different** dataset: the correlation between temperature and ice cream sales.
 
@@ -441,7 +440,7 @@ ice_cream <- data.frame(temp = temp, sales = sales)
 cor(ice_cream$temp, ice_cream$sales)
 ```
 
-Now write the equivalent Python — fill in the blanks below and run it!
+Now write the equivalent Python. Fill in the blanks below and run it!
 
 ```{pyodide-python}
 import numpy as np
