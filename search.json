@@ -4,7 +4,7 @@
     "href": "lessons/Demo.html",
     "title": "Demo!",
     "section": "",
-    "text": "For this activity, we’ll use a small made-up dataset: hours studied vs. exam score for 12 students. We’ll define the exact same data in both R and Python so we can compare the two languages side-by-side.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nNotice the parallels already: c() becomes [], data.frame() becomes pd.DataFrame(), and head() becomes .head().",
+    "text": "We’ll use a small made-up dataset: hours studied vs. exam score for 12 students defined in both R and Python.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nMany of us have seen these parallels: c() becomes [], data.frame() becomes pd.DataFrame(), and head() becomes .head().",
     "crumbs": [
       "Home",
       "Content",
@@ -16,7 +16,7 @@
     "href": "lessons/Demo.html#step-1-a-shared-dataset",
     "title": "Demo!",
     "section": "",
-    "text": "For this activity, we’ll use a small made-up dataset: hours studied vs. exam score for 12 students. We’ll define the exact same data in both R and Python so we can compare the two languages side-by-side.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nNotice the parallels already: c() becomes [], data.frame() becomes pd.DataFrame(), and head() becomes .head().",
+    "text": "We’ll use a small made-up dataset: hours studied vs. exam score for 12 students defined in both R and Python.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nMany of us have seen these parallels: c() becomes [], data.frame() becomes pd.DataFrame(), and head() becomes .head().",
     "crumbs": [
       "Home",
       "Content",
@@ -27,8 +27,8 @@
     "objectID": "lessons/Demo.html#step-2-fit-a-linear-model-in-r",
     "href": "lessons/Demo.html#step-2-fit-a-linear-model-in-r",
     "title": "Demo!",
-    "section": "Step 2: Fit a linear model — in R",
-    "text": "Step 2: Fit a linear model — in R\nIn R, fitting a linear model and getting a full statistical summary takes just two lines:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "section": "Step 2: Fit a linear model in R",
+    "text": "Step 2: Fit a linear model in R\nIn R, fitting a linear model and getting a full statistical summary takes just two lines:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
@@ -40,67 +40,7 @@
     "href": "lessons/Demo.html#step-3-from-r-to-python-ask-the-ai",
     "title": "Demo!",
     "section": "Step 3: From R to Python — ask the AI",
-    "text": "Step 3: From R to Python — ask the AI\nSuppose you’ve never written Python before, but you need to reproduce this analysis. Let’s ask an AI assistant for help.\n\nPrompt: “Translate this R code to Python”\n\n🧑 Prompt\nTranslate this R code to Python:\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nIn Python, the closest equivalent is scikit-learn’s LinearRegression. Here’s the translation:\nfrom sklearn.linear_model import LinearRegression\n\nX = study_data[[\"hours\"]]\ny = study_data[\"score\"]\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprint(\"Intercept:\", model.intercept_)\nprint(\"Coefficient:\", model.coef_[0])\n\nTry running the translated code below (the first run may take a few seconds while scikit-learn loads):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBetter prompts: “Take me step by step through the differences and similarities in this code”\nThe first translation works, but a better prompt can help us actually understand what changed.\n\n🧑 Prompt\nI'm a stats student fluent in R.\nTranslate this R code to Python using sklearn, AND:\n\n1. Add inline comments mapping each R line to its Python equivalent.\n2. Flag any idiom differences (e.g., formula interface vs. design matrix).\n3. End with one concept-check question I should be able to answer\n   before I move on.\n4. Make sure to tell me which packages have to be loaded and how to load them.\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model) ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\n\n\nR — Base only, no imports needed\nlm() and summary() ship with base R.\n\nPython — Install and import\npip install scikit-learn numpy pandas\nimport numpy as np\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score\n\n\n\n\nR original\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\n\n\n\nPython (sklearn) — annotated\n# ── R: model &lt;- lm(score ~ hours, data = study_data) ──────────────────\n# R uses a formula interface: 'score ~ hours' is a symbolic expression.\n# sklearn has NO formula interface — you must build X and y manually.\n\nX = study_data[['hours']]   # double brackets → 2-D DataFrame (n×1)\n                             # R adds intercept automatically; sklearn does too (fit_intercept=True default)\ny = study_data['score']     # single bracket → 1-D Series\n\nmodel = LinearRegression()  # equivalent to specifying lm() — no fitting yet\nmodel.fit(X, y)             # &lt;- this is where lm() actually does its work\n\n# ── R: summary(model) ─────────────────────────────────────────────────\n# R's summary() prints coefs, SEs, t-stats, p-values, F-stat, R² in one call.\n# sklearn gives NONE of that directly — it is a prediction library, not inference.\n# You reconstruct the pieces manually:\n\nprint(\"Intercept :\", model.intercept_)     # R: coef(model)[1]\nprint(\"Coefficient:\", model.coef_[0])      # R: coef(model)['hours']\nprint(\"R²         :\", model.score(X, y))   # R: summary(model)$r.squared\n\n# ⚠ p-values, SEs, and t-stats are NOT available in sklearn.\n# Use statsmodels.formula.api.ols() if you need full inference output.\n\n\n\nIdiom flags\n\nFormula interface vs. design matrix. R’s score ~ hours is declarative — R parses variable names, builds the design matrix, and adds an intercept for you. sklearn is imperative: you construct X as an explicit 2-D array and y as a 1-D array before fitting. If you accidentally pass a 1-D array as X, sklearn raises a ValueError.\n\n\nInference vs. prediction focus. R’s lm() is built for statistical inference — standard errors, t-tests, F-tests are first-class output. sklearn’s LinearRegression is optimised for predictive accuracy; it deliberately omits p-values. For inference in Python, use statsmodels.formula.api.ols(), which also supports the formula syntax.\n\n\nAttribute naming. R stores results as a named list (model$coefficients). sklearn stores them as object attributes with trailing underscores: model.coef_ and model.intercept_. The trailing underscore is a sklearn convention signalling “set after fitting.”\n\n\n\n\nAdditional notes\n\nThe statsmodels alternative is often the right call for real statistics. statsmodels.formula.api.ols('score ~ hours', data=study_data).fit() accepts R-style formula syntax and produces a summary() that looks almost identical to R’s. Use sklearn when doing prediction and cross-validation, not inference.\nfit_intercept=True default. sklearn includes an intercept by default (same as R’s lm()). If you manually dummy-code all levels of a categorical variable and pass them in, you’ll get perfect multicollinearity — the same trap as forgetting to drop a reference level in R with -1 in your formula.\nmodel.score(X, y) gives R², not adjusted R². R’s summary() reports both. If you need adjusted R², compute it manually from n, p, and the raw R².\n\n\n\n\nConcept check\nWhen you write X = study_data[['hours']] with double brackets instead of study_data['hours'] with single brackets, what is the difference in shape — and why does model.fit() require that specific shape?",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Demo!"
-    ]
-  },
-  {
-    "objectID": "lessons/Demo.html#r-original",
-    "href": "lessons/Demo.html#r-original",
-    "title": "Demo!",
-    "section": "R original",
-    "text": "R original\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Demo!"
-    ]
-  },
-  {
-    "objectID": "lessons/Demo.html#python-sklearn-annotated",
-    "href": "lessons/Demo.html#python-sklearn-annotated",
-    "title": "Demo!",
-    "section": "Python (sklearn) — annotated",
-    "text": "Python (sklearn) — annotated\n# ── R: model &lt;- lm(score ~ hours, data = study_data) ──────────────────\n# R uses a formula interface: 'score ~ hours' is a symbolic expression.\n# sklearn has NO formula interface — you must build X and y manually.\n\nX = study_data[['hours']]   # double brackets → 2-D DataFrame (n×1)\n                             # R adds intercept automatically; sklearn does too (fit_intercept=True default)\ny = study_data['score']     # single bracket → 1-D Series\n\nmodel = LinearRegression()  # equivalent to specifying lm() — no fitting yet\nmodel.fit(X, y)             # &lt;- this is where lm() actually does its work\n\n# ── R: summary(model) ─────────────────────────────────────────────────\n# R's summary() prints coefs, SEs, t-stats, p-values, F-stat, R² in one call.\n# sklearn gives NONE of that directly — it is a prediction library, not inference.\n# You reconstruct the pieces manually:\n\nprint(\"Intercept :\", model.intercept_)     # R: coef(model)[1]\nprint(\"Coefficient:\", model.coef_[0])      # R: coef(model)['hours']\nprint(\"R²         :\", model.score(X, y))   # R: summary(model)$r.squared\n\n# ⚠ p-values, SEs, and t-stats are NOT available in sklearn.\n# Use statsmodels.formula.api.ols() if you need full inference output.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Demo!"
-    ]
-  },
-  {
-    "objectID": "lessons/Demo.html#idiom-flags",
-    "href": "lessons/Demo.html#idiom-flags",
-    "title": "Demo!",
-    "section": "Idiom flags",
-    "text": "Idiom flags\n\nFormula interface vs. design matrix. R’s score ~ hours is declarative — R parses variable names, builds the design matrix, and adds an intercept for you. sklearn is imperative: you construct X as an explicit 2-D array and y as a 1-D array before fitting. If you accidentally pass a 1-D array as X, sklearn raises a ValueError.\n\n\nInference vs. prediction focus. R’s lm() is built for statistical inference — standard errors, t-tests, F-tests are first-class output. sklearn’s LinearRegression is optimised for predictive accuracy; it deliberately omits p-values. For inference in Python, use statsmodels.formula.api.ols(), which also supports the formula syntax.\n\n\nAttribute naming. R stores results as a named list (model$coefficients). sklearn stores them as object attributes with trailing underscores: model.coef_ and model.intercept_. The trailing underscore is a sklearn convention signalling “set after fitting.”",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Demo!"
-    ]
-  },
-  {
-    "objectID": "lessons/Demo.html#additional-notes",
-    "href": "lessons/Demo.html#additional-notes",
-    "title": "Demo!",
-    "section": "Additional notes",
-    "text": "Additional notes\n\nThe statsmodels alternative is often the right call for real statistics. statsmodels.formula.api.ols('score ~ hours', data=study_data).fit() accepts R-style formula syntax and produces a summary() that looks almost identical to R’s. Use sklearn when doing prediction and cross-validation, not inference.\nfit_intercept=True default. sklearn includes an intercept by default (same as R’s lm()). If you manually dummy-code all levels of a categorical variable and pass them in, you’ll get perfect multicollinearity — the same trap as forgetting to drop a reference level in R with -1 in your formula.\nmodel.score(X, y) gives R², not adjusted R². R’s summary() reports both. If you need adjusted R², compute it manually from n, p, and the raw R².",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Demo!"
-    ]
-  },
-  {
-    "objectID": "lessons/Demo.html#concept-check",
-    "href": "lessons/Demo.html#concept-check",
-    "title": "Demo!",
-    "section": "Concept check",
-    "text": "Concept check\nWhen you write X = study_data[['hours']] with double brackets instead of study_data['hours'] with single brackets, what is the difference in shape — and why does model.fit() require that specific shape?",
+    "text": "Step 3: From R to Python — ask the AI\nSuppose you’ve never written Python before, but you need to reproduce this analysis. Let’s ask an AI assistant for help.\n\nPrompt: “Translate this R code to Python”\n\n🧑 Prompt\nTranslate this R code to Python:\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nIn Python, the closest equivalent is scikit-learn’s LinearRegression. Here’s the translation:\nfrom sklearn.linear_model import LinearRegression\n\nX = study_data[[\"hours\"]]\ny = study_data[\"score\"]\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprint(\"Intercept:\", model.intercept_)\nprint(\"Coefficient:\", model.coef_[0])\n\nTry running the translated code below (the first run may take a few seconds while scikit-learn loads):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBetter prompts: “Take me step by step through the differences and similarities in this code”\nThe first translation works, but a better prompt can help us actually understand what changed.\n\n🧑 Prompt\nI'm a stats student fluent in R.\nTranslate this R code to Python using sklearn, AND:\n\n1. Add inline comments mapping each R line to its Python equivalent.\n2. Flag any idiom differences (e.g., formula interface vs. design matrix).\n3. End with one concept-check question I should be able to answer\n   before I move on.\n4. Make sure to tell me which packages have to be loaded and how to load them.\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model) ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nHere’s the same translation, broken into pieces — click through each tab:\n\nPackagesAnnotated codeIdiom flagsNotesConcept check\n\n\n\n\nR — base only, no imports needed\nlm() and summary() ship with base R.\n\nPython — install and import\npip install scikit-learn numpy pandas\nimport numpy as np\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score\n\n\n\n\nR original\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\nPython (sklearn) — annotated\n# ── R: model &lt;- lm(score ~ hours, data = study_data) ──────────────────\n# R uses a formula interface: 'score ~ hours' is a symbolic expression.\n# sklearn has NO formula interface — you must build X and y manually.\n\nX = study_data[['hours']]   # double brackets → 2-D DataFrame (n×1)\n                             # R adds intercept automatically; sklearn does too (fit_intercept=True default)\ny = study_data['score']     # single bracket → 1-D Series\n\nmodel = LinearRegression()  # equivalent to specifying lm() — no fitting yet\nmodel.fit(X, y)             # &lt;- this is where lm() actually does its work\n\n# ── R: summary(model) ─────────────────────────────────────────────────\n# R's summary() prints coefs, SEs, t-stats, p-values, F-stat, R² in one call.\n# sklearn gives NONE of that directly — it is a prediction library, not inference.\n# You reconstruct the pieces manually:\n\nprint(\"Intercept :\", model.intercept_)     # R: coef(model)[1]\nprint(\"Coefficient:\", model.coef_[0])      # R: coef(model)['hours']\nprint(\"R²         :\", model.score(X, y))   # R: summary(model)$r.squared\n\n# ⚠ p-values, SEs, and t-stats are NOT available in sklearn.\n# Use statsmodels.formula.api.ols() if you need full inference output.\n\n\n\nFormula interface vs. design matrix. R’s score ~ hours is declarative — R parses variable names, builds the design matrix, and adds an intercept for you. sklearn is imperative: you construct X as an explicit 2-D array and y as a 1-D array before fitting. If you accidentally pass a 1-D array as X, sklearn raises a ValueError.\n\n\nInference vs. prediction focus. R’s lm() is built for statistical inference — standard errors, t-tests, F-tests are first-class output. sklearn’s LinearRegression is optimised for predictive accuracy; it deliberately omits p-values. For inference in Python, use statsmodels.formula.api.ols(), which also supports the formula syntax.\n\n\nAttribute naming. R stores results as a named list (model$coefficients). sklearn stores them as object attributes with trailing underscores: model.coef_ and model.intercept_. The trailing underscore is a sklearn convention signalling “set after fitting.”\n\n\n\n\nThe statsmodels alternative is often the right call for real statistics. statsmodels.formula.api.ols('score ~ hours', data=study_data).fit() accepts R-style formula syntax and produces a summary() that looks almost identical to R’s. Use sklearn when doing prediction and cross-validation, not inference.\nfit_intercept=True default. sklearn includes an intercept by default (same as R’s lm()). If you manually dummy-code all levels of a categorical variable and pass them in, you’ll get perfect multicollinearity — the same trap as forgetting to drop a reference level in R with -1 in your formula.\nmodel.score(X, y) gives R², not adjusted R². R’s summary() reports both. If you need adjusted R², compute it manually from n, p, and the raw R².\n\n\n\nWhen you write X = study_data[['hours']] with double brackets instead of study_data['hours'] with single brackets, what is the difference in shape — and why does model.fit() require that specific shape?",
     "crumbs": [
       "Home",
       "Content",

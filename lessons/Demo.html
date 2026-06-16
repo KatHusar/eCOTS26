@@ -2514,7 +2514,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </style>
 <section id="step-1-a-shared-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-a-shared-dataset">Step 1: A shared dataset</h2>
-<p>For this activity, we’ll use a small made-up dataset: <strong>hours studied</strong> vs.&nbsp;<strong>exam score</strong> for 12 students. We’ll define the <em>exact same data</em> in both R and Python so we can compare the two languages side-by-side.</p>
+<p>We’ll use a small made-up dataset: <strong>hours studied</strong> vs.&nbsp;<strong>exam score</strong> for 12 students defined in both R and Python.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Python</a></li></ul>
 <div class="tab-content">
@@ -2528,10 +2528,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 </div>
-<p>Notice the parallels already: <code>c()</code> becomes <code>[]</code>, <code>data.frame()</code> becomes <code>pd.DataFrame()</code>, and <code>head()</code> becomes <code>.head()</code>.</p>
+<p>Many of us have seen these parallels: <code>c()</code> becomes <code>[]</code>, <code>data.frame()</code> becomes <code>pd.DataFrame()</code>, and <code>head()</code> becomes <code>.head()</code>.</p>
 </section>
 <section id="step-2-fit-a-linear-model-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-fit-a-linear-model-in-r">Step 2: Fit a linear model — in R</h2>
+<h2 class="anchored" data-anchor-id="step-2-fit-a-linear-model-in-r">Step 2: Fit a linear model in R</h2>
 <p>In R, fitting a linear model and getting a full statistical summary takes just two lines:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2567,7 +2567,7 @@ summary(model)</code></pre>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="better-prompts-take-me-step-by-step-through-the-differences-and-similarities-in-this-code" class="level3">
-<h3 class="anchored">Better prompts: “Take me step by step through the differences and similarities in this code”</h3>
+<h3 class="anchored" data-anchor-id="better-prompts-take-me-step-by-step-through-the-differences-and-similarities-in-this-code">Better prompts: “Take me step by step through the differences and similarities in this code”</h3>
 <p>The first translation <em>works</em>, but a better prompt can help us actually <strong>understand</strong> what changed.</p>
 <div class="prompt-box">
 <p><span class="prompt-label">🧑 Prompt</span></p>
@@ -2586,12 +2586,17 @@ summary(model)</code></pre>
 </div>
 <div class="ai-response-box">
 <p><span class="ai-label">🤖 AI response</span></p>
+<p>Here’s the same translation, broken into pieces — click through each tab:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Packages</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Annotated code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Idiom flags</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Notes</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false" href="">Concept check</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>R</strong> — Base only, no imports needed</p>
+<p><strong>R</strong> — base only, no imports needed</p>
 <p><code>lm()</code> and <code>summary()</code> ship with base R.</p>
 </div><div class="column" style="width:50%;">
-<p><strong>Python</strong> — Install and import</p>
+<p><strong>Python</strong> — install and import</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install scikit-learn numpy pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -2599,15 +2604,12 @@ summary(model)</code></pre>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<hr>
-<section id="r-original" class="level2">
-<h2 class="anchored" data-anchor-id="r-original">R original</h2>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><strong>R original</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> hours, <span class="at">data =</span> study_data)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-<section id="python-sklearn-annotated" class="level2">
-<h2 class="anchored" data-anchor-id="python-sklearn-annotated">Python (sklearn) — annotated</h2>
+<p><strong>Python (sklearn) — annotated</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── R: model &lt;- lm(score ~ hours, data = study_data) ──────────────────</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># R uses a formula interface: 'score ~ hours' is a symbolic expression.</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sklearn has NO formula interface — you must build X and y manually.</span></span>
@@ -2630,10 +2632,8 @@ summary(model)</code></pre>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ⚠ p-values, SEs, and t-stats are NOT available in sklearn.</span></span>
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Use statsmodels.formula.api.ols() if you need full inference output.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-<section id="idiom-flags" class="level2">
-<h2 class="anchored" data-anchor-id="idiom-flags">Idiom flags</h2>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <blockquote class="blockquote">
 <p><strong>Formula interface vs.&nbsp;design matrix.</strong> R’s <code>score ~ hours</code> is declarative — R parses variable names, builds the design matrix, and adds an intercept for you. sklearn is imperative: you construct <code>X</code> as an explicit 2-D array and <code>y</code> as a 1-D array before fitting. If you accidentally pass a 1-D array as <code>X</code>, sklearn raises a <code>ValueError</code>.</p>
 </blockquote>
@@ -2643,21 +2643,19 @@ summary(model)</code></pre>
 <blockquote class="blockquote">
 <p><strong>Attribute naming.</strong> R stores results as a named list (<code>model$coefficients</code>). sklearn stores them as object attributes with trailing underscores: <code>model.coef_</code> and <code>model.intercept_</code>. The trailing underscore is a sklearn convention signalling “set after fitting.”</p>
 </blockquote>
-<hr>
-</section>
-<section id="additional-notes" class="level2">
-<h2 class="anchored" data-anchor-id="additional-notes">Additional notes</h2>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <ul>
 <li><p><strong>The statsmodels alternative</strong> is often the right call for real statistics. <code>statsmodels.formula.api.ols('score ~ hours', data=study_data).fit()</code> accepts R-style formula syntax and produces a <code>summary()</code> that looks almost identical to R’s. Use sklearn when doing prediction and cross-validation, not inference.</p></li>
 <li><p><strong><code>fit_intercept=True</code> default.</strong> sklearn includes an intercept by default (same as R’s <code>lm()</code>). If you manually dummy-code all levels of a categorical variable and pass them in, you’ll get perfect multicollinearity — the same trap as forgetting to drop a reference level in R with <code>-1</code> in your formula.</p></li>
 <li><p><strong><code>model.score(X, y)</code> gives R², not adjusted R².</strong> R’s <code>summary()</code> reports both. If you need adjusted R², compute it manually from n, p, and the raw R².</p></li>
 </ul>
-<hr>
-</section>
-<section id="concept-check" class="level2">
-<h2 class="anchored" data-anchor-id="concept-check">Concept check</h2>
+</div>
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
 <p>When you write <code>X = study_data[['hours']]</code> with double brackets instead of <code>study_data['hours']</code> with single brackets, what is the difference in shape — and why does <code>model.fit()</code> require that specific shape?</p>
-</section>
+</div>
+</div>
+</div>
 </div>
 </section>
 </section>
