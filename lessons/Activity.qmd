@@ -105,19 +105,15 @@ library(dplyr)
 Take one course you actually teach:
 
 ::: {.box .box-tip}
-[1 · Where it fits and where it would backfire]{.box-label}
+[1  Where it fits and where it would backfire]{.box-label}
 Think about places a second language could appear succesfully and places it might break.
 :::
 
 ::: {.box .box-highlight}
-[2 · Make it concrete]{.box-label}
+[2  Make it concrete]{.box-label}
 Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.
 :::
 
-::: {.box .box-important}
-[Share back]{.box-label}
-We'll discuss and share back as a group!
-:::
 
 ## Share your thoughts
 
