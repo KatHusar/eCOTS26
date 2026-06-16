@@ -108,8 +108,6 @@ Comfort *moving between* languages outlasts any single one of them.
 
 ---
 
-<<<<<<< HEAD
-=======
 ## Like a multilingual childhood {.center background-color="#ffffff"}
 
 Kids raised hearing two languages rarely speak both *perfectly*,
@@ -134,7 +132,6 @@ doesn't look foreign.
 
 ---
 
->>>>>>> a7b7206 (updates)
 ## Same job. Different syntax. {background-color="#ffffff"}
 
 Three real **entry-level Data Analyst** postings.
