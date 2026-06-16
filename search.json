@@ -39,8 +39,8 @@
     "objectID": "lessons/Demo.html#step-3-from-r-to-python-ask-the-ai",
     "href": "lessons/Demo.html#step-3-from-r-to-python-ask-the-ai",
     "title": "Demo!",
-    "section": "Step 3: From R to Python — ask the AI",
-    "text": "Step 3: From R to Python — ask the AI\nSuppose you’ve never written Python before, but you need to reproduce this analysis. Let’s ask an AI assistant for help.\n\nPrompt: “Translate this R code to Python”\n\n🧑 Prompt\nTranslate this R code to Python:\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nIn Python, the closest equivalent is scikit-learn’s LinearRegression. Here’s the translation:\nfrom sklearn.linear_model import LinearRegression\n\nX = study_data[[\"hours\"]]\ny = study_data[\"score\"]\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprint(\"Intercept:\", model.intercept_)\nprint(\"Coefficient:\", model.coef_[0])\n\nTry running the translated code below (the first run may take a few seconds while scikit-learn loads):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBetter prompts: “Take me step by step through the differences and similarities in this code”\nThe first translation works, but a better prompt can help us actually understand what changed.\n\n🧑 Prompt\nI'm a stats student fluent in R.\nTranslate this R code to Python using sklearn, AND:\n\n1. Add inline comments mapping each R line to its Python equivalent.\n2. Flag any idiom differences (e.g., formula interface vs. design matrix).\n3. End with one concept-check question I should be able to answer\n   before I move on.\n4. Make sure to tell me which packages have to be loaded and how to load them.\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model) ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nHere’s the same translation, broken into pieces — click through each tab:\n\nPackagesAnnotated codeIdiom flagsNotesConcept check\n\n\n\n\nR — base only, no imports needed\nlm() and summary() ship with base R.\n\nPython — install and import\npip install scikit-learn numpy pandas\nimport numpy as np\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score\n\n\n\n\nR original\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\nPython (sklearn) — annotated\n# ── R: model &lt;- lm(score ~ hours, data = study_data) ──────────────────\n# R uses a formula interface: 'score ~ hours' is a symbolic expression.\n# sklearn has NO formula interface — you must build X and y manually.\n\nX = study_data[['hours']]   # double brackets → 2-D DataFrame (n×1)\n                             # R adds intercept automatically; sklearn does too (fit_intercept=True default)\ny = study_data['score']     # single bracket → 1-D Series\n\nmodel = LinearRegression()  # equivalent to specifying lm() — no fitting yet\nmodel.fit(X, y)             # &lt;- this is where lm() actually does its work\n\n# ── R: summary(model) ─────────────────────────────────────────────────\n# R's summary() prints coefs, SEs, t-stats, p-values, F-stat, R² in one call.\n# sklearn gives NONE of that directly — it is a prediction library, not inference.\n# You reconstruct the pieces manually:\n\nprint(\"Intercept :\", model.intercept_)     # R: coef(model)[1]\nprint(\"Coefficient:\", model.coef_[0])      # R: coef(model)['hours']\nprint(\"R²         :\", model.score(X, y))   # R: summary(model)$r.squared\n\n# ⚠ p-values, SEs, and t-stats are NOT available in sklearn.\n# Use statsmodels.formula.api.ols() if you need full inference output.\n\n\n\nFormula interface vs. design matrix. R’s score ~ hours is declarative — R parses variable names, builds the design matrix, and adds an intercept for you. sklearn is imperative: you construct X as an explicit 2-D array and y as a 1-D array before fitting. If you accidentally pass a 1-D array as X, sklearn raises a ValueError.\n\n\nInference vs. prediction focus. R’s lm() is built for statistical inference — standard errors, t-tests, F-tests are first-class output. sklearn’s LinearRegression is optimised for predictive accuracy; it deliberately omits p-values. For inference in Python, use statsmodels.formula.api.ols(), which also supports the formula syntax.\n\n\nAttribute naming. R stores results as a named list (model$coefficients). sklearn stores them as object attributes with trailing underscores: model.coef_ and model.intercept_. The trailing underscore is a sklearn convention signalling “set after fitting.”\n\n\n\n\nThe statsmodels alternative is often the right call for real statistics. statsmodels.formula.api.ols('score ~ hours', data=study_data).fit() accepts R-style formula syntax and produces a summary() that looks almost identical to R’s. Use sklearn when doing prediction and cross-validation, not inference.\nfit_intercept=True default. sklearn includes an intercept by default (same as R’s lm()). If you manually dummy-code all levels of a categorical variable and pass them in, you’ll get perfect multicollinearity — the same trap as forgetting to drop a reference level in R with -1 in your formula.\nmodel.score(X, y) gives R², not adjusted R². R’s summary() reports both. If you need adjusted R², compute it manually from n, p, and the raw R².\n\n\n\nWhen you write X = study_data[['hours']] with double brackets instead of study_data['hours'] with single brackets, what is the difference in shape — and why does model.fit() require that specific shape?",
+    "section": "Step 3: From R to Python: ask the AI",
+    "text": "Step 3: From R to Python: ask the AI\nSuppose you’ve never written Python before, but you need to reproduce this analysis. Let’s ask an AI assistant for help.\n\nPrompt: “Translate this R code to Python”\n\n🧑 Prompt\nTranslate this R code to Python:\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nIn Python, the closest equivalent is scikit-learn’s LinearRegression. Here’s the translation:\nfrom sklearn.linear_model import LinearRegression\n\nX = study_data[[\"hours\"]]\ny = study_data[\"score\"]\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprint(\"Intercept:\", model.intercept_)\nprint(\"Coefficient:\", model.coef_[0])\n\nTry running the translated code below (the first run may take a few seconds while scikit-learn loads):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBetter prompts: “Take me step by step through the differences and similarities in this code”\nThe first translation works, but a better prompt can help us actually understand what changed.\n\n🧑 Prompt\nI'm a stats student fluent in R.\nTranslate this R code to Python using sklearn, AND:\n\n1. Add inline comments mapping each R line to its Python equivalent.\n2. Flag any idiom differences (e.g., formula interface vs. design matrix).\n3. End with one concept-check question I should be able to answer\n   before I move on.\n4. Make sure to tell me which packages have to be loaded and how to load them.\n\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\n\n\n🤖 AI response\nHere’s the same translation, broken into pieces. Click through each tab:\n\nPackagesAnnotated codeIdiom flagsNotesConcept check\n\n\n\n\nR: base only, no imports needed\nlm() and summary() ship with base R.\n\nPython: install and import\npip install scikit-learn numpy pandas\nimport numpy as np\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import r2_score\n\n\n\n\nR original\nmodel &lt;- lm(score ~ hours, data = study_data)\nsummary(model)\nPython (sklearn): annotated\n# ── R: model &lt;- lm(score ~ hours, data = study_data) ──────────────────\n# R uses a formula interface: 'score ~ hours' is a symbolic expression.\n# sklearn has NO formula interface. You must build X and y manually.\n\nX = study_data[['hours']]   # double brackets → 2-D DataFrame (n×1)\n                             # R adds intercept automatically; sklearn does too (fit_intercept=True default)\ny = study_data['score']     # single bracket → 1-D Series\n\nmodel = LinearRegression()  # equivalent to specifying lm(), no fitting yet\nmodel.fit(X, y)             # &lt;- this is where lm() actually does its work\n\n# ── R: summary(model) ─────────────────────────────────────────────────\n# R's summary() prints coefs, SEs, t-stats, p-values, F-stat, R² in one call.\n# sklearn gives NONE of that directly. It is a prediction library, not inference.\n# You reconstruct the pieces manually:\n\nprint(\"Intercept :\", model.intercept_)     # R: coef(model)[1]\nprint(\"Coefficient:\", model.coef_[0])      # R: coef(model)['hours']\nprint(\"R²         :\", model.score(X, y))   # R: summary(model)$r.squared\n\n# ⚠ p-values, SEs, and t-stats are NOT available in sklearn.\n# Use statsmodels.formula.api.ols() if you need full inference output.\n\n\n\nFormula interface vs. design matrix. R’s score ~ hours is declarative: R parses variable names, builds the design matrix, and adds an intercept for you. sklearn is imperative: you construct X as an explicit 2-D array and y as a 1-D array before fitting. If you accidentally pass a 1-D array as X, sklearn raises a ValueError.\n\n\nInference vs. prediction focus. R’s lm() is built for statistical inference: standard errors, t-tests, F-tests are first-class output. sklearn’s LinearRegression is optimised for predictive accuracy; it deliberately omits p-values. For inference in Python, use statsmodels.formula.api.ols(), which also supports the formula syntax.\n\n\nAttribute naming. R stores results as a named list (model$coefficients). sklearn stores them as object attributes with trailing underscores: model.coef_ and model.intercept_. The trailing underscore is a sklearn convention signalling “set after fitting.”\n\n\n\n\nThe statsmodels alternative is often the right call for real statistics. statsmodels.formula.api.ols('score ~ hours', data=study_data).fit() accepts R-style formula syntax and produces a summary() that looks almost identical to R’s. Use sklearn when doing prediction and cross-validation, not inference.\nfit_intercept=True default. sklearn includes an intercept by default (same as R’s lm()). If you manually dummy-code all levels of a categorical variable and pass them in, you’ll get perfect multicollinearity, the same trap as forgetting to drop a reference level in R with -1 in your formula.\nmodel.score(X, y) gives R², not adjusted R². R’s summary() reports both. If you need adjusted R², compute it manually from n, p, and the raw R².\n\n\n\nWhen you write X = study_data[['hours']] with double brackets instead of study_data['hours'] with single brackets, what is the difference in shape, and why does model.fit() require that specific shape?",
     "crumbs": [
       "Home",
       "Content",
@@ -63,12 +63,36 @@
     "objectID": "lessons/Demo.html#step-5-your-turn-fill-in-the-blanks",
     "href": "lessons/Demo.html#step-5-your-turn-fill-in-the-blanks",
     "title": "Demo!",
-    "section": "Step 5: Your turn — fill in the blanks",
-    "text": "Step 5: Your turn — fill in the blanks\nNow let’s try a different task on a different dataset: the correlation between temperature and ice cream sales.\nHere’s the complete R version:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow write the equivalent Python — fill in the blanks below and run it!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nReveal Solution\n\n\nimport numpy as np\n\ntemp = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95]\nsales = [10, 15, 22, 28, 35, 42, 50, 58, 65, 75]\n\ncorrelation = np.corrcoef(temp, sales)[0, 1]\nprint(correlation)",
+    "section": "Step 5: Your turn: fill in the blanks",
+    "text": "Step 5: Your turn: fill in the blanks\nNow let’s try a different task on a different dataset: the correlation between temperature and ice cream sales.\nHere’s the complete R version:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow write the equivalent Python. Fill in the blanks below and run it!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nReveal Solution\n\n\nimport numpy as np\n\ntemp = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95]\nsales = [10, 15, 22, 28, 35, 42, 50, 58, 65, 75]\n\ncorrelation = np.corrcoef(temp, sales)[0, 1]\nprint(correlation)",
     "crumbs": [
       "Home",
       "Content",
       "Demo!"
+    ]
+  },
+  {
+    "objectID": "lessons/Activity.html",
+    "href": "lessons/Activity.html",
+    "title": "Your Turn",
+    "section": "",
+    "text": "Take one course you actually teach:\n\n1 Where it fits and where it would backfire Think about places a second language could appear succesfully and places it might break.\n\n\n2 Make it concrete Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.\n\n\n3 Share back When we regroup, we will share any insights we found particularly valuable.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Your Turn"
+    ]
+  },
+  {
+    "objectID": "lessons/Activity.html#in-your-groups",
+    "href": "lessons/Activity.html#in-your-groups",
+    "title": "Your Turn",
+    "section": "",
+    "text": "Take one course you actually teach:\n\n1 Where it fits and where it would backfire Think about places a second language could appear succesfully and places it might break.\n\n\n2 Make it concrete Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.\n\n\n3 Share back When we regroup, we will share any insights we found particularly valuable.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Your Turn"
     ]
   },
   {
@@ -96,111 +120,99 @@
     ]
   },
   {
-    "objectID": "lessons/Activity.html#in-your-groups",
-    "href": "lessons/Activity.html#in-your-groups",
-    "title": "Try It Yourself!",
-    "section": "In your groups",
-    "text": "In your groups\nTake one course you actually teach:\n\n1 Where it fits and where it would backfire Think about places a second language could appear succesfully and places it might break.\n\n\n2 Make it concrete Talk through how you might keep students using AI for translating-to-understand, rather than blind copy and pasting.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Try It Yourself!"
-    ]
-  },
-  {
-    "objectID": "lessons/Activity.html#share-your-thoughts",
-    "href": "lessons/Activity.html#share-your-thoughts",
-    "title": "Try It Yourself!",
+    "objectID": "lessons/Appendix.html#share-your-thoughts",
+    "href": "lessons/Appendix.html#share-your-thoughts",
+    "title": "Appendix: Try It Yourself!",
     "section": "Share your thoughts",
     "text": "Share your thoughts\nAs you are trying, please, share your thoughts, challenges, AI outputs, etc. on a new slide in this slidedeck",
     "crumbs": [
       "Home",
       "Content",
-      "Try It Yourself!"
+      "Appendix: Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#the-shared-dataset",
-    "href": "lessons/Activity.html#the-shared-dataset",
-    "title": "Try It Yourself!",
+    "objectID": "lessons/Appendix.html#the-shared-dataset",
+    "href": "lessons/Appendix.html#the-shared-dataset",
+    "title": "Appendix: Try It Yourself!",
     "section": "The shared dataset",
     "text": "The shared dataset\nWe’ll use a small sales dataset: transactions across three product categories over several months. Define it once in each language — the analysis is identical.\n\nRPython\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
-      "Try It Yourself!"
+      "Appendix: Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#part-1-group-summarise-and-sort",
-    "href": "lessons/Activity.html#part-1-group-summarise-and-sort",
-    "title": "Try It Yourself!",
+    "objectID": "lessons/Appendix.html#part-1-group-summarise-and-sort",
+    "href": "lessons/Appendix.html#part-1-group-summarise-and-sort",
+    "title": "Appendix: Try It Yourself!",
     "section": "Part 1: Group, summarise, and sort",
     "text": "Part 1: Group, summarise, and sort\nThe most common data-wrangling task: total revenue by category, sorted descending.\n\nIn R — the dplyr pipe\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nIn Python — pandas groupby\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nSide-by-side comparison\n\n\n\n\n\n\nTip\n\n\n\nKey idiom differences\n\n\n\n\n\n\n\n\nConcept\ndplyr (R)\npandas (Python)\n\n\n\n\nStart a chain\ndf |&gt; ...\n(df...)\n\n\nGroup rows\ngroup_by(category)\n.groupby(\"category\")\n\n\nSummarise\nsummarise(name = fn(col))\n.agg(name=(\"col\", \"fn\"))\n\n\nSort descending\narrange(desc(col))\n.sort_values(\"col\", ascending=False)\n\n\nColumn names quoted?\nBare names: category\nAlways strings: \"category\"",
     "crumbs": [
       "Home",
       "Content",
-      "Try It Yourself!"
+      "Appendix: Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#part-2-filter-then-group",
-    "href": "lessons/Activity.html#part-2-filter-then-group",
-    "title": "Try It Yourself!",
+    "objectID": "lessons/Appendix.html#part-2-filter-then-group",
+    "href": "lessons/Appendix.html#part-2-filter-then-group",
+    "title": "Appendix: Try It Yourself!",
     "section": "Part 2: Filter, then group",
     "text": "Part 2: Filter, then group\nNow: average revenue per unit, for months that aren’t February.\n\nIn R\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nIn Python\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nTip\n\n\n\nIdiom flags\n\nfilter() → .query() — both accept an expression, but pandas requires a string.\nmutate() → .assign() — pandas uses a lambda to reference the DataFrame mid-chain.\n.groups = \"drop\" in dplyr → .reset_index() in pandas — both un-nest the groups.",
     "crumbs": [
       "Home",
       "Content",
-      "Try It Yourself!"
+      "Appendix: Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#part-3-sql-tidyverse-cameo",
-    "href": "lessons/Activity.html#part-3-sql-tidyverse-cameo",
-    "title": "Try It Yourself!",
+    "objectID": "lessons/Appendix.html#part-3-sql-tidyverse-cameo",
+    "href": "lessons/Appendix.html#part-3-sql-tidyverse-cameo",
+    "title": "Appendix: Try It Yourself!",
     "section": "Part 3: SQL ↔︎ tidyverse cameo",
     "text": "Part 3: SQL ↔︎ tidyverse cameo\nThe same aggregation in all three languages. Notice how SQL is the conceptual middle ground — its GROUP BY maps directly to both group_by() and .groupby().\n\n\n\n🗄 SQL\n\nSELECT\n  category,\n  SUM(revenue)  AS total_revenue,\n  SUM(units)    AS total_units\nFROM sales\nGROUP BY category\nORDER BY total_revenue DESC;\n\n\n\n\n📦 dplyr (R)\n\nsales |&gt;\n  group_by(category) |&gt;\n  summarise(\n    total_revenue = sum(revenue),\n    total_units   = sum(units)\n  ) |&gt;\n  arrange(desc(total_revenue))\n\n\n\n\n🐍 pandas (Python)\n\n(sales\n  .groupby(\"category\")\n  .agg(\n    total_revenue=(\"revenue\",\"sum\"),\n    total_units  =(\"units\",  \"sum\"))\n  .sort_values(\"total_revenue\",\n               ascending=False)\n  .reset_index()\n  )\n\n\n\n\n\n\n\n\n\n\n\nSQL clause\ndplyr verb\npandas method\n\n\n\n\nWHERE\nfilter()\n.query()\n\n\nSELECT col, fn(col)\nsummarise()\n.agg()\n\n\nGROUP BY\ngroup_by()\n.groupby()\n\n\nORDER BY ... DESC\narrange(desc(...))\n.sort_values(..., ascending=False)\n\n\nAS name\nname = expr inside summarise()\nname=(\"col\",\"fn\") inside .agg()",
     "crumbs": [
       "Home",
       "Content",
-      "Try It Yourself!"
+      "Appendix: Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#match-the-syntax",
-    "href": "lessons/Activity.html#match-the-syntax",
-    "title": "Try It Yourself!",
+    "objectID": "lessons/Appendix.html#match-the-syntax",
+    "href": "lessons/Appendix.html#match-the-syntax",
+    "title": "Appendix: Try It Yourself!",
     "section": "Match the syntax!",
     "text": "Match the syntax!\nFor each dplyr snippet, choose its pandas equivalent.\n\n\n\ndplyr (R)\npandas (Python)\n\n\n\n\n\nfilter(month == \"Jan\")\n -- choose -- .filter(month=\"Jan\") .query('month == \"Jan\"') .where(\"month\", \"Jan\") \n\n\n\ngroup_by(category)\n -- choose -- .groupby(\"category\") .group(\"category\") .aggregate(\"category\") \n\n\n\nsummarise(total = sum(revenue))\n -- choose -- .summarise(total=sum(\"revenue\")) .sum(\"revenue\") .agg(total=(\"revenue\", \"sum\")) \n\n\n\narrange(desc(revenue))\n -- choose -- .sort_values(\"revenue\") .sort_values(\"revenue\", ascending=False) .order_by(\"revenue\", desc=True) \n\n\n\nmutate(rev_per_unit = revenue / units)\n -- choose -- .assign(rev_per_unit=lambda df: df[\"revenue\"] / df[\"units\"]) .mutate(rev_per_unit=\"revenue/units\") .add_column(\"rev_per_unit\", df[\"revenue\"] / df[\"units\"]) \n\n\n\nselect(month, revenue)\n -- choose -- .select([\"month\", \"revenue\"]) .keep(\"month\", \"revenue\") [[\"month\", \"revenue\"]] \n\n\n\n\n\n\nCheck Answers",
     "crumbs": [
       "Home",
       "Content",
-      "Try It Yourself!"
+      "Appendix: Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#your-turn-fill-in-the-blanks",
-    "href": "lessons/Activity.html#your-turn-fill-in-the-blanks",
-    "title": "Try It Yourself!",
+    "objectID": "lessons/Appendix.html#your-turn-fill-in-the-blanks",
+    "href": "lessons/Appendix.html#your-turn-fill-in-the-blanks",
+    "title": "Appendix: Try It Yourself!",
     "section": "Your turn — fill in the blanks",
     "text": "Your turn — fill in the blanks\nHere’s the complete R version of a new task: total units sold per month, keeping only months with more than 30 total units.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow complete the pandas equivalent below and run it:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nReveal Solution\n\n\nsales\n  .groupby(\"month\")\n  .agg(total_units=(\"units\", \"sum\"))\n  .reset_index()\n  .query(\"total_units &gt; 30\")\n  .sort_values(\"month\")",
     "crumbs": [
       "Home",
       "Content",
-      "Try It Yourself!"
+      "Appendix: Try It Yourself!"
     ]
   },
   {
-    "objectID": "lessons/Activity.html#concept-check",
-    "href": "lessons/Activity.html#concept-check",
-    "title": "Try It Yourself!",
+    "objectID": "lessons/Appendix.html#concept-check",
+    "href": "lessons/Appendix.html#concept-check",
+    "title": "Appendix: Try It Yourself!",
     "section": "Concept check",
     "text": "Concept check\nIn dplyr you can write filter(total_units &gt; 30) immediately after summarise() because the pipe passes the result forward as a new data frame. In pandas, why do you need .reset_index() before .query(\"total_units &gt; 30\") — and what happens if you skip it?",
     "crumbs": [
       "Home",
       "Content",
-      "Try It Yourself!"
+      "Appendix: Try It Yourself!"
     ]
   }
 ]
