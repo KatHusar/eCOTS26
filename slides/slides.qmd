@@ -108,29 +108,6 @@ Comfort *moving between* languages outlasts any single one of them.
 
 ---
 
-## Like a multilingual childhood {.center background-color="#ffffff"}
-
-Kids raised hearing two languages rarely speak both *perfectly*,
-but a **third**, related language later comes much easier.
-
-::: {.box .box-tip .fragment}
-[Key idea]{.box-label}
-**Early exposure doesn't need to produce fluency.**
-It needs to produce *familiarity* so the next language
-doesn't look foreign.
-:::
-
-::: {.notes}
-- This is the emotional core of motivation #1. Give it room to breathe.
-- Nobody expects a bilingual toddler to be "fluent" the way we'd judge an
-  adult. But that early, low-stakes exposure rewires how easy the THIRD
-  language is later.
-- Same with R/Python/SQL in intro courses: a student doesn't need to master
-  Python in week 3 of an R-based intro course. They just need it to stop
-  looking like an alien alphabet.
-:::
-
----
 
 ## Same job. Different syntax. {background-color="#ffffff"}
 
